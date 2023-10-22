@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-//#include "i2c-lcd.h"
+#include "i2c-lcd.h"
 #include "string.h"
 #include "stdio.h"
 #include "keypad.h"
@@ -74,7 +74,7 @@ void loop_main(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 // Password mac dinh
-char password[] = {'0','0','0','0'};
+char password[] = {'1','1','1','1'};
 
 uint8_t key;
 char i,j,tmp;
@@ -85,7 +85,7 @@ char key_pass[5];
 char buffer_pass[5];
 char new_pass1[5];
 char new_pass2[5];
-unsigned char data[]="NHOM 8 - KHOA DIEN TU \r\n		Welcome!		";
+unsigned char data[]="		Welcome!		";
 unsigned char buffer[100];
 unsigned char clear[1] = {12};
 unsigned char clear_[1] = {8};
@@ -125,7 +125,11 @@ int main(void)
   MX_I2C1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-	HAL_UART_Transmit(&huart1,data,strlen(data),100);
+	lcd_init ();
+	lcd_clear();
+	lcd_send_cmd(0x80);
+	lcd_send_string ("WELCOME!");
+	//HAL_UART_Transmit(&huart1,data,strlen(data),100);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -302,9 +306,12 @@ void get_key()
 	// Che do doi mat khau
 	if ((key == 'A')&&(mode_pass == MODE_RUN))
 	{
-		HAL_UART_Transmit(&huart1,clear,1,100); //
-		unsigned char doimk[] = "Nhap mat khau cu: \r\n";
-		HAL_UART_Transmit(&huart1,doimk,strlen(doimk),100);
+		lcd_clear();
+		lcd_put_cur(0, 0);
+		lcd_send_string("OLD PASSWORD:");
+		//HAL_UART_Transmit(&huart1,clear,1,100);
+		//unsigned char doimk[] = "Nhap mat khau cu: \r\n";
+		//HAL_UART_Transmit(&huart1,doimk,strlen(doimk),100);
 		count_key_in = 0;
 		count_key = 0;
 		mode_pass = MODE_CHANGE;
@@ -361,15 +368,18 @@ char run_CheckPass()
 		if (count_key < 4)
 		{
 			buffer_pass[count_key] = key;
-			unsigned char display[] = "*";
-			HAL_UART_Transmit(&huart1,display,strlen(display),100); // Hien thi '*' the hien dang nhap pass
+			lcd_put_cur(1,count_key);
+			lcd_send_string("*");
+			//unsigned char display[] = "*";
+			//HAL_UART_Transmit(&huart1,display,strlen(display),100); // Hien thi '*' the hien dang nhap pass
 			count_key++;
 			key = 0;
 		}
 		if (count_key == 4)
 		{
 			count_key = 0;
-			HAL_UART_Transmit(&huart1,clear,1,100); // Xoa man hinh
+			lcd_clear();
+			//HAL_UART_Transmit(&huart1,clear,1,100); // Xoa man hinh
 			for(i = 0; i < 4; i++){
 				if(password[i] != buffer_pass[i])
 					break;
@@ -381,9 +391,12 @@ char run_CheckPass()
 			else
 			{
 				check_pass = NOT_OK;
-				HAL_UART_Transmit(&huart1,clear,1,100);// Xoa man hinh
-				unsigned char no_pass[] = "Wrong Password!";
-				HAL_UART_Transmit(&huart1,no_pass,strlen(no_pass),100);// Hien thi sai mat khau
+				lcd_clear();
+				lcd_put_cur(0,0);
+				lcd_send_string("Wrong password!");
+				//HAL_UART_Transmit(&huart1,clear,1,100);// Xoa man hinh
+				//unsigned char no_pass[] = "Wrong Password!";
+				//HAL_UART_Transmit(&huart1,no_pass,strlen(no_pass),100);// Hien thi sai mat khau
 			}
 		}
 	}
@@ -396,7 +409,12 @@ void run_Normal()
 	status_pass = run_CheckPass();
 	if (status_pass == OK)
 	{
-		HAL_UART_Transmit(&huart1,data,strlen(data),100); // Hien thi mo cua
+		lcd_clear();
+		lcd_put_cur(0,0);
+		lcd_send_string("Door is open!");
+		//HAL_UART_Transmit(&huart1,data,strlen(data),100); // Hien thi mo cua
+		HAL_Delay(3000);
+		lcd_clear();
 		count_enter_pass = 0;
 		mode_pass = MODE_RUN;
 		check_pass = 2;
@@ -408,11 +426,13 @@ void run_Normal()
 		if (count_enter_pass == 3)
 		{
 			count_enter_pass = 0;
-			HAL_UART_Transmit(&huart1,clear,1,100);
-			unsigned char sos[] = "Ban nhap sai mat khau qua 3 lan";
-			HAL_UART_Transmit(&huart1,sos,strlen(sos),100);// Canh bao
+			lcd_clear();
+			lcd_send_string("XXXXX");
+			//HAL_UART_Transmit(&huart1,clear,1,100);
+			//unsigned char sos[] = "Ban nhap sai mat khau qua 3 lan";
+			//HAL_UART_Transmit(&huart1,sos,strlen(sos),100);// Canh bao
 		}
-		//mode_pass = MODE_RUN;
+		mode_pass = MODE_RUN;
 	}
 	else {}
 }
@@ -423,14 +443,16 @@ void run_ChangePass()
 	status_pass = run_CheckPass();
 	if (status_pass == OK)
 	{
-		unsigned char doimk[] = "Nhap new password 1: \r\n";
-		HAL_UART_Transmit(&huart1,doimk,strlen(doimk),100);
+		lcd_send_string("NEW PASSWORD 1:");
+		//unsigned char doimk[] = "Nhap new password 1: \r\n";
+		//HAL_UART_Transmit(&huart1,doimk,strlen(doimk),100);
 		mode_pass = MODE_INPUT_PASS;
 	}
 	else if (status_pass == NOT_OK)
 	{
 		HAL_Delay(500);
-		HAL_UART_Transmit(&huart1,clear,1,100);
+		lcd_clear();
+		//HAL_UART_Transmit(&huart1,clear,1,100);
 		status_pass = 2;
 		mode_pass = MODE_RUN;
 	}
@@ -457,13 +479,18 @@ void run_InputPass(){
 		{
 			new_pass1[count_key_in] = key;
 			count_key_in++;
-			unsigned char display[] = "*";
-			HAL_UART_Transmit(&huart1,display,strlen(display),100);
+			lcd_put_cur(1,count_key_in);
+			lcd_send_string("*");
+			//unsigned char display[] = "*";
+			//HAL_UART_Transmit(&huart1,display,strlen(display),100);
 			if (count_key_in == 4)
 			{
-				HAL_UART_Transmit(&huart1,clear,1,100);
-				unsigned char doimk[] = "Nhap new password 2: \r\n";
-				HAL_UART_Transmit(&huart1,doimk,strlen(doimk),100);
+				lcd_clear();
+				lcd_put_cur(1,0);
+				lcd_send_string("NEW PASSWORD 2:");
+				//HAL_UART_Transmit(&huart1,clear,1,100);
+				//unsigned char doimk[] = "Nhap new password 2: \r\n";
+				//HAL_UART_Transmit(&huart1,doimk,strlen(doimk),100);
 			}
 			key = 0;
 		}
@@ -471,8 +498,10 @@ void run_InputPass(){
 		{
 			new_pass2[count_key_in-4] = key;
 			count_key_in++;
-			unsigned char display[] = "*";
-			HAL_UART_Transmit(&huart1,display,strlen(display),100);
+			lcd_put_cur(1,count_key_in);
+			lcd_send_string("*");
+			//unsigned char display[] = "*";
+			//HAL_UART_Transmit(&huart1,display,strlen(display),100);
 			key = 0;
 		}
 		if (count_key_in == 8)
@@ -491,18 +520,25 @@ void run_InputPass(){
 				password[2] = new_pass1[2];
 				password[3] = new_pass1[3];
 				
-				HAL_UART_Transmit(&huart1,clear,1,100);
-				unsigned char doimk[] = "Doi mat khau thanh cong";
-				HAL_UART_Transmit(&huart1,doimk,strlen(doimk),100);
+				lcd_clear();
+				lcd_put_cur(0,0);
+				lcd_send_string("CHANGE SUCCESSFULLY");
+				//HAL_UART_Transmit(&huart1,clear,1,100);
+				// char doimk[] = "Doi mat khau thanh cong";
+				//HAL_UART_Transmit(&huart1,doimk,strlen(doimk),100);
 			}
 			else
 			{
-				HAL_UART_Transmit(&huart1,clear,1,100);
-				unsigned char doimk[] = "Doi mat khau khong thanh cong";
-				HAL_UART_Transmit(&huart1,doimk,strlen(doimk),100);
+				lcd_clear();
+				lcd_put_cur(0,0);
+				lcd_send_string("CHANGE UNSUCCESSFULLY");
+				//HAL_UART_Transmit(&huart1,clear,1,100);
+				//unsigned char doimk[] = "Doi mat khau khong thanh cong";
+				//HAL_UART_Transmit(&huart1,doimk,strlen(doimk),100);
 			}
 			HAL_Delay(2000);
-			HAL_UART_Transmit(&huart1,clear,1,100);
+			lcd_clear();
+			//HAL_UART_Transmit(&huart1,clear,1,100);
 			status_pass = 2;
 			mode_pass = MODE_RUN;
 		}

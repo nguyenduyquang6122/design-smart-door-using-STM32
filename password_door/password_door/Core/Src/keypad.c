@@ -1,28 +1,28 @@
 #include "keypad.h"
 
-#define C1_PORT GPIOA
-#define C1_PIN GPIO_PIN_0
-
-#define C2_PORT GPIOA
-#define C2_PIN GPIO_PIN_1
-
-#define C3_PORT GPIOA
-#define C3_PIN GPIO_PIN_2
-
-#define C4_PORT GPIOA
-#define C4_PIN GPIO_PIN_3
-
 #define R1_PORT GPIOA
-#define R1_PIN GPIO_PIN_4
+#define R1_PIN GPIO_PIN_7
 
 #define R2_PORT GPIOA
-#define R2_PIN GPIO_PIN_5
+#define R2_PIN GPIO_PIN_6
 
 #define R3_PORT GPIOA
-#define R3_PIN GPIO_PIN_6
+#define R3_PIN GPIO_PIN_5
 
 #define R4_PORT GPIOA
-#define R4_PIN GPIO_PIN_7
+#define R4_PIN GPIO_PIN_4
+
+#define C1_PORT GPIOA
+#define C1_PIN GPIO_PIN_3
+
+#define C2_PORT GPIOA
+#define C2_PIN GPIO_PIN_2
+
+#define C3_PORT GPIOA
+#define C3_PIN GPIO_PIN_1
+
+#define C4_PORT GPIOA
+#define C4_PIN GPIO_PIN_0
 
 char read_keypad (void)
 {
