@@ -1,0 +1,27 @@
+--cpu Cortex-M3
+"check_card_rfid\startup_stm32f103xb.o"
+"check_card_rfid\main.o"
+"check_card_rfid\stm32f1xx_it.o"
+"check_card_rfid\stm32f1xx_hal_msp.o"
+"check_card_rfid\lcd.o"
+"check_card_rfid\rc522.o"
+"check_card_rfid\stm32f1xx_hal_gpio_ex.o"
+"check_card_rfid\stm32f1xx_hal_i2c.o"
+"check_card_rfid\stm32f1xx_hal.o"
+"check_card_rfid\stm32f1xx_hal_rcc.o"
+"check_card_rfid\stm32f1xx_hal_rcc_ex.o"
+"check_card_rfid\stm32f1xx_hal_gpio.o"
+"check_card_rfid\stm32f1xx_hal_dma.o"
+"check_card_rfid\stm32f1xx_hal_cortex.o"
+"check_card_rfid\stm32f1xx_hal_pwr.o"
+"check_card_rfid\stm32f1xx_hal_flash.o"
+"check_card_rfid\stm32f1xx_hal_flash_ex.o"
+"check_card_rfid\stm32f1xx_hal_exti.o"
+"check_card_rfid\stm32f1xx_hal_spi.o"
+"check_card_rfid\stm32f1xx_hal_tim.o"
+"check_card_rfid\stm32f1xx_hal_tim_ex.o"
+"check_card_rfid\system_stm32f1xx.o"
+--strict --scatter "check_card_RFID\check_card_RFID.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "check_card_RFID.map" -o check_card_RFID\check_card_RFID.axf
