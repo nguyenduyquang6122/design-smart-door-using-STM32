@@ -648,7 +648,7 @@ void check_card_RFID()
 			{
 				for(i=4; i<8; i++)
 				{
-					if(key_card[i] != serNum[i]) is_true_card = false;
+					if(key_card[i] != serNum[i-4]) is_true_card = false;
 				}
 			}
       else is_true_card = true;
