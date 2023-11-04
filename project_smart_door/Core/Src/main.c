@@ -57,7 +57,7 @@ SPI_HandleTypeDef hspi1;
 
 /* USER CODE BEGIN PV */
 // ID default
-char key_card[4] = {0x13,0xC8,0xC8,0x0D};
+char key_card[8] = {0x13,0xC8,0xC8,0x0D,0,0,0,0};
 char status;
 char str[MFRC522_MAX_LEN]; //MFRC522_MAX_LEN = 16
 char serNum[5];
@@ -316,6 +316,70 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+void add_card()
+{
+  char buff_uID[10];
+  status = MFRC522_Request(PICC_REQIDL, str);
+  status = MFRC522_Anticoll(str);
+  memcpy(serNum, str, 4);
+	if(status == MI_OK)
+  {
+		for(i=0; i<4; i++)
+		{
+			key_card[i+4] = serNum[i];
+			
+		}
+    lcd_clear();
+    lcd_put_cur(0, 1);
+    lcd_send_string("Card's number:");
+    memset(buff_uID,0,10);
+    sprintf(buff_uID, "%02X-%02X-%02X-%02X", serNum[0],serNum[1],serNum[2],serNum[3]);
+    lcd_put_cur(1,0);
+    lcd_send_string(buff_uID);
+		HAL_Delay(3000);
+		lcd_clear();
+		
+	}
+}
+void less_card()
+{
+	char buff_uID[10];
+	lcd_clear();
+  lcd_put_cur(0, 1);
+  lcd_send_string("Choose Card:");
+	if ( key == '1')
+	{
+		lcd_put_cur(0, 1);
+		lcd_send_string("Deleted Card:");
+		sprintf(buff_uID, "%02X-%02X-%02X-%02X", key_card[0],key_card[1],key_card[2],key_card[3]);
+    lcd_put_cur(1,0);
+    lcd_send_string(buff_uID);
+    HAL_Delay(1000);
+		for(i=0; i<4; i++)
+    {
+      key_card[i] = key_card[i+4];
+			key_card[i+4] = 0;
+    }
+		HAL_Delay(2000);
+    lcd_clear();
+	}
+	else if ( key == '2')
+	{
+		lcd_put_cur(0, 1);
+		lcd_send_string("Deleted Card:");
+		sprintf(buff_uID, "%02X-%02X-%02X-%02X", key_card[4],key_card[5],key_card[6],key_card[7]);
+    lcd_put_cur(1,0);
+    lcd_send_string(buff_uID);
+    HAL_Delay(1000);
+		for(i=4; i<8; i++)
+    {
+      key_card[i] = 0;
+    }
+		HAL_Delay(2000);
+    lcd_clear();
+	}
+}
 // Ham nhan gia tri tu ban phim nhap
 void get_key()
 {
@@ -363,6 +427,14 @@ void get_key()
   {
     mode_pass = MODE_RUN;
   }
+	else if (key == 'B')
+	{
+		add_card();
+	}
+	else if (key == 'C')
+	{
+		less_card();
+	}
   else {}
   key_input = 0;
 }
@@ -558,10 +630,6 @@ void check_card_RFID()
   bool is_true_card = false;
   char buff_uID[10];
   status = MFRC522_Request(PICC_REQIDL, str);
-  if(status == MI_OK)
-  {
-    
-  }
   status = MFRC522_Anticoll(str);
   memcpy(serNum, str, 4);
   if(status == MI_OK)
@@ -576,7 +644,13 @@ void check_card_RFID()
     HAL_Delay(2000);
     for(i=0; i<4; i++)
     {
-      if(key_card[i] != serNum[i]) is_true_card = false;
+      if(key_card[i] != serNum[i])
+			{
+				for(i=4; i<8; i++)
+				{
+					if(key_card[i] != serNum[i]) is_true_card = false;
+				}
+			}
       else is_true_card = true;
     }
     if(is_true_card == false)
