@@ -61,7 +61,6 @@ char str[MFRC522_MAX_LEN]; //MFRC522_MAX_LEN = 16
 char serNum[5];
 int count_error_rfid = 0;
 int wrong_card = 0;
-//uint8_t		memID[8] = "13C8C80D";
 char key_card[4] = {0x13,0xC8,0xC8,0x0D};
 /* USER CODE END PV */
 
@@ -111,7 +110,7 @@ int main(void)
   MX_I2C1_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
-		MFRC522_Init();
+	MFRC522_Init();
 	lcd_init();
 	lcd_send_cmd(0x80);
 	lcd_send_string("WELLCOME HAUI");
