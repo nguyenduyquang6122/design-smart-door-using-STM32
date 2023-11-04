@@ -319,6 +319,7 @@ void check_card_RFID()
 		}
 		else
 		{
+			HAL_GPIO_Write(GPIOA,GPIO_PIN_0,1);
 			lcd_clear();
 			lcd_put_cur(0, 0);
 			lcd_send_string("Door is open!");
