@@ -30,4 +30,4 @@ project_smart_door/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Core\Inc\rc522.h ..\Core\Inc\lcd.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ..\Core\Inc\keypad.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h ..\Core\Inc\flash.h

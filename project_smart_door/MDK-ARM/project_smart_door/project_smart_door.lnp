@@ -6,6 +6,7 @@
 "project_smart_door\keypad.o"
 "project_smart_door\lcd.o"
 "project_smart_door\rc522.o"
+"project_smart_door\flash.o"
 "project_smart_door\stm32f1xx_hal_gpio_ex.o"
 "project_smart_door\stm32f1xx_hal_i2c.o"
 "project_smart_door\stm32f1xx_hal.o"

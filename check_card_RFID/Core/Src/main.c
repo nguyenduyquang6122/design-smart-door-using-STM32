@@ -26,6 +26,7 @@
 #include "string.h"
 #include "stdio.h"
 #include "stdbool.h"
+#include "flash.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -36,6 +37,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 // Cac mode chuong trinh
+#define ADDRESS_DATA_STORAGE (0x08000000+ 120*1024) 
 #define MODE_RUN 0
 #define MODE_CHANGE 1
 #define MODE_INPUT_PASS 3
@@ -55,13 +57,14 @@ I2C_HandleTypeDef hi2c1;
 SPI_HandleTypeDef hspi1;
 
 /* USER CODE BEGIN PV */
+int value;
 char i,j,tmp;
 char status;
 char str[MFRC522_MAX_LEN]; //MFRC522_MAX_LEN = 16
 char serNum[5];
 int count_error_rfid = 0;
 int wrong_card = 0;
-char key_card[4] = {0x13,0xC8,0xC8,0x0D};
+uint8_t key_card[4] = {0x13,0xC8,0xC8,0x0D};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -110,12 +113,15 @@ int main(void)
   MX_I2C1_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
-	MFRC522_Init();
 	lcd_init();
 	lcd_send_cmd(0x80);
 	lcd_send_string("WELLCOME HAUI");
 	HAL_Delay(1000);
 	lcd_clear();
+	MFRC522_Init();
+	Flash_Erase(ADDRESS_DATA_STORAGE);
+	Flash_Write_Int(ADDRESS_DATA_STORAGE, 1000);
+	value = Flash_Read_Int(ADDRESS_DATA_STORAGE);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -318,7 +324,7 @@ void check_card_RFID()
 		}
 		else
 		{
-			HAL_GPIO_Write(GPIOA,GPIO_PIN_0,1);
+			//HAL_GPIO_Write(GPIOA,GPIO_PIN_0,1);
 			lcd_clear();
 			lcd_put_cur(0, 0);
 			lcd_send_string("Door is open!");

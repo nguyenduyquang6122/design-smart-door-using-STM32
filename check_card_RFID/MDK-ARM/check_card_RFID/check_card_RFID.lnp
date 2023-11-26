@@ -5,6 +5,7 @@
 "check_card_rfid\stm32f1xx_hal_msp.o"
 "check_card_rfid\lcd.o"
 "check_card_rfid\rc522.o"
+"check_card_rfid\flash.o"
 "check_card_rfid\stm32f1xx_hal_gpio_ex.o"
 "check_card_rfid\stm32f1xx_hal_i2c.o"
 "check_card_rfid\stm32f1xx_hal.o"
