@@ -37,10 +37,14 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-// Cac mode chuong trinh
+// Cac mode cua the
+#define MODE_CHECK_CARD 0
+#define MODE_ADD_CARD 1
+#define MODE_DEL_CARD 2
+// Cac mode cua cua
 #define MODE_RUN 0
 #define MODE_CHANGE 1
-#define MODE_INPUT_PASS 3
+#define MODE_INPUT_PASS 2
 // Trang thai
 #define OK 0
 #define NOT_OK 1
@@ -61,7 +65,7 @@ I2C_HandleTypeDef hi2c1;
 SPI_HandleTypeDef hspi1;
 
 /* USER CODE BEGIN PV */
-// ID default
+// Key card default
 char key_card[15];
 char status;
 char str[MFRC522_MAX_LEN]; //MFRC522_MAX_LEN = 16
@@ -72,7 +76,9 @@ int wrong_card = 0;
 // Password default
 char pass_master[] = {'1','1','1','1'};
 char password[4];
+// Cac bien su dung
 uint8_t key;
+int len_key_card = 0;
 char i,j,tmp;
 char count_key = 0;
 char count_key_in = 0;
@@ -81,9 +87,12 @@ char key_pass[5];
 char buffer_pass[5];
 char new_pass1[5];
 char new_pass2[5];
-char mode_pass = 2;
+char mode_pass = 3;
 char status_pass = 2;
 char check_pass = 2;
+char mode_card = MODE_CHECK_CARD;
+char status_card = 2;
+char check_card = 2;
 char checking = NOT_OK;
 /* USER CODE END PV */
 
@@ -93,12 +102,17 @@ static void MX_GPIO_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_SPI1_Init(void);
 /* USER CODE BEGIN PFP */
-void run_Normal(void);
+int get_len_keycard(void);
+char check_card_RFID(void);
+void check_Card(void);
+void add_Card(void);
+void del_Card (void);
 char run_CheckPass(void);
+void run_Normal(void);
 void run_ChangePass(void);
 void run_InputPass(void);
 void get_key(void);
-void check_card_RFID(void);
+//void check_card_RFID(void);
 void notify_audio(int s);
 void loop_main(void);
 /* USER CODE END PFP */
@@ -340,13 +354,23 @@ void get_key()
     HAL_Delay(100);
   }
   // Che do doi mat khau
-  if ((key == 'A')&&(mode_pass == MODE_RUN))
+  if (key == 'A')
   {
     lcd_clear();
     count_key_in = 0;
     count_key = 0;
     mode_pass = MODE_CHANGE;
   }
+	else if (key == 'B')
+	{
+		mode_card = MODE_ADD_CARD;
+		mode_pass = 3;
+	}
+	else if (key == 'C')
+	{
+		mode_card = MODE_DEL_CARD;
+		mode_pass = 3;
+	}
   // Nhan * de backspace
   else if (key == '*')
   {
@@ -372,17 +396,11 @@ void get_key()
       }
     }
   }
-  // Nhan # de xac nhan password or cho phep nhap password
+	// Nhan # de xac nhan password or cho phep nhap password
   else if (key == '#') 
   {
     mode_pass = MODE_RUN;
   }
-	else if (key == 'B')
-	{ 
-	}
-	else if (key == 'C')
-	{
-	}
   else {}
   key_input = 0;
 }
@@ -391,8 +409,21 @@ void get_key()
 void loop_main()
 {
 	Flash_Read_Array(ADDRESS_PASS_STORAGE, (uint8_t*)password, 4);
-	check_card_RFID();
   get_key();
+	switch (mode_card)
+	{
+		case MODE_CHECK_CARD:
+      check_Card();
+      break;
+    case MODE_ADD_CARD:
+      add_Card();
+      break;
+    case MODE_DEL_CARD:
+      del_Card();
+      break;
+    default:
+      break;
+	}
   switch (mode_pass)
   {
     case MODE_RUN:
@@ -470,7 +501,7 @@ void run_Normal()
     HAL_Delay(3000);
     lcd_clear();
     count_enter_pass = 0;
-    mode_pass = 2;
+    mode_pass = 3;
     check_pass = 2;
   }
   else if (status_pass == NOT_OK)
@@ -507,7 +538,7 @@ void run_ChangePass()
   {
     lcd_clear();
     status_pass = 2;
-    mode_pass = 2;
+    mode_pass = 3;
   }
   else {}
 }
@@ -526,7 +557,7 @@ void run_InputPass(){
       {
         lcd_clear();
         lcd_put_cur(0,1);
-        lcd_send_string("COMFIRM PASS:");
+        lcd_send_string("CONFIRM PASS:");
       }
       key = 0;
     }
@@ -583,56 +614,141 @@ void run_InputPass(){
   }
 }
 
-// Ham check card
-void check_card_RFID()
+int get_len_keycard()
 {
-  bool is_true_card = false;
-  char buff_uID[10];
-  status = MFRC522_Request(PICC_REQIDL, str);
-  status = MFRC522_Anticoll(str);
-  memcpy(serNum, str, 4);
-  if(status == MI_OK)
-  {
-    lcd_clear();
-    lcd_put_cur(0, 1);
-    lcd_send_string("Card's number:");
-    memset(buff_uID,0,10);
-    sprintf(buff_uID, "%02X-%02X-%02X-%02X", serNum[0],serNum[1],serNum[2],serNum[3]);
-    lcd_put_cur(1,0);
-    lcd_send_string(buff_uID);
-    HAL_Delay(2000);
-    for(i=0; i<4; i++)
-    {
-      if(key_card[i] != serNum[i]) is_true_card = false;
-      else is_true_card = true;
-    }
-    if(is_true_card == false)
-    {
-      lcd_clear();
-      lcd_put_cur(0, 0);;
-      lcd_send_string("Wrong card!");
-      notify_audio(5);
-      HAL_Delay(3000);
-      lcd_clear();
-    }
-    else
-    {
-      lcd_clear();
-      lcd_put_cur(0, 0);
-      lcd_send_string("Door is open!");
-      notify_audio(3);
-      mode_pass = 2;
-      HAL_Delay(3000);
-      lcd_clear();
-    }
-  }
+	int n = 0;
+	Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 15);
+	for(i = 0; i<sizeof(key_card); i++)
+	{
+		if(key_card[i] != 0xFF)
+		{
+			n++;
+		}
+		else
+		{
+			break;
+		}
+	}
+	return n;
 }
 
-// Ham them the
+// Ham check card
+char check_card_RFID()
+{
+	if(len_key_card <= 0)
+	{
+		lcd_clear();
+		lcd_put_cur(0,1);
+		lcd_send_string("No exist");
+		lcd_put_cur(1,3);
+		lcd_send_string("the card");
+		
+	} else
+	{
+		bool is_true_card = false;
+		char buff_uID[10];
+		status = MFRC522_Request(PICC_REQIDL, str);
+		status = MFRC522_Anticoll(str);
+		memcpy(serNum, str, 4);
+		if(status == MI_OK)
+		{
+			for(i=0; i<4; i++)
+			{
+				if(key_card[i] != serNum[i]) is_true_card = false;
+				else is_true_card = true;
+			}
+			if(is_true_card == false)
+			{
+				check_card = NOT_OK;
+			}
+			else
+			{
+				check_card = OK;
+			}
+		}
+  }
+	return check_card;
+}
 
+void check_Card()
+{
+	len_key_card = get_len_keycard();
+	status_card = check_card_RFID();
+	if(status_card == OK)
+	{
+		check_card = 2;
+		lcd_clear();
+		lcd_put_cur(0, 0);
+		lcd_send_string("Door is open!");
+		notify_audio(3);
+		mode_pass = 2;
+		HAL_Delay(3000);
+		lcd_clear();
+	}
+	else if (status_card == NOT_OK)
+	{
+		check_card = 2;
+		lcd_clear();
+		lcd_put_cur(0, 0);;
+		lcd_send_string("Wrong card!");
+		notify_audio(5);
+		HAL_Delay(3000);
+		lcd_clear();
+	}
+}
+// Ham them the
+void add_Card()
+{
+	lcd_put_cur(0, 1);
+  lcd_send_string("ENTER PASSWORD:");
+	status_pass = run_CheckPass();
+	if(status_pass == OK)
+	{
+		lcd_clear();
+		lcd_put_cur(0,1);
+		lcd_send_string("Correct pass!");
+		HAL_Delay(1000);
+		lcd_clear();
+		lcd_put_cur(0,1);
+		lcd_send_string("Put new card");
+		lcd_put_cur(1,1);
+		lcd_send_string("on NCF Reader");
+		while(1)
+		{
+			status = MFRC522_Request(PICC_REQIDL, str);
+			status = MFRC522_Anticoll(str);
+			memcpy(serNum, str, 4);
+			if(status == MI_OK)
+			{
+				for(i=len_key_card; i<len_key_card+4; i++)
+				{
+					key_card[i] = serNum[i%4];
+				}
+				Flash_Erase(ADDRESS_CARD_STORAGE);
+				Flash_Write_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 15);
+				HAL_Delay(100);
+				Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 15);
+				
+				lcd_clear();
+				lcd_put_cur(0,1);
+				lcd_send_string("ADD NEW CARD");
+				lcd_put_cur(1,1);
+				lcd_send_string("SUCCESSFULLY");
+				HAL_Delay(2000);
+				lcd_clear();
+				mode_card = MODE_CHECK_CARD;
+				break;
+			}
+			HAL_Delay(50);
+		}
+	}	
+}
 
 // Ham xoa the
-
+void del_Card()
+{
+	
+}
 
 // Ham thong bao bang am thanh
 void notify_audio(int s)

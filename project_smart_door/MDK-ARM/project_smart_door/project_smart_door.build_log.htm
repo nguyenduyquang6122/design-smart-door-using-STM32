@@ -27,27 +27,36 @@ Project File Date:  11/25/2023
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'project_smart_door'
-../Core/Src/main.c(591): warning: passing 'char[16]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
-  status = MFRC522_Request(PICC_REQIDL, str);
-                                        ^~~
+../Core/Src/main.c(650): warning: passing 'char[16]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                status = MFRC522_Request(PICC_REQIDL, str);
+                                                      ^~~
 ../Core/Inc\rc522.h(124): note: passing argument to parameter 'TagType' here
 uint8_t MFRC522_Request(uint8_t reqMode, uint8_t* TagType);
                                                   ^
-../Core/Src/main.c(592): warning: passing 'char[16]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
-  status = MFRC522_Anticoll(str);
-                            ^~~
+../Core/Src/main.c(651): warning: passing 'char[16]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                status = MFRC522_Anticoll(str);
+                                          ^~~
 ../Core/Inc\rc522.h(126): note: passing argument to parameter 'serNum' here
 uint8_t MFRC522_Anticoll(uint8_t* serNum);
                                   ^
-../Core/Src/main.c(600): warning: 'sprintf' will always overflow; destination buffer has size 10, but format string expands to at least 12 [-Wfortify-source]
-    sprintf(buff_uID, "%02X-%02X-%02X-%02X", serNum[0],serNum[1],serNum[2],serNum[3]);
-    ^
-3 warnings generated.
+../Core/Src/main.c(718): warning: passing 'char[16]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                        status = MFRC522_Request(PICC_REQIDL, str);
+                                                              ^~~
+../Core/Inc\rc522.h(124): note: passing argument to parameter 'TagType' here
+uint8_t MFRC522_Request(uint8_t reqMode, uint8_t* TagType);
+                                                  ^
+../Core/Src/main.c(719): warning: passing 'char[16]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                        status = MFRC522_Anticoll(str);
+                                                  ^~~
+../Core/Inc\rc522.h(126): note: passing argument to parameter 'serNum' here
+uint8_t MFRC522_Anticoll(uint8_t* serNum);
+                                  ^
+4 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=13450 RO-data=414 RW-data=20 ZI-data=1916  
+Program Size: Code=13500 RO-data=384 RW-data=24 ZI-data=1912  
 FromELF: creating hex file...
-"project_smart_door\project_smart_door.axf" - 0 Error(s), 3 Warning(s).
+"project_smart_door\project_smart_door.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
