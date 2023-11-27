@@ -66,7 +66,7 @@ SPI_HandleTypeDef hspi1;
 
 /* USER CODE BEGIN PV */
 // Key card default
-char key_card[15];
+char key_card[12];
 char status;
 char str[MFRC522_MAX_LEN]; //MFRC522_MAX_LEN = 16
 char serNum[5];
@@ -163,9 +163,11 @@ int main(void)
 	*/
   MFRC522_Init();
   lcd_init();
-  lcd_put_cur(0, 1);
-  lcd_send_string("WELLCOME HAUI");
-  HAL_Delay(1000);
+  lcd_put_cur(0, 3);
+  lcd_send_string("WELLCOME");
+	lcd_put_cur(1, 1);
+  lcd_send_string("NHOM 9 - DACN");
+  HAL_Delay(2000);
   lcd_clear();
   /* USER CODE END 2 */
 
@@ -475,7 +477,7 @@ char run_CheckPass()
         check_pass = NOT_OK;
         lcd_clear();
         lcd_put_cur(0,0);
-        lcd_send_string("Wrong password!"); // Hien thi sai mat khau
+        lcd_send_string("WRONG PASSWORD!"); // Hien thi sai mat khau
         notify_audio(5);
         HAL_Delay(3000);
         lcd_clear();
@@ -489,14 +491,14 @@ char run_CheckPass()
 // Ham run_Normal
 void run_Normal()
 {
-  lcd_put_cur(0, 1);
+  lcd_put_cur(0, 0);
   lcd_send_string("ENTER PASSWORD:");
   status_pass = run_CheckPass();
   if (status_pass == OK)
   {
     lcd_clear();
-    lcd_put_cur(0,0);
-    lcd_send_string("Door is open!"); // Hien thi mo cua
+    lcd_put_cur(0,1);
+    lcd_send_string("DOOR IS OPEN!"); // Hien thi mo cua
     notify_audio(3);
     HAL_Delay(3000);
     lcd_clear();
@@ -591,16 +593,16 @@ void run_InputPass(){
 				Flash_Read_Array(ADDRESS_PASS_STORAGE, (uint8_t*)password, 4);
         
         lcd_clear();
-        lcd_put_cur(0,3);
+        lcd_put_cur(0,4);
         lcd_send_string("CHANGE");
-				lcd_put_cur(1,1);
+				lcd_put_cur(1,2);
         lcd_send_string("SUCCESSFULLY");
         check_pass = 2;
       }
       else
       {
         lcd_clear();
-        lcd_put_cur(0,3);
+        lcd_put_cur(0,4);
         lcd_send_string("CHANGE");
 				lcd_put_cur(1,0);
         lcd_send_string("UNSUCCESSFULLY");
@@ -617,7 +619,7 @@ void run_InputPass(){
 int get_len_keycard()
 {
 	int n = 0;
-	Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 15);
+	Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 12);
 	for(i = 0; i<sizeof(key_card); i++)
 	{
 		if(key_card[i] != 0xFF)
@@ -639,9 +641,9 @@ char check_card_RFID()
 	{
 		lcd_clear();
 		lcd_put_cur(0,1);
-		lcd_send_string("No exist");
-		lcd_put_cur(1,3);
-		lcd_send_string("the card");
+		lcd_send_string("NO EXIST");
+		lcd_put_cur(1,6);
+		lcd_send_string("THE CARD");
 		
 	} else
 	{
@@ -678,8 +680,8 @@ void check_Card()
 	{
 		check_card = 2;
 		lcd_clear();
-		lcd_put_cur(0, 0);
-		lcd_send_string("Door is open!");
+		lcd_put_cur(0, 1);
+		lcd_send_string("DOOR IS OPEN!");
 		notify_audio(3);
 		mode_pass = 2;
 		HAL_Delay(3000);
@@ -689,8 +691,8 @@ void check_Card()
 	{
 		check_card = 2;
 		lcd_clear();
-		lcd_put_cur(0, 0);;
-		lcd_send_string("Wrong card!");
+		lcd_put_cur(0, 1);;
+		lcd_send_string("WRONG CARD!");
 		notify_audio(5);
 		HAL_Delay(3000);
 		lcd_clear();
@@ -699,20 +701,20 @@ void check_Card()
 // Ham them the
 void add_Card()
 {
-	lcd_put_cur(0, 1);
+	lcd_put_cur(0, 0);
   lcd_send_string("ENTER PASSWORD:");
 	status_pass = run_CheckPass();
 	if(status_pass == OK)
 	{
 		lcd_clear();
 		lcd_put_cur(0,1);
-		lcd_send_string("Correct pass!");
+		lcd_send_string("CORRECT PASS!");
 		HAL_Delay(1000);
 		lcd_clear();
 		lcd_put_cur(0,1);
-		lcd_send_string("Put new card");
+		lcd_send_string("PUT NEW CARD");
 		lcd_put_cur(1,1);
-		lcd_send_string("on NCF Reader");
+		lcd_send_string("ON NFC READER");
 		while(1)
 		{
 			status = MFRC522_Request(PICC_REQIDL, str);
@@ -725,9 +727,9 @@ void add_Card()
 					key_card[i] = serNum[i%4];
 				}
 				Flash_Erase(ADDRESS_CARD_STORAGE);
-				Flash_Write_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 15);
+				Flash_Write_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 12);
 				HAL_Delay(100);
-				Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 15);
+				Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 12);
 				
 				lcd_clear();
 				lcd_put_cur(0,1);
