@@ -654,11 +654,18 @@ char check_card_RFID()
 		memcpy(serNum, str, 4);
 		if(status == MI_OK)
 		{
-			for(i=0; i<4; i++)
+			for(i = 0; i < len_key_card/4; i++)
 			{
-				if(key_card[i] != serNum[i]) is_true_card = false;
-				else is_true_card = true;
+				for(j = 4*i; j < 4*i+4; j++)
+				{
+					if(key_card[j] != serNum[j%4])
+						break;
+				}
 			}
+      if (j%4==0)
+      {
+        is_true_card = true;
+      }
 			if(is_true_card == false)
 			{
 				check_card = NOT_OK;
@@ -749,6 +756,63 @@ void add_Card()
 // Ham xoa the
 void del_Card()
 {
+	lcd_put_cur(0, 0);
+  lcd_send_string("ENTER PASSWORD:");
+	status_pass = run_CheckPass();
+	if(status_pass == OK)
+	{
+		lcd_clear();
+		lcd_put_cur(0,1);
+		lcd_send_string("CORRECT PASS!");
+		HAL_Delay(1000);
+		lcd_clear();
+		lcd_put_cur(0,1);
+		lcd_send_string("PUT YOUR CARD");
+		lcd_put_cur(1,1);
+		lcd_send_string("ON NFC READER");
+		while(1)
+		{
+			status = MFRC522_Request(PICC_REQIDL, str);
+			status = MFRC522_Anticoll(str);
+			memcpy(serNum, str, 4);
+			if(status == MI_OK)
+			{
+				for(i = 0; i < len_key_card/4; i++){
+					for(j = 4*i; j < 4*i+4; j++){
+						if(key_card[j] != serNum[j%4])
+							break;
+					}
+				}
+      if (j%4==0)
+      {
+        for(i = j - 4; i < len_key_card; i++)
+				{
+					key_card[i] = key_card[i+4];
+					if (i>15)
+					{
+						key_card[i] = 0xFF;
+					}
+				}			
+      }
+						
+				Flash_Erase(ADDRESS_CARD_STORAGE);
+				Flash_Write_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 20);
+				HAL_Delay(100);
+				Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 20);
+				
+				lcd_clear();
+				lcd_put_cur(0,1);
+				lcd_send_string("DEL NEW CARD");
+				lcd_put_cur(1,1);
+				lcd_send_string("SUCCESSFULLY");
+				HAL_Delay(2000);
+				lcd_clear();
+				mode_card = MODE_CHECK_CARD;
+				break;
+			}
+			HAL_Delay(50);
+		}
+	}	
 	
 }
 
