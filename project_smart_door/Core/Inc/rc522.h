@@ -113,7 +113,6 @@ extern SPI_HandleTypeDef hspi1;
 #define MFRC522_MAX_LEN								16			// Buf len byte
 
 
-
 // RC522
 uint8_t MFRC522_Check(uint8_t* id);
 uint8_t MFRC522_Compare(uint8_t* CardID, uint8_t* CompareID);
