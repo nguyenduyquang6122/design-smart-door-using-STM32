@@ -66,8 +66,10 @@ SPI_HandleTypeDef hspi1;
 
 /* USER CODE BEGIN PV */
 // Key card default
-char key_card[12];
+char key_card[LIMIT_CARD*4];
 char status;
+char status_available_card;
+char status_card_del;
 char str[MFRC522_MAX_LEN]; //MFRC522_MAX_LEN = 16
 char serNum[5];
 int count_error_rfid = 0;
@@ -79,7 +81,7 @@ char password[4];
 // Cac bien su dung
 uint8_t key;
 int len_key_card = 0;
-char i,j,tmp;
+char i,j,tmp,x;
 char count_key = 0;
 char count_key_in = 0;
 char count_enter_pass = 0;
@@ -176,7 +178,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+		
     /* USER CODE BEGIN 3 */
     loop_main();
   }
@@ -362,16 +364,19 @@ void get_key()
     count_key_in = 0;
     count_key = 0;
     mode_pass = MODE_CHANGE;
+		mode_card = 3;
   }
 	else if (key == 'B')
 	{
 		mode_card = MODE_ADD_CARD;
 		mode_pass = 3;
+    check_pass = 2;
 	}
 	else if (key == 'C')
 	{
 		mode_card = MODE_DEL_CARD;
 		mode_pass = 3;
+    check_pass = 2;
 	}
   // Nhan * de backspace
   else if (key == '*')
@@ -401,7 +406,10 @@ void get_key()
 	// Nhan # de xac nhan password or cho phep nhap password
   else if (key == '#') 
   {
+		mode_pass = 3;
+    check_pass = 2;
     mode_pass = MODE_RUN;
+		
   }
   else {}
   key_input = 0;
@@ -498,7 +506,7 @@ void run_Normal()
   {
     lcd_clear();
     lcd_put_cur(0,1);
-    lcd_send_string("DOOR IS OPEN!"); // Hien thi mo cua
+    lcd_send_string("DOOR IS OPENKP!"); // Hien thi mo cua
     notify_audio(3);
     HAL_Delay(3000);
     lcd_clear();
@@ -619,7 +627,7 @@ void run_InputPass(){
 int get_len_keycard()
 {
 	int n = 0;
-	Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 12);
+	Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
 	for(i = 0; i<sizeof(key_card); i++)
 	{
 		if(key_card[i] != 0xFF)
@@ -656,16 +664,21 @@ char check_card_RFID()
 		{
 			for(i = 0; i < len_key_card/4; i++)
 			{
+				bool match = true;
 				for(j = 4*i; j < 4*i+4; j++)
 				{
 					if(key_card[j] != serNum[j%4])
+					{
+						match = false;
 						break;
+					}
+				}
+				if(match)
+				{
+					is_true_card = true;
+					break;
 				}
 			}
-      if (j%4==0)
-      {
-        is_true_card = true;
-      }
 			if(is_true_card == false)
 			{
 				check_card = NOT_OK;
@@ -675,6 +688,7 @@ char check_card_RFID()
 				check_card = OK;
 			}
 		}
+		
   }
 	return check_card;
 }
@@ -688,7 +702,7 @@ void check_Card()
 		check_card = 2;
 		lcd_clear();
 		lcd_put_cur(0, 1);
-		lcd_send_string("DOOR IS OPEN!");
+		lcd_send_string("DOOR IS OPENRF!");
 		notify_audio(3);
 		mode_pass = 2;
 		HAL_Delay(3000);
@@ -734,9 +748,9 @@ void add_Card()
 					key_card[i] = serNum[i%4];
 				}
 				Flash_Erase(ADDRESS_CARD_STORAGE);
-				Flash_Write_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 12);
+				Flash_Write_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
 				HAL_Delay(100);
-				Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 12);
+				Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 20);
 				
 				lcd_clear();
 				lcd_put_cur(0,1);
@@ -746,11 +760,12 @@ void add_Card()
 				HAL_Delay(2000);
 				lcd_clear();
 				mode_card = MODE_CHECK_CARD;
+				status_pass = 2;
 				break;
 			}
 			HAL_Delay(50);
 		}
-	}	
+	}
 }
 
 // Ham xoa the
@@ -772,49 +787,40 @@ void del_Card()
 		lcd_send_string("ON NFC READER");
 		while(1)
 		{
-			status = MFRC522_Request(PICC_REQIDL, str);
-			status = MFRC522_Anticoll(str);
-			memcpy(serNum, str, 4);
-			if(status == MI_OK)
+			status_card_del = check_card_RFID();
+			if(status_card_del == OK)
 			{
-				for(i = 0; i < len_key_card/4; i++){
-					for(j = 4*i; j < 4*i+4; j++){
-						if(key_card[j] != serNum[j%4])
-							break;
+				for(x = i*4; x<len_key_card; x++)
+				{
+					key_card[x] = key_card[x+4];
+					if(x >= len_key_card-4)
+					{
+						key_card[x] = 0xFF;
 					}
 				}
-      if (j%4==0)
-      {
-        for(i = j - 4; i < len_key_card; i++)
-				{
-					key_card[i] = key_card[i+4];
-					if (i>15)
-					{
-						key_card[i] = 0xFF;
-					}
-				}			
-      }
-						
 				Flash_Erase(ADDRESS_CARD_STORAGE);
-				Flash_Write_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 20);
+				Flash_Write_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
 				HAL_Delay(100);
 				Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 20);
 				
 				lcd_clear();
 				lcd_put_cur(0,1);
-				lcd_send_string("DEL NEW CARD");
+				lcd_send_string("DEL THIS CARD");
 				lcd_put_cur(1,1);
 				lcd_send_string("SUCCESSFULLY");
 				HAL_Delay(2000);
 				lcd_clear();
 				mode_card = MODE_CHECK_CARD;
+				check_card = 2;
+				status_pass = 2;
 				break;
 			}
+			
 			HAL_Delay(50);
 		}
-	}	
-	
-}
+	}
+}	
+
 
 // Ham thong bao bang am thanh
 void notify_audio(int s)
