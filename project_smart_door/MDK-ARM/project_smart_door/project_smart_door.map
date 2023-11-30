@@ -23,157 +23,6 @@ Section Cross References
     startup_stm32f103xb.o(.text) refers to __main.o(!!!main) for __main
     startup_stm32f103xb.o(.text) refers to startup_stm32f103xb.o(HEAP) for Heap_Mem
     startup_stm32f103xb.o(.text) refers to startup_stm32f103xb.o(STACK) for Stack_Mem
-    main.o(.text.main) refers to stm32f1xx_hal.o(.text.HAL_Init) for HAL_Init
-    main.o(.text.main) refers to stm32f1xx_hal_rcc.o(.text.HAL_RCC_OscConfig) for HAL_RCC_OscConfig
-    main.o(.text.main) refers to stm32f1xx_hal_rcc.o(.text.HAL_RCC_ClockConfig) for HAL_RCC_ClockConfig
-    main.o(.text.main) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
-    main.o(.text.main) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_Init) for HAL_GPIO_Init
-    main.o(.text.main) refers to main.o(.bss.hi2c1) for hi2c1
-    main.o(.text.main) refers to stm32f1xx_hal_i2c.o(.text.HAL_I2C_Init) for HAL_I2C_Init
-    main.o(.text.main) refers to main.o(.bss.hspi1) for hspi1
-    main.o(.text.main) refers to stm32f1xx_hal_spi.o(.text.HAL_SPI_Init) for HAL_SPI_Init
-    main.o(.text.main) refers to flash.o(.text.Flash_Erase) for Flash_Erase
-    main.o(.text.main) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
-    main.o(.text.main) refers to flash.o(.text.Flash_Write_Array) for Flash_Write_Array
-    main.o(.text.main) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
-    main.o(.text.main) refers to rc522.o(.text.MFRC522_Init) for MFRC522_Init
-    main.o(.text.main) refers to lcd.o(.text.lcd_init) for lcd_init
-    main.o(.text.main) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
-    main.o(.text.main) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
-    main.o(.text.main) refers to lcd.o(.text.lcd_clear) for lcd_clear
-    main.o(.text.main) refers to main.o(.bss..L_MergedGlobals.19) for .L_MergedGlobals.19
-    main.o(.text.main) refers to main.o(.rodata.str1.1) for .L.str.6
-    main.o(.text.main) refers to main.o(.text.run_InputPass) for run_InputPass
-    main.o(.text.main) refers to flash.o(.text.Flash_Read_Array) for Flash_Read_Array
-    main.o(.text.main) refers to main.o(.text.get_key) for get_key
-    main.o(.text.main) refers to main.o(.text.check_Card) for check_Card
-    main.o(.text.main) refers to main.o(.text.add_Card) for add_Card
-    main.o(.text.main) refers to main.o(.text.run_Normal) for run_Normal
-    main.o(.text.main) refers to main.o(.text.run_CheckPass) for run_CheckPass
-    main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
-    main.o(.text.SystemClock_Config) refers to stm32f1xx_hal_rcc.o(.text.HAL_RCC_OscConfig) for HAL_RCC_OscConfig
-    main.o(.text.SystemClock_Config) refers to stm32f1xx_hal_rcc.o(.text.HAL_RCC_ClockConfig) for HAL_RCC_ClockConfig
-    main.o(.ARM.exidx.text.SystemClock_Config) refers to main.o(.text.SystemClock_Config) for [Anonymous Symbol]
-    main.o(.text.loop_main) refers to main.o(.bss..L_MergedGlobals.19) for .L_MergedGlobals.19
-    main.o(.text.loop_main) refers to flash.o(.text.Flash_Read_Array) for Flash_Read_Array
-    main.o(.text.loop_main) refers to main.o(.text.get_key) for get_key
-    main.o(.text.loop_main) refers to main.o(.text.check_Card) for check_Card
-    main.o(.text.loop_main) refers to main.o(.text.add_Card) for add_Card
-    main.o(.text.loop_main) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
-    main.o(.text.loop_main) refers to main.o(.text.run_Normal) for run_Normal
-    main.o(.text.loop_main) refers to main.o(.text.run_InputPass) for run_InputPass
-    main.o(.text.loop_main) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
-    main.o(.text.loop_main) refers to main.o(.rodata.str1.1) for .L.str.6
-    main.o(.text.loop_main) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
-    main.o(.text.loop_main) refers to main.o(.text.run_CheckPass) for run_CheckPass
-    main.o(.text.loop_main) refers to lcd.o(.text.lcd_clear) for lcd_clear
-    main.o(.ARM.exidx.text.loop_main) refers to main.o(.text.loop_main) for [Anonymous Symbol]
-    main.o(.ARM.exidx.text.Error_Handler) refers to main.o(.text.Error_Handler) for [Anonymous Symbol]
-    main.o(.text.get_key) refers to keypad.o(.text.read_keypad) for read_keypad
-    main.o(.text.get_key) refers to main.o(.bss..L_MergedGlobals.19) for .L_MergedGlobals.19
-    main.o(.text.get_key) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
-    main.o(.text.get_key) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
-    main.o(.text.get_key) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
-    main.o(.text.get_key) refers to lcd.o(.text.lcd_send_data) for lcd_send_data
-    main.o(.text.get_key) refers to lcd.o(.text.lcd_clear) for lcd_clear
-    main.o(.ARM.exidx.text.get_key) refers to main.o(.text.get_key) for [Anonymous Symbol]
-    main.o(.text.check_Card) refers to main.o(.text.get_len_keycard) for get_len_keycard
-    main.o(.text.check_Card) refers to main.o(.bss..L_MergedGlobals.19) for .L_MergedGlobals.19
-    main.o(.text.check_Card) refers to main.o(.text.check_card_RFID) for check_card_RFID
-    main.o(.text.check_Card) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
-    main.o(.text.check_Card) refers to lcd.o(.text.lcd_clear) for lcd_clear
-    main.o(.text.check_Card) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
-    main.o(.text.check_Card) refers to main.o(.rodata.str1.1) for .L.str.4
-    main.o(.text.check_Card) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
-    main.o(.text.check_Card) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_TogglePin) for HAL_GPIO_TogglePin
-    main.o(.text.check_Card) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
-    main.o(.ARM.exidx.text.check_Card) refers to main.o(.text.check_Card) for [Anonymous Symbol]
-    main.o(.text.add_Card) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
-    main.o(.text.add_Card) refers to main.o(.rodata.str1.1) for .L.str.3
-    main.o(.text.add_Card) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
-    main.o(.text.add_Card) refers to main.o(.text.run_CheckPass) for run_CheckPass
-    main.o(.text.add_Card) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
-    main.o(.text.add_Card) refers to lcd.o(.text.lcd_clear) for lcd_clear
-    main.o(.text.add_Card) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
-    main.o(.text.add_Card) refers to main.o(.bss..L_MergedGlobals.19) for .L_MergedGlobals.19
-    main.o(.text.add_Card) refers to rc522.o(.text.MFRC522_Request) for MFRC522_Request
-    main.o(.text.add_Card) refers to rc522.o(.text.MFRC522_Anticoll) for MFRC522_Anticoll
-    main.o(.text.add_Card) refers to flash.o(.text.Flash_Erase) for Flash_Erase
-    main.o(.text.add_Card) refers to flash.o(.text.Flash_Write_Array) for Flash_Write_Array
-    main.o(.text.add_Card) refers to flash.o(.text.Flash_Read_Array) for Flash_Read_Array
-    main.o(.ARM.exidx.text.add_Card) refers to main.o(.text.add_Card) for [Anonymous Symbol]
-    main.o(.ARM.exidx.text.del_Card) refers to main.o(.text.del_Card) for [Anonymous Symbol]
-    main.o(.text.run_Normal) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
-    main.o(.text.run_Normal) refers to main.o(.rodata.str1.1) for .L.str.3
-    main.o(.text.run_Normal) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
-    main.o(.text.run_Normal) refers to main.o(.text.run_CheckPass) for run_CheckPass
-    main.o(.text.run_Normal) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
-    main.o(.text.run_Normal) refers to lcd.o(.text.lcd_clear) for lcd_clear
-    main.o(.text.run_Normal) refers to main.o(.bss..L_MergedGlobals.19) for .L_MergedGlobals.19
-    main.o(.text.run_Normal) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_TogglePin) for HAL_GPIO_TogglePin
-    main.o(.text.run_Normal) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
-    main.o(.ARM.exidx.text.run_Normal) refers to main.o(.text.run_Normal) for [Anonymous Symbol]
-    main.o(.text.run_ChangePass) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
-    main.o(.text.run_ChangePass) refers to main.o(.rodata.str1.1) for .L.str.6
-    main.o(.text.run_ChangePass) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
-    main.o(.text.run_ChangePass) refers to main.o(.text.run_CheckPass) for run_CheckPass
-    main.o(.text.run_ChangePass) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
-    main.o(.text.run_ChangePass) refers to lcd.o(.text.lcd_clear) for lcd_clear
-    main.o(.ARM.exidx.text.run_ChangePass) refers to main.o(.text.run_ChangePass) for [Anonymous Symbol]
-    main.o(.text.run_InputPass) refers to main.o(.bss..L_MergedGlobals.19) for .L_MergedGlobals.19
-    main.o(.text.run_InputPass) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
-    main.o(.text.run_InputPass) refers to main.o(.rodata.str1.1) for .L.str.1
-    main.o(.text.run_InputPass) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
-    main.o(.text.run_InputPass) refers to lcd.o(.text.lcd_clear) for lcd_clear
-    main.o(.text.run_InputPass) refers to flash.o(.text.Flash_Erase) for Flash_Erase
-    main.o(.text.run_InputPass) refers to flash.o(.text.Flash_Write_Array) for Flash_Write_Array
-    main.o(.text.run_InputPass) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
-    main.o(.text.run_InputPass) refers to flash.o(.text.Flash_Read_Array) for Flash_Read_Array
-    main.o(.text.run_InputPass) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
-    main.o(.ARM.exidx.text.run_InputPass) refers to main.o(.text.run_InputPass) for [Anonymous Symbol]
-    main.o(.text.run_CheckPass) refers to main.o(.bss..L_MergedGlobals.19) for .L_MergedGlobals.19
-    main.o(.text.run_CheckPass) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
-    main.o(.text.run_CheckPass) refers to lcd.o(.text.lcd_clear) for lcd_clear
-    main.o(.text.run_CheckPass) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
-    main.o(.text.run_CheckPass) refers to main.o(.rodata.str1.1) for .L.str.1
-    main.o(.text.run_CheckPass) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
-    main.o(.text.run_CheckPass) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_TogglePin) for HAL_GPIO_TogglePin
-    main.o(.text.run_CheckPass) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
-    main.o(.ARM.exidx.text.run_CheckPass) refers to main.o(.text.run_CheckPass) for [Anonymous Symbol]
-    main.o(.text.notify_audio) refers to main.o(.bss..L_MergedGlobals.19) for .L_MergedGlobals.19
-    main.o(.text.notify_audio) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_TogglePin) for HAL_GPIO_TogglePin
-    main.o(.text.notify_audio) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
-    main.o(.ARM.exidx.text.notify_audio) refers to main.o(.text.notify_audio) for [Anonymous Symbol]
-    main.o(.text.get_len_keycard) refers to main.o(.bss..L_MergedGlobals.19) for .L_MergedGlobals.19
-    main.o(.text.get_len_keycard) refers to flash.o(.text.Flash_Read_Array) for Flash_Read_Array
-    main.o(.ARM.exidx.text.get_len_keycard) refers to main.o(.text.get_len_keycard) for [Anonymous Symbol]
-    main.o(.text.check_card_RFID) refers to main.o(.bss..L_MergedGlobals.19) for .L_MergedGlobals.19
-    main.o(.text.check_card_RFID) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
-    main.o(.text.check_card_RFID) refers to rc522.o(.text.MFRC522_Request) for MFRC522_Request
-    main.o(.text.check_card_RFID) refers to rc522.o(.text.MFRC522_Anticoll) for MFRC522_Anticoll
-    main.o(.text.check_card_RFID) refers to lcd.o(.text.lcd_clear) for lcd_clear
-    main.o(.text.check_card_RFID) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
-    main.o(.text.check_card_RFID) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
-    main.o(.ARM.exidx.text.check_card_RFID) refers to main.o(.text.check_card_RFID) for [Anonymous Symbol]
-    stm32f1xx_it.o(.ARM.exidx.text.NMI_Handler) refers to stm32f1xx_it.o(.text.NMI_Handler) for [Anonymous Symbol]
-    stm32f1xx_it.o(.ARM.exidx.text.HardFault_Handler) refers to stm32f1xx_it.o(.text.HardFault_Handler) for [Anonymous Symbol]
-    stm32f1xx_it.o(.ARM.exidx.text.MemManage_Handler) refers to stm32f1xx_it.o(.text.MemManage_Handler) for [Anonymous Symbol]
-    stm32f1xx_it.o(.ARM.exidx.text.BusFault_Handler) refers to stm32f1xx_it.o(.text.BusFault_Handler) for [Anonymous Symbol]
-    stm32f1xx_it.o(.ARM.exidx.text.UsageFault_Handler) refers to stm32f1xx_it.o(.text.UsageFault_Handler) for [Anonymous Symbol]
-    stm32f1xx_it.o(.ARM.exidx.text.SVC_Handler) refers to stm32f1xx_it.o(.text.SVC_Handler) for [Anonymous Symbol]
-    stm32f1xx_it.o(.ARM.exidx.text.DebugMon_Handler) refers to stm32f1xx_it.o(.text.DebugMon_Handler) for [Anonymous Symbol]
-    stm32f1xx_it.o(.ARM.exidx.text.PendSV_Handler) refers to stm32f1xx_it.o(.text.PendSV_Handler) for [Anonymous Symbol]
-    stm32f1xx_it.o(.text.SysTick_Handler) refers to stm32f1xx_hal.o(.text.HAL_IncTick) for HAL_IncTick
-    stm32f1xx_it.o(.ARM.exidx.text.SysTick_Handler) refers to stm32f1xx_it.o(.text.SysTick_Handler) for [Anonymous Symbol]
-    stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_MspInit) refers to stm32f1xx_hal_msp.o(.text.HAL_MspInit) for [Anonymous Symbol]
-    stm32f1xx_hal_msp.o(.text.HAL_I2C_MspInit) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_Init) for HAL_GPIO_Init
-    stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_I2C_MspInit) refers to stm32f1xx_hal_msp.o(.text.HAL_I2C_MspInit) for [Anonymous Symbol]
-    stm32f1xx_hal_msp.o(.text.HAL_I2C_MspDeInit) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_DeInit) for HAL_GPIO_DeInit
-    stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_I2C_MspDeInit) refers to stm32f1xx_hal_msp.o(.text.HAL_I2C_MspDeInit) for [Anonymous Symbol]
-    stm32f1xx_hal_msp.o(.text.HAL_SPI_MspInit) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_Init) for HAL_GPIO_Init
-    stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_SPI_MspInit) refers to stm32f1xx_hal_msp.o(.text.HAL_SPI_MspInit) for [Anonymous Symbol]
-    stm32f1xx_hal_msp.o(.text.HAL_SPI_MspDeInit) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_DeInit) for HAL_GPIO_DeInit
-    stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_SPI_MspDeInit) refers to stm32f1xx_hal_msp.o(.text.HAL_SPI_MspDeInit) for [Anonymous Symbol]
     keypad.o(.text.read_keypad) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
     keypad.o(.text.read_keypad) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_ReadPin) for HAL_GPIO_ReadPin
     keypad.o(.ARM.exidx.text.read_keypad) refers to keypad.o(.text.read_keypad) for [Anonymous Symbol]
@@ -317,6 +166,176 @@ Section Cross References
     flash.o(.ARM.exidx.text.Flash_Read_Float) refers to flash.o(.text.Flash_Read_Float) for [Anonymous Symbol]
     flash.o(.ARM.exidx.text.Flash_Read_Array) refers to flash.o(.text.Flash_Read_Array) for [Anonymous Symbol]
     flash.o(.ARM.exidx.text.Flash_Read_Struct) refers to flash.o(.text.Flash_Read_Struct) for [Anonymous Symbol]
+    main.o(.text.main) refers to stm32f1xx_hal.o(.text.HAL_Init) for HAL_Init
+    main.o(.text.main) refers to stm32f1xx_hal_rcc.o(.text.HAL_RCC_OscConfig) for HAL_RCC_OscConfig
+    main.o(.text.main) refers to stm32f1xx_hal_rcc.o(.text.HAL_RCC_ClockConfig) for HAL_RCC_ClockConfig
+    main.o(.text.main) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
+    main.o(.text.main) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_Init) for HAL_GPIO_Init
+    main.o(.text.main) refers to main.o(.bss.hi2c1) for hi2c1
+    main.o(.text.main) refers to stm32f1xx_hal_i2c.o(.text.HAL_I2C_Init) for HAL_I2C_Init
+    main.o(.text.main) refers to main.o(.bss.hspi1) for hspi1
+    main.o(.text.main) refers to stm32f1xx_hal_spi.o(.text.HAL_SPI_Init) for HAL_SPI_Init
+    main.o(.text.main) refers to flash.o(.text.Flash_Erase) for Flash_Erase
+    main.o(.text.main) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
+    main.o(.text.main) refers to flash.o(.text.Flash_Write_Array) for Flash_Write_Array
+    main.o(.text.main) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
+    main.o(.text.main) refers to rc522.o(.text.MFRC522_Init) for MFRC522_Init
+    main.o(.text.main) refers to lcd.o(.text.lcd_init) for lcd_init
+    main.o(.text.main) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
+    main.o(.text.main) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
+    main.o(.text.main) refers to lcd.o(.text.lcd_clear) for lcd_clear
+    main.o(.text.main) refers to main.o(.text.loop_main) for loop_main
+    main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
+    main.o(.text.SystemClock_Config) refers to stm32f1xx_hal_rcc.o(.text.HAL_RCC_OscConfig) for HAL_RCC_OscConfig
+    main.o(.text.SystemClock_Config) refers to stm32f1xx_hal_rcc.o(.text.HAL_RCC_ClockConfig) for HAL_RCC_ClockConfig
+    main.o(.ARM.exidx.text.SystemClock_Config) refers to main.o(.text.SystemClock_Config) for [Anonymous Symbol]
+    main.o(.text.loop_main) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
+    main.o(.text.loop_main) refers to flash.o(.text.Flash_Read_Array) for Flash_Read_Array
+    main.o(.text.loop_main) refers to main.o(.text.get_key) for get_key
+    main.o(.text.loop_main) refers to main.o(.text.check_Card) for check_Card
+    main.o(.text.loop_main) refers to main.o(.text.del_Card) for del_Card
+    main.o(.text.loop_main) refers to main.o(.text.add_Card) for add_Card
+    main.o(.text.loop_main) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
+    main.o(.text.loop_main) refers to main.o(.text.run_Normal) for run_Normal
+    main.o(.text.loop_main) refers to main.o(.text.run_InputPass) for run_InputPass
+    main.o(.text.loop_main) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
+    main.o(.text.loop_main) refers to main.o(.rodata.str1.1) for .L.str.7
+    main.o(.text.loop_main) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
+    main.o(.text.loop_main) refers to main.o(.text.run_CheckPass) for run_CheckPass
+    main.o(.text.loop_main) refers to main.o(.text.run_PassMaster) for run_PassMaster
+    main.o(.text.loop_main) refers to lcd.o(.text.lcd_clear) for lcd_clear
+    main.o(.ARM.exidx.text.loop_main) refers to main.o(.text.loop_main) for [Anonymous Symbol]
+    main.o(.ARM.exidx.text.Error_Handler) refers to main.o(.text.Error_Handler) for [Anonymous Symbol]
+    main.o(.text.get_key) refers to keypad.o(.text.read_keypad) for read_keypad
+    main.o(.text.get_key) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
+    main.o(.text.get_key) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
+    main.o(.text.get_key) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
+    main.o(.text.get_key) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
+    main.o(.text.get_key) refers to lcd.o(.text.lcd_send_data) for lcd_send_data
+    main.o(.text.get_key) refers to lcd.o(.text.lcd_clear) for lcd_clear
+    main.o(.ARM.exidx.text.get_key) refers to main.o(.text.get_key) for [Anonymous Symbol]
+    main.o(.text.check_Card) refers to main.o(.text.get_len_keycard) for get_len_keycard
+    main.o(.text.check_Card) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
+    main.o(.text.check_Card) refers to rc522.o(.text.MFRC522_Request) for MFRC522_Request
+    main.o(.text.check_Card) refers to rc522.o(.text.MFRC522_Anticoll) for MFRC522_Anticoll
+    main.o(.text.check_Card) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
+    main.o(.text.check_Card) refers to lcd.o(.text.lcd_clear) for lcd_clear
+    main.o(.text.check_Card) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
+    main.o(.text.check_Card) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
+    main.o(.text.check_Card) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_TogglePin) for HAL_GPIO_TogglePin
+    main.o(.text.check_Card) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
+    main.o(.text.check_Card) refers to main.o(.rodata.str1.1) for .L.str.25
+    main.o(.ARM.exidx.text.check_Card) refers to main.o(.text.check_Card) for [Anonymous Symbol]
+    main.o(.text.add_Card) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
+    main.o(.text.add_Card) refers to lcd.o(.text.lcd_clear) for lcd_clear
+    main.o(.text.add_Card) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
+    main.o(.text.add_Card) refers to main.o(.rodata.str1.1) for .L.str.25
+    main.o(.text.add_Card) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
+    main.o(.text.add_Card) refers to main.o(.text.run_CheckPass) for run_CheckPass
+    main.o(.text.add_Card) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
+    main.o(.text.add_Card) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
+    main.o(.text.add_Card) refers to rc522.o(.text.MFRC522_Request) for MFRC522_Request
+    main.o(.text.add_Card) refers to rc522.o(.text.MFRC522_Anticoll) for MFRC522_Anticoll
+    main.o(.text.add_Card) refers to flash.o(.text.Flash_Erase) for Flash_Erase
+    main.o(.text.add_Card) refers to flash.o(.text.Flash_Write_Array) for Flash_Write_Array
+    main.o(.text.add_Card) refers to flash.o(.text.Flash_Read_Array) for Flash_Read_Array
+    main.o(.ARM.exidx.text.add_Card) refers to main.o(.text.add_Card) for [Anonymous Symbol]
+    main.o(.text.del_Card) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
+    main.o(.text.del_Card) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
+    main.o(.text.del_Card) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
+    main.o(.text.del_Card) refers to main.o(.rodata.str1.1) for .L.str.4
+    main.o(.text.del_Card) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
+    main.o(.text.del_Card) refers to main.o(.text.run_CheckPass) for run_CheckPass
+    main.o(.text.del_Card) refers to lcd.o(.text.lcd_clear) for lcd_clear
+    main.o(.text.del_Card) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
+    main.o(.text.del_Card) refers to rc522.o(.text.MFRC522_Request) for MFRC522_Request
+    main.o(.text.del_Card) refers to rc522.o(.text.MFRC522_Anticoll) for MFRC522_Anticoll
+    main.o(.text.del_Card) refers to flash.o(.text.Flash_Erase) for Flash_Erase
+    main.o(.text.del_Card) refers to flash.o(.text.Flash_Write_Array) for Flash_Write_Array
+    main.o(.text.del_Card) refers to flash.o(.text.Flash_Read_Array) for Flash_Read_Array
+    main.o(.ARM.exidx.text.del_Card) refers to main.o(.text.del_Card) for [Anonymous Symbol]
+    main.o(.text.run_Normal) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
+    main.o(.text.run_Normal) refers to main.o(.rodata.str1.1) for .L.str.4
+    main.o(.text.run_Normal) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
+    main.o(.text.run_Normal) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
+    main.o(.text.run_Normal) refers to main.o(.text.run_CheckPass) for run_CheckPass
+    main.o(.text.run_Normal) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
+    main.o(.text.run_Normal) refers to lcd.o(.text.lcd_clear) for lcd_clear
+    main.o(.text.run_Normal) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_TogglePin) for HAL_GPIO_TogglePin
+    main.o(.text.run_Normal) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
+    main.o(.ARM.exidx.text.run_Normal) refers to main.o(.text.run_Normal) for [Anonymous Symbol]
+    main.o(.text.run_ChangePass) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
+    main.o(.text.run_ChangePass) refers to main.o(.rodata.str1.1) for .L.str.7
+    main.o(.text.run_ChangePass) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
+    main.o(.text.run_ChangePass) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
+    main.o(.text.run_ChangePass) refers to main.o(.text.run_CheckPass) for run_CheckPass
+    main.o(.text.run_ChangePass) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
+    main.o(.text.run_ChangePass) refers to lcd.o(.text.lcd_clear) for lcd_clear
+    main.o(.ARM.exidx.text.run_ChangePass) refers to main.o(.text.run_ChangePass) for [Anonymous Symbol]
+    main.o(.text.run_InputPass) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
+    main.o(.text.run_InputPass) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
+    main.o(.text.run_InputPass) refers to main.o(.rodata.str1.1) for .L.str.2
+    main.o(.text.run_InputPass) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
+    main.o(.text.run_InputPass) refers to lcd.o(.text.lcd_clear) for lcd_clear
+    main.o(.text.run_InputPass) refers to flash.o(.text.Flash_Erase) for Flash_Erase
+    main.o(.text.run_InputPass) refers to flash.o(.text.Flash_Write_Array) for Flash_Write_Array
+    main.o(.text.run_InputPass) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
+    main.o(.text.run_InputPass) refers to flash.o(.text.Flash_Read_Array) for Flash_Read_Array
+    main.o(.text.run_InputPass) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
+    main.o(.ARM.exidx.text.run_InputPass) refers to main.o(.text.run_InputPass) for [Anonymous Symbol]
+    main.o(.text.run_PassMaster) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
+    main.o(.text.run_PassMaster) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
+    main.o(.text.run_PassMaster) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
+    main.o(.text.run_PassMaster) refers to main.o(.text.run_CheckPass) for run_CheckPass
+    main.o(.text.run_PassMaster) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
+    main.o(.text.run_PassMaster) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_TogglePin) for HAL_GPIO_TogglePin
+    main.o(.text.run_PassMaster) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
+    main.o(.text.run_PassMaster) refers to main.o(.text.get_key) for get_key
+    main.o(.text.run_PassMaster) refers to lcd.o(.text.lcd_clear) for lcd_clear
+    main.o(.text.run_PassMaster) refers to main.o(.rodata.str1.1) for .L.str.18
+    main.o(.text.run_PassMaster) refers to flash.o(.text.Flash_Erase) for Flash_Erase
+    main.o(.text.run_PassMaster) refers to flash.o(.text.Flash_Write_Array) for Flash_Write_Array
+    main.o(.ARM.exidx.text.run_PassMaster) refers to main.o(.text.run_PassMaster) for [Anonymous Symbol]
+    main.o(.text.run_CheckPass) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
+    main.o(.text.run_CheckPass) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
+    main.o(.text.run_CheckPass) refers to lcd.o(.text.lcd_clear) for lcd_clear
+    main.o(.text.run_CheckPass) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
+    main.o(.text.run_CheckPass) refers to main.o(.rodata.str1.1) for .L.str.2
+    main.o(.text.run_CheckPass) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
+    main.o(.text.run_CheckPass) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_TogglePin) for HAL_GPIO_TogglePin
+    main.o(.text.run_CheckPass) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
+    main.o(.ARM.exidx.text.run_CheckPass) refers to main.o(.text.run_CheckPass) for [Anonymous Symbol]
+    main.o(.text.notify_audio) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
+    main.o(.text.notify_audio) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_TogglePin) for HAL_GPIO_TogglePin
+    main.o(.text.notify_audio) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
+    main.o(.ARM.exidx.text.notify_audio) refers to main.o(.text.notify_audio) for [Anonymous Symbol]
+    main.o(.text.get_len_keycard) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
+    main.o(.text.get_len_keycard) refers to flash.o(.text.Flash_Read_Array) for Flash_Read_Array
+    main.o(.ARM.exidx.text.get_len_keycard) refers to main.o(.text.get_len_keycard) for [Anonymous Symbol]
+    main.o(.text.check_card_RFID) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
+    main.o(.text.check_card_RFID) refers to rc522.o(.text.MFRC522_Request) for MFRC522_Request
+    main.o(.text.check_card_RFID) refers to rc522.o(.text.MFRC522_Anticoll) for MFRC522_Anticoll
+    main.o(.text.check_card_RFID) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
+    main.o(.ARM.exidx.text.check_card_RFID) refers to main.o(.text.check_card_RFID) for [Anonymous Symbol]
+    stm32f1xx_it.o(.ARM.exidx.text.NMI_Handler) refers to stm32f1xx_it.o(.text.NMI_Handler) for [Anonymous Symbol]
+    stm32f1xx_it.o(.ARM.exidx.text.HardFault_Handler) refers to stm32f1xx_it.o(.text.HardFault_Handler) for [Anonymous Symbol]
+    stm32f1xx_it.o(.ARM.exidx.text.MemManage_Handler) refers to stm32f1xx_it.o(.text.MemManage_Handler) for [Anonymous Symbol]
+    stm32f1xx_it.o(.ARM.exidx.text.BusFault_Handler) refers to stm32f1xx_it.o(.text.BusFault_Handler) for [Anonymous Symbol]
+    stm32f1xx_it.o(.ARM.exidx.text.UsageFault_Handler) refers to stm32f1xx_it.o(.text.UsageFault_Handler) for [Anonymous Symbol]
+    stm32f1xx_it.o(.ARM.exidx.text.SVC_Handler) refers to stm32f1xx_it.o(.text.SVC_Handler) for [Anonymous Symbol]
+    stm32f1xx_it.o(.ARM.exidx.text.DebugMon_Handler) refers to stm32f1xx_it.o(.text.DebugMon_Handler) for [Anonymous Symbol]
+    stm32f1xx_it.o(.ARM.exidx.text.PendSV_Handler) refers to stm32f1xx_it.o(.text.PendSV_Handler) for [Anonymous Symbol]
+    stm32f1xx_it.o(.text.SysTick_Handler) refers to stm32f1xx_hal.o(.text.HAL_IncTick) for HAL_IncTick
+    stm32f1xx_it.o(.ARM.exidx.text.SysTick_Handler) refers to stm32f1xx_it.o(.text.SysTick_Handler) for [Anonymous Symbol]
+    stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_MspInit) refers to stm32f1xx_hal_msp.o(.text.HAL_MspInit) for [Anonymous Symbol]
+    stm32f1xx_hal_msp.o(.text.HAL_I2C_MspInit) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_Init) for HAL_GPIO_Init
+    stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_I2C_MspInit) refers to stm32f1xx_hal_msp.o(.text.HAL_I2C_MspInit) for [Anonymous Symbol]
+    stm32f1xx_hal_msp.o(.text.HAL_I2C_MspDeInit) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_DeInit) for HAL_GPIO_DeInit
+    stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_I2C_MspDeInit) refers to stm32f1xx_hal_msp.o(.text.HAL_I2C_MspDeInit) for [Anonymous Symbol]
+    stm32f1xx_hal_msp.o(.text.HAL_SPI_MspInit) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_Init) for HAL_GPIO_Init
+    stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_SPI_MspInit) refers to stm32f1xx_hal_msp.o(.text.HAL_SPI_MspInit) for [Anonymous Symbol]
+    stm32f1xx_hal_msp.o(.text.HAL_SPI_MspDeInit) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_DeInit) for HAL_GPIO_DeInit
+    stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_SPI_MspDeInit) refers to stm32f1xx_hal_msp.o(.text.HAL_SPI_MspDeInit) for [Anonymous Symbol]
     stm32f1xx_hal_gpio_ex.o(.ARM.exidx.text.HAL_GPIOEx_ConfigEventout) refers to stm32f1xx_hal_gpio_ex.o(.text.HAL_GPIOEx_ConfigEventout) for [Anonymous Symbol]
     stm32f1xx_hal_gpio_ex.o(.ARM.exidx.text.HAL_GPIOEx_EnableEventout) refers to stm32f1xx_hal_gpio_ex.o(.text.HAL_GPIOEx_EnableEventout) for [Anonymous Symbol]
     stm32f1xx_hal_gpio_ex.o(.ARM.exidx.text.HAL_GPIOEx_DisableEventout) refers to stm32f1xx_hal_gpio_ex.o(.text.HAL_GPIOEx_DisableEventout) for [Anonymous Symbol]
@@ -979,52 +998,6 @@ Section Cross References
 
 Removing Unused input sections from the image.
 
-    Removing main.o(.text), (0 bytes).
-    Removing main.o(.ARM.exidx.text.main), (8 bytes).
-    Removing main.o(.text.SystemClock_Config), (100 bytes).
-    Removing main.o(.ARM.exidx.text.SystemClock_Config), (8 bytes).
-    Removing main.o(.text.loop_main), (162 bytes).
-    Removing main.o(.ARM.exidx.text.loop_main), (8 bytes).
-    Removing main.o(.text.Error_Handler), (10 bytes).
-    Removing main.o(.ARM.exidx.text.Error_Handler), (8 bytes).
-    Removing main.o(.ARM.exidx.text.get_key), (8 bytes).
-    Removing main.o(.ARM.exidx.text.check_Card), (8 bytes).
-    Removing main.o(.ARM.exidx.text.add_Card), (8 bytes).
-    Removing main.o(.text.del_Card), (2 bytes).
-    Removing main.o(.ARM.exidx.text.del_Card), (8 bytes).
-    Removing main.o(.ARM.exidx.text.run_Normal), (8 bytes).
-    Removing main.o(.text.run_ChangePass), (86 bytes).
-    Removing main.o(.ARM.exidx.text.run_ChangePass), (8 bytes).
-    Removing main.o(.ARM.exidx.text.run_InputPass), (8 bytes).
-    Removing main.o(.ARM.exidx.text.run_CheckPass), (8 bytes).
-    Removing main.o(.text.notify_audio), (64 bytes).
-    Removing main.o(.ARM.exidx.text.notify_audio), (8 bytes).
-    Removing main.o(.ARM.exidx.text.get_len_keycard), (8 bytes).
-    Removing main.o(.ARM.exidx.text.check_card_RFID), (8 bytes).
-    Removing main.o(.bss.count_error_rfid), (4 bytes).
-    Removing main.o(.bss.wrong_card), (4 bytes).
-    Removing main.o(.bss.j), (1 bytes).
-    Removing main.o(.bss.tmp), (1 bytes).
-    Removing main.o(.bss.key_pass), (5 bytes).
-    Removing main.o(.ARM.use_no_argv), (4 bytes).
-    Removing stm32f1xx_it.o(.text), (0 bytes).
-    Removing stm32f1xx_it.o(.ARM.exidx.text.NMI_Handler), (8 bytes).
-    Removing stm32f1xx_it.o(.ARM.exidx.text.HardFault_Handler), (8 bytes).
-    Removing stm32f1xx_it.o(.ARM.exidx.text.MemManage_Handler), (8 bytes).
-    Removing stm32f1xx_it.o(.ARM.exidx.text.BusFault_Handler), (8 bytes).
-    Removing stm32f1xx_it.o(.ARM.exidx.text.UsageFault_Handler), (8 bytes).
-    Removing stm32f1xx_it.o(.ARM.exidx.text.SVC_Handler), (8 bytes).
-    Removing stm32f1xx_it.o(.ARM.exidx.text.DebugMon_Handler), (8 bytes).
-    Removing stm32f1xx_it.o(.ARM.exidx.text.PendSV_Handler), (8 bytes).
-    Removing stm32f1xx_it.o(.ARM.exidx.text.SysTick_Handler), (8 bytes).
-    Removing stm32f1xx_hal_msp.o(.text), (0 bytes).
-    Removing stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_MspInit), (8 bytes).
-    Removing stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_I2C_MspInit), (8 bytes).
-    Removing stm32f1xx_hal_msp.o(.text.HAL_I2C_MspDeInit), (62 bytes).
-    Removing stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_I2C_MspDeInit), (8 bytes).
-    Removing stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_SPI_MspInit), (8 bytes).
-    Removing stm32f1xx_hal_msp.o(.text.HAL_SPI_MspDeInit), (44 bytes).
-    Removing stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_SPI_MspDeInit), (8 bytes).
     Removing keypad.o(.text), (0 bytes).
     Removing keypad.o(.ARM.exidx.text.read_keypad), (8 bytes).
     Removing lcd.o(.text), (0 bytes).
@@ -1095,6 +1068,51 @@ Removing Unused input sections from the image.
     Removing flash.o(.ARM.exidx.text.Flash_Read_Array), (8 bytes).
     Removing flash.o(.text.Flash_Read_Struct), (126 bytes).
     Removing flash.o(.ARM.exidx.text.Flash_Read_Struct), (8 bytes).
+    Removing main.o(.text), (0 bytes).
+    Removing main.o(.ARM.exidx.text.main), (8 bytes).
+    Removing main.o(.text.SystemClock_Config), (100 bytes).
+    Removing main.o(.ARM.exidx.text.SystemClock_Config), (8 bytes).
+    Removing main.o(.ARM.exidx.text.loop_main), (8 bytes).
+    Removing main.o(.text.Error_Handler), (10 bytes).
+    Removing main.o(.ARM.exidx.text.Error_Handler), (8 bytes).
+    Removing main.o(.ARM.exidx.text.get_key), (8 bytes).
+    Removing main.o(.ARM.exidx.text.check_Card), (8 bytes).
+    Removing main.o(.ARM.exidx.text.add_Card), (8 bytes).
+    Removing main.o(.ARM.exidx.text.del_Card), (8 bytes).
+    Removing main.o(.ARM.exidx.text.run_Normal), (8 bytes).
+    Removing main.o(.text.run_ChangePass), (98 bytes).
+    Removing main.o(.ARM.exidx.text.run_ChangePass), (8 bytes).
+    Removing main.o(.ARM.exidx.text.run_InputPass), (8 bytes).
+    Removing main.o(.ARM.exidx.text.run_PassMaster), (8 bytes).
+    Removing main.o(.ARM.exidx.text.run_CheckPass), (8 bytes).
+    Removing main.o(.text.notify_audio), (64 bytes).
+    Removing main.o(.ARM.exidx.text.notify_audio), (8 bytes).
+    Removing main.o(.ARM.exidx.text.get_len_keycard), (8 bytes).
+    Removing main.o(.text.check_card_RFID), (256 bytes).
+    Removing main.o(.ARM.exidx.text.check_card_RFID), (8 bytes).
+    Removing main.o(.bss.count_error_rfid), (4 bytes).
+    Removing main.o(.bss.wrong_card), (4 bytes).
+    Removing main.o(.bss.tmp), (1 bytes).
+    Removing main.o(.bss.key_pass), (5 bytes).
+    Removing main.o(.ARM.use_no_argv), (4 bytes).
+    Removing stm32f1xx_it.o(.text), (0 bytes).
+    Removing stm32f1xx_it.o(.ARM.exidx.text.NMI_Handler), (8 bytes).
+    Removing stm32f1xx_it.o(.ARM.exidx.text.HardFault_Handler), (8 bytes).
+    Removing stm32f1xx_it.o(.ARM.exidx.text.MemManage_Handler), (8 bytes).
+    Removing stm32f1xx_it.o(.ARM.exidx.text.BusFault_Handler), (8 bytes).
+    Removing stm32f1xx_it.o(.ARM.exidx.text.UsageFault_Handler), (8 bytes).
+    Removing stm32f1xx_it.o(.ARM.exidx.text.SVC_Handler), (8 bytes).
+    Removing stm32f1xx_it.o(.ARM.exidx.text.DebugMon_Handler), (8 bytes).
+    Removing stm32f1xx_it.o(.ARM.exidx.text.PendSV_Handler), (8 bytes).
+    Removing stm32f1xx_it.o(.ARM.exidx.text.SysTick_Handler), (8 bytes).
+    Removing stm32f1xx_hal_msp.o(.text), (0 bytes).
+    Removing stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_MspInit), (8 bytes).
+    Removing stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_I2C_MspInit), (8 bytes).
+    Removing stm32f1xx_hal_msp.o(.text.HAL_I2C_MspDeInit), (62 bytes).
+    Removing stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_I2C_MspDeInit), (8 bytes).
+    Removing stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_SPI_MspInit), (8 bytes).
+    Removing stm32f1xx_hal_msp.o(.text.HAL_SPI_MspDeInit), (44 bytes).
+    Removing stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_SPI_MspDeInit), (8 bytes).
     Removing stm32f1xx_hal_gpio_ex.o(.text), (0 bytes).
     Removing stm32f1xx_hal_gpio_ex.o(.text.HAL_GPIOEx_ConfigEventout), (20 bytes).
     Removing stm32f1xx_hal_gpio_ex.o(.ARM.exidx.text.HAL_GPIOEx_ConfigEventout), (8 bytes).
@@ -1576,7 +1594,7 @@ Removing Unused input sections from the image.
     Removing system_stm32f1xx.o(.text.SystemCoreClockUpdate), (112 bytes).
     Removing system_stm32f1xx.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
 
-596 unused section(s) (total 35049 bytes) removed from the image.
+595 unused section(s) (total 35160 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1776,43 +1794,50 @@ Image Symbol Table
     [Anonymous Symbol]                       0x08002564   Section        0  system_stm32f1xx.o(.text.SystemInit)
     [Anonymous Symbol]                       0x08002568   Section        0  stm32f1xx_it.o(.text.UsageFault_Handler)
     [Anonymous Symbol]                       0x0800256c   Section        0  main.o(.text.add_Card)
-    [Anonymous Symbol]                       0x08002718   Section        0  main.o(.text.check_Card)
-    [Anonymous Symbol]                       0x080027f0   Section        0  main.o(.text.check_card_RFID)
-    [Anonymous Symbol]                       0x08002884   Section        0  main.o(.text.get_key)
-    [Anonymous Symbol]                       0x08002958   Section        0  main.o(.text.get_len_keycard)
-    [Anonymous Symbol]                       0x08002a64   Section        0  lcd.o(.text.lcd_clear)
-    [Anonymous Symbol]                       0x08002ab8   Section        0  lcd.o(.text.lcd_init)
-    [Anonymous Symbol]                       0x08002bd0   Section        0  lcd.o(.text.lcd_put_cur)
-    [Anonymous Symbol]                       0x08002c2c   Section        0  lcd.o(.text.lcd_send_data)
-    [Anonymous Symbol]                       0x08002c70   Section        0  lcd.o(.text.lcd_send_string)
-    [Anonymous Symbol]                       0x08002cc8   Section        0  main.o(.text.main)
-    [Anonymous Symbol]                       0x08002f5c   Section        0  keypad.o(.text.read_keypad)
-    [Anonymous Symbol]                       0x08003234   Section        0  main.o(.text.run_CheckPass)
-    [Anonymous Symbol]                       0x0800333c   Section        0  main.o(.text.run_InputPass)
-    [Anonymous Symbol]                       0x0800349c   Section        0  main.o(.text.run_Normal)
-    HAL_RCC_GetSysClockFreq.aPredivFactorTable 0x080035c0   Data           2  stm32f1xx_hal_rcc.o(.rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
-    [Anonymous Symbol]                       0x080035c0   Section        0  stm32f1xx_hal_rcc.o(.rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
-    HAL_RCC_GetSysClockFreq.aPLLMULFactorTable 0x080035c2   Data          16  stm32f1xx_hal_rcc.o(.rodata.cst16)
-    [Anonymous Symbol]                       0x080035c2   Section        0  stm32f1xx_hal_rcc.o(.rodata.cst16)
-    .L.str.4                                 0x080035d2   Data          14  main.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x080035d2   Section        0  main.o(.rodata.str1.1)
-    .L.str.1                                 0x080035e0   Data           2  main.o(.rodata.str1.1)
-    .L.str.6                                 0x080035e2   Data          14  main.o(.rodata.str1.1)
-    .L.str.3                                 0x080035f0   Data          16  main.o(.rodata.str1.1)
-    .L.str.7                                 0x08003600   Data          14  main.o(.rodata.str1.1)
-    .L.str.10                                0x0800360e   Data          13  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08002860   Section        0  main.o(.text.check_Card)
+    [Anonymous Symbol]                       0x08002a90   Section        0  main.o(.text.del_Card)
+    [Anonymous Symbol]                       0x08002dd4   Section        0  main.o(.text.get_key)
+    [Anonymous Symbol]                       0x08002ed8   Section        0  main.o(.text.get_len_keycard)
+    [Anonymous Symbol]                       0x08003034   Section        0  lcd.o(.text.lcd_clear)
+    [Anonymous Symbol]                       0x08003088   Section        0  lcd.o(.text.lcd_init)
+    [Anonymous Symbol]                       0x080031a0   Section        0  lcd.o(.text.lcd_put_cur)
+    [Anonymous Symbol]                       0x080031fc   Section        0  lcd.o(.text.lcd_send_data)
+    [Anonymous Symbol]                       0x08003240   Section        0  lcd.o(.text.lcd_send_string)
+    [Anonymous Symbol]                       0x08003298   Section        0  main.o(.text.loop_main)
+    [Anonymous Symbol]                       0x08003358   Section        0  main.o(.text.main)
+    [Anonymous Symbol]                       0x0800358c   Section        0  keypad.o(.text.read_keypad)
+    [Anonymous Symbol]                       0x08003864   Section        0  main.o(.text.run_CheckPass)
+    [Anonymous Symbol]                       0x08003974   Section        0  main.o(.text.run_InputPass)
+    [Anonymous Symbol]                       0x08003ad8   Section        0  main.o(.text.run_Normal)
+    [Anonymous Symbol]                       0x08003be8   Section        0  main.o(.text.run_PassMaster)
+    HAL_RCC_GetSysClockFreq.aPredivFactorTable 0x08003eac   Data           2  stm32f1xx_hal_rcc.o(.rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
+    [Anonymous Symbol]                       0x08003eac   Section        0  stm32f1xx_hal_rcc.o(.rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
+    HAL_RCC_GetSysClockFreq.aPLLMULFactorTable 0x08003eae   Data          16  stm32f1xx_hal_rcc.o(.rodata.cst16)
+    [Anonymous Symbol]                       0x08003eae   Section        0  stm32f1xx_hal_rcc.o(.rodata.cst16)
+    .L.str.2                                 0x08003ebe   Data           2  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08003ebe   Section        0  main.o(.rodata.str1.1)
+    .L.str.18                                0x08003ec0   Data           9  main.o(.rodata.str1.1)
+    .L.str.7                                 0x08003ec9   Data          14  main.o(.rodata.str1.1)
+    .L.str.4                                 0x08003ed7   Data          16  main.o(.rodata.str1.1)
+    .L.str.8                                 0x08003ee7   Data          14  main.o(.rodata.str1.1)
+    .L.str.32                                0x08003ef5   Data           9  main.o(.rodata.str1.1)
+    .L.str.31                                0x08003efe   Data          14  main.o(.rodata.str1.1)
+    .L.str.25                                0x08003f0c   Data          11  main.o(.rodata.str1.1)
+    .L.str.39                                0x08003f17   Data           9  main.o(.rodata.str1.1)
+    .L.str.11                                0x08003f20   Data          13  main.o(.rodata.str1.1)
+    .L.str.26                                0x08003f2d   Data          16  main.o(.rodata.str1.1)
     .L_MergedGlobals                         0x20000000   Data          10  main.o(.data..L_MergedGlobals)
     [Anonymous Symbol]                       0x20000000   Section        0  main.o(.data..L_MergedGlobals)
     .L_MergedGlobals                         0x2000000c   Data           8  stm32f1xx_hal.o(.data..L_MergedGlobals)
     [Anonymous Symbol]                       0x2000000c   Section        0  stm32f1xx_hal.o(.data..L_MergedGlobals)
     .bss                                     0x20000018   Section       96  libspace.o(.bss)
-    .L_MergedGlobals.19                      0x20000078   Data          68  main.o(.bss..L_MergedGlobals.19)
-    [Anonymous Symbol]                       0x20000078   Section        0  main.o(.bss..L_MergedGlobals.19)
-    Heap_Mem                                 0x20000190   Data         512  startup_stm32f103xb.o(HEAP)
-    HEAP                                     0x20000190   Section      512  startup_stm32f103xb.o(HEAP)
-    Stack_Mem                                0x20000390   Data        1024  startup_stm32f103xb.o(STACK)
-    STACK                                    0x20000390   Section     1024  startup_stm32f103xb.o(STACK)
-    __initial_sp                             0x20000790   Data           0  startup_stm32f103xb.o(STACK)
+    .L_MergedGlobals.40                      0x20000078   Data          80  main.o(.bss..L_MergedGlobals.40)
+    [Anonymous Symbol]                       0x20000078   Section        0  main.o(.bss..L_MergedGlobals.40)
+    Heap_Mem                                 0x200001a0   Data         512  startup_stm32f103xb.o(HEAP)
+    HEAP                                     0x200001a0   Section      512  startup_stm32f103xb.o(HEAP)
+    Stack_Mem                                0x200003a0   Data        1024  startup_stm32f103xb.o(STACK)
+    STACK                                    0x200003a0   Section     1024  startup_stm32f103xb.o(STACK)
+    __initial_sp                             0x200007a0   Data           0  startup_stm32f103xb.o(STACK)
 
     Global Symbols
 
@@ -2005,25 +2030,27 @@ Image Symbol Table
     SysTick_Handler                          0x08002561   Thumb Code     4  stm32f1xx_it.o(.text.SysTick_Handler)
     SystemInit                               0x08002565   Thumb Code     2  system_stm32f1xx.o(.text.SystemInit)
     UsageFault_Handler                       0x08002569   Thumb Code     2  stm32f1xx_it.o(.text.UsageFault_Handler)
-    add_Card                                 0x0800256d   Thumb Code   364  main.o(.text.add_Card)
-    check_Card                               0x08002719   Thumb Code   204  main.o(.text.check_Card)
-    check_card_RFID                          0x080027f1   Thumb Code   124  main.o(.text.check_card_RFID)
-    get_key                                  0x08002885   Thumb Code   210  main.o(.text.get_key)
-    get_len_keycard                          0x08002959   Thumb Code   266  main.o(.text.get_len_keycard)
-    lcd_clear                                0x08002a65   Thumb Code    84  lcd.o(.text.lcd_clear)
-    lcd_init                                 0x08002ab9   Thumb Code   278  lcd.o(.text.lcd_init)
-    lcd_put_cur                              0x08002bd1   Thumb Code    90  lcd.o(.text.lcd_put_cur)
-    lcd_send_data                            0x08002c2d   Thumb Code    68  lcd.o(.text.lcd_send_data)
-    lcd_send_string                          0x08002c71   Thumb Code    86  lcd.o(.text.lcd_send_string)
-    main                                     0x08002cc9   Thumb Code   644  main.o(.text.main)
-    read_keypad                              0x08002f5d   Thumb Code   726  keypad.o(.text.read_keypad)
-    run_CheckPass                            0x08003235   Thumb Code   248  main.o(.text.run_CheckPass)
-    run_InputPass                            0x0800333d   Thumb Code   312  main.o(.text.run_InputPass)
-    run_Normal                               0x0800349d   Thumb Code   252  main.o(.text.run_Normal)
-    AHBPrescTable                            0x080035a8   Data          16  system_stm32f1xx.o(.rodata.AHBPrescTable)
-    APBPrescTable                            0x080035b8   Data           8  system_stm32f1xx.o(.rodata.APBPrescTable)
-    Region$$Table$$Base                      0x0800361c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0800363c   Number         0  anon$$obj.o(Region$$Table)
+    add_Card                                 0x0800256d   Thumb Code   680  main.o(.text.add_Card)
+    check_Card                               0x08002861   Thumb Code   532  main.o(.text.check_Card)
+    del_Card                                 0x08002a91   Thumb Code   784  main.o(.text.del_Card)
+    get_key                                  0x08002dd5   Thumb Code   260  main.o(.text.get_key)
+    get_len_keycard                          0x08002ed9   Thumb Code   346  main.o(.text.get_len_keycard)
+    lcd_clear                                0x08003035   Thumb Code    84  lcd.o(.text.lcd_clear)
+    lcd_init                                 0x08003089   Thumb Code   278  lcd.o(.text.lcd_init)
+    lcd_put_cur                              0x080031a1   Thumb Code    90  lcd.o(.text.lcd_put_cur)
+    lcd_send_data                            0x080031fd   Thumb Code    68  lcd.o(.text.lcd_send_data)
+    lcd_send_string                          0x08003241   Thumb Code    86  lcd.o(.text.lcd_send_string)
+    loop_main                                0x08003299   Thumb Code   190  main.o(.text.loop_main)
+    main                                     0x08003359   Thumb Code   536  main.o(.text.main)
+    read_keypad                              0x0800358d   Thumb Code   726  keypad.o(.text.read_keypad)
+    run_CheckPass                            0x08003865   Thumb Code   256  main.o(.text.run_CheckPass)
+    run_InputPass                            0x08003975   Thumb Code   316  main.o(.text.run_InputPass)
+    run_Normal                               0x08003ad9   Thumb Code   240  main.o(.text.run_Normal)
+    run_PassMaster                           0x08003be9   Thumb Code   524  main.o(.text.run_PassMaster)
+    AHBPrescTable                            0x08003e94   Data          16  system_stm32f1xx.o(.rodata.AHBPrescTable)
+    APBPrescTable                            0x08003ea4   Data           8  system_stm32f1xx.o(.rodata.APBPrescTable)
+    Region$$Table$$Base                      0x08003f40   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08003f60   Number         0  anon$$obj.o(Region$$Table)
     mode_pass                                0x20000000   Data           1  main.o(.data..L_MergedGlobals)
     status_pass                              0x20000001   Data           1  main.o(.data..L_MergedGlobals)
     check_pass                               0x20000002   Data           1  main.o(.data..L_MergedGlobals)
@@ -2036,25 +2063,27 @@ Image Symbol Table
     SystemCoreClock                          0x20000014   Data           4  system_stm32f1xx.o(.data.SystemCoreClock)
     __libspace_start                         0x20000018   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x20000078   Data           0  libspace.o(.bss)
-    count_key                                0x20000078   Data           1  main.o(.bss..L_MergedGlobals.19)
-    count_key_in                             0x20000079   Data           1  main.o(.bss..L_MergedGlobals.19)
-    count_enter_pass                         0x2000007a   Data           1  main.o(.bss..L_MergedGlobals.19)
-    mode_card                                0x2000007b   Data           1  main.o(.bss..L_MergedGlobals.19)
-    key                                      0x2000007c   Data           1  main.o(.bss..L_MergedGlobals.19)
-    i                                        0x2000007d   Data           1  main.o(.bss..L_MergedGlobals.19)
-    status                                   0x2000007e   Data           1  main.o(.bss..L_MergedGlobals.19)
-    len_key_card                             0x20000080   Data           4  main.o(.bss..L_MergedGlobals.19)
-    password                                 0x20000084   Data           4  main.o(.bss..L_MergedGlobals.19)
-    buffer_pass                              0x20000088   Data           5  main.o(.bss..L_MergedGlobals.19)
-    new_pass1                                0x2000008d   Data           5  main.o(.bss..L_MergedGlobals.19)
-    new_pass2                                0x20000092   Data           5  main.o(.bss..L_MergedGlobals.19)
-    serNum                                   0x20000098   Data           5  main.o(.bss..L_MergedGlobals.19)
-    key_card                                 0x2000009d   Data          15  main.o(.bss..L_MergedGlobals.19)
-    str                                      0x200000ac   Data          16  main.o(.bss..L_MergedGlobals.19)
-    hi2c1                                    0x200000bc   Data          84  main.o(.bss.hi2c1)
-    hspi1                                    0x20000110   Data          88  main.o(.bss.hspi1)
-    pFlash                                   0x20000168   Data          32  stm32f1xx_hal_flash.o(.bss.pFlash)
-    uwTick                                   0x20000188   Data           4  stm32f1xx_hal.o(.bss.uwTick)
+    count_key                                0x20000078   Data           1  main.o(.bss..L_MergedGlobals.40)
+    count_key_in                             0x20000079   Data           1  main.o(.bss..L_MergedGlobals.40)
+    count_enter_pass                         0x2000007a   Data           1  main.o(.bss..L_MergedGlobals.40)
+    mode_card                                0x2000007b   Data           1  main.o(.bss..L_MergedGlobals.40)
+    key                                      0x2000007c   Data           1  main.o(.bss..L_MergedGlobals.40)
+    i                                        0x2000007d   Data           1  main.o(.bss..L_MergedGlobals.40)
+    status                                   0x2000007e   Data           1  main.o(.bss..L_MergedGlobals.40)
+    j                                        0x2000007f   Data           1  main.o(.bss..L_MergedGlobals.40)
+    x                                        0x20000080   Data           1  main.o(.bss..L_MergedGlobals.40)
+    len_key_card                             0x20000084   Data           4  main.o(.bss..L_MergedGlobals.40)
+    password                                 0x20000088   Data           4  main.o(.bss..L_MergedGlobals.40)
+    buffer_pass                              0x2000008c   Data           5  main.o(.bss..L_MergedGlobals.40)
+    new_pass1                                0x20000091   Data           5  main.o(.bss..L_MergedGlobals.40)
+    new_pass2                                0x20000096   Data           5  main.o(.bss..L_MergedGlobals.40)
+    serNum                                   0x2000009c   Data           5  main.o(.bss..L_MergedGlobals.40)
+    str                                      0x200000a4   Data          16  main.o(.bss..L_MergedGlobals.40)
+    key_card                                 0x200000b4   Data          20  main.o(.bss..L_MergedGlobals.40)
+    hi2c1                                    0x200000c8   Data          84  main.o(.bss.hi2c1)
+    hspi1                                    0x2000011c   Data          88  main.o(.bss.hspi1)
+    pFlash                                   0x20000178   Data          32  stm32f1xx_hal_flash.o(.bss.pFlash)
+    uwTick                                   0x20000198   Data           4  stm32f1xx_hal.o(.bss.uwTick)
 
 
 
@@ -2064,203 +2093,206 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00003658, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00003f78, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000363c, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00003f60, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x000000ec   Data   RO            3    RESET               startup_stm32f103xb.o
-    0x080000ec   0x080000ec   0x00000008   Code   RO          834  * !!!main             c_w.l(__main.o)
-    0x080000f4   0x080000f4   0x00000034   Code   RO          999    !!!scatter          c_w.l(__scatter.o)
-    0x08000128   0x08000128   0x0000001a   Code   RO         1001    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x080000ec   0x080000ec   0x00000008   Code   RO          835  * !!!main             c_w.l(__main.o)
+    0x080000f4   0x080000f4   0x00000034   Code   RO         1000    !!!scatter          c_w.l(__scatter.o)
+    0x08000128   0x08000128   0x0000001a   Code   RO         1002    !!handler_copy      c_w.l(__scatter_copy.o)
     0x08000142   0x08000142   0x00000002   PAD
-    0x08000144   0x08000144   0x0000001c   Code   RO         1003    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x08000160   0x08000160   0x00000002   Code   RO          861    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          868    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          870    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          872    .ARM.Collect$$libinit$$00000006  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          875    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          877    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          879    .ARM.Collect$$libinit$$00000010  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          882    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          884    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          886    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          888    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          890    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          892    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          894    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          896    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          898    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          900    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          902    .ARM.Collect$$libinit$$00000027  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          906    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          908    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          910    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO          912    .ARM.Collect$$libinit$$00000034  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000002   Code   RO          913    .ARM.Collect$$libinit$$00000035  c_w.l(libinit2.o)
-    0x08000164   0x08000164   0x00000002   Code   RO          935    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x08000166   0x08000166   0x00000000   Code   RO          950    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x08000166   0x08000166   0x00000000   Code   RO          952    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x08000166   0x08000166   0x00000000   Code   RO          955    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x08000166   0x08000166   0x00000000   Code   RO          958    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x08000166   0x08000166   0x00000000   Code   RO          960    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x08000166   0x08000166   0x00000000   Code   RO          963    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x08000166   0x08000166   0x00000002   Code   RO          964    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x08000168   0x08000168   0x00000000   Code   RO          836    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x08000168   0x08000168   0x00000000   Code   RO          838    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x08000168   0x08000168   0x00000006   Code   RO          850    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
-    0x0800016e   0x0800016e   0x00000000   Code   RO          840    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x0800016e   0x0800016e   0x00000004   Code   RO          841    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x08000172   0x08000172   0x00000000   Code   RO          843    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
-    0x08000172   0x08000172   0x00000008   Code   RO          844    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x0800017a   0x0800017a   0x00000002   Code   RO          865    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x0800017c   0x0800017c   0x00000000   Code   RO          915    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x0800017c   0x0800017c   0x00000004   Code   RO          916    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x08000180   0x08000180   0x00000006   Code   RO          917    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x08000144   0x08000144   0x0000001c   Code   RO         1004    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x08000160   0x08000160   0x00000002   Code   RO          862    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          869    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          871    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          873    .ARM.Collect$$libinit$$00000006  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          876    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          878    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          880    .ARM.Collect$$libinit$$00000010  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          883    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          885    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          887    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          889    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          891    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          893    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          895    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          897    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          899    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          901    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          903    .ARM.Collect$$libinit$$00000027  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          907    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          909    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          911    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO          913    .ARM.Collect$$libinit$$00000034  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000002   Code   RO          914    .ARM.Collect$$libinit$$00000035  c_w.l(libinit2.o)
+    0x08000164   0x08000164   0x00000002   Code   RO          936    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x08000166   0x08000166   0x00000000   Code   RO          951    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x08000166   0x08000166   0x00000000   Code   RO          953    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x08000166   0x08000166   0x00000000   Code   RO          956    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x08000166   0x08000166   0x00000000   Code   RO          959    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x08000166   0x08000166   0x00000000   Code   RO          961    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x08000166   0x08000166   0x00000000   Code   RO          964    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x08000166   0x08000166   0x00000002   Code   RO          965    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x08000168   0x08000168   0x00000000   Code   RO          837    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x08000168   0x08000168   0x00000000   Code   RO          839    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x08000168   0x08000168   0x00000006   Code   RO          851    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x0800016e   0x0800016e   0x00000000   Code   RO          841    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x0800016e   0x0800016e   0x00000004   Code   RO          842    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x08000172   0x08000172   0x00000000   Code   RO          844    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x08000172   0x08000172   0x00000008   Code   RO          845    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x0800017a   0x0800017a   0x00000002   Code   RO          866    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x0800017c   0x0800017c   0x00000000   Code   RO          916    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x0800017c   0x0800017c   0x00000004   Code   RO          917    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x08000180   0x08000180   0x00000006   Code   RO          918    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x08000186   0x08000186   0x00000002   PAD
     0x08000188   0x08000188   0x00000040   Code   RO            4    .text               startup_stm32f103xb.o
-    0x080001c8   0x080001c8   0x00000006   Code   RO          832    .text               c_w.l(heapauxi.o)
-    0x080001ce   0x080001ce   0x0000004a   Code   RO          852    .text               c_w.l(sys_stackheap_outer.o)
-    0x08000218   0x08000218   0x00000012   Code   RO          854    .text               c_w.l(exit.o)
+    0x080001c8   0x080001c8   0x00000006   Code   RO          833    .text               c_w.l(heapauxi.o)
+    0x080001ce   0x080001ce   0x0000004a   Code   RO          853    .text               c_w.l(sys_stackheap_outer.o)
+    0x08000218   0x08000218   0x00000012   Code   RO          855    .text               c_w.l(exit.o)
     0x0800022a   0x0800022a   0x00000002   PAD
-    0x0800022c   0x0800022c   0x00000008   Code   RO          862    .text               c_w.l(libspace.o)
-    0x08000234   0x08000234   0x0000000c   Code   RO          925    .text               c_w.l(sys_exit.o)
-    0x08000240   0x08000240   0x00000002   Code   RO          940    .text               c_w.l(use_no_semi.o)
-    0x08000242   0x08000242   0x00000000   Code   RO          942    .text               c_w.l(indicate_semi.o)
+    0x0800022c   0x0800022c   0x00000008   Code   RO          863    .text               c_w.l(libspace.o)
+    0x08000234   0x08000234   0x0000000c   Code   RO          926    .text               c_w.l(sys_exit.o)
+    0x08000240   0x08000240   0x00000002   Code   RO          941    .text               c_w.l(use_no_semi.o)
+    0x08000242   0x08000242   0x00000000   Code   RO          943    .text               c_w.l(indicate_semi.o)
     0x08000242   0x08000242   0x00000002   PAD
-    0x08000244   0x08000244   0x00000002   Code   RO           66    .text.BusFault_Handler  stm32f1xx_it.o
+    0x08000244   0x08000244   0x00000002   Code   RO          179    .text.BusFault_Handler  stm32f1xx_it.o
     0x08000246   0x08000246   0x00000002   PAD
-    0x08000248   0x08000248   0x00000002   Code   RO           72    .text.DebugMon_Handler  stm32f1xx_it.o
+    0x08000248   0x08000248   0x00000002   Code   RO          185    .text.DebugMon_Handler  stm32f1xx_it.o
     0x0800024a   0x0800024a   0x00000002   PAD
-    0x0800024c   0x0800024c   0x000000e0   Code   RO          621    .text.FLASH_WaitForLastOperation  stm32f1xx_hal_flash.o
-    0x0800032c   0x0800032c   0x00000026   Code   RO          189    .text.Flash_Erase   flash.o
+    0x0800024c   0x0800024c   0x000000e0   Code   RO          622    .text.FLASH_WaitForLastOperation  stm32f1xx_hal_flash.o
+    0x0800032c   0x0800032c   0x00000026   Code   RO           97    .text.Flash_Erase   flash.o
     0x08000352   0x08000352   0x00000002   PAD
-    0x08000354   0x08000354   0x00000070   Code   RO          203    .text.Flash_Read_Array  flash.o
-    0x080003c4   0x080003c4   0x00000032   Code   RO          195    .text.Flash_Write_Array  flash.o
+    0x08000354   0x08000354   0x00000070   Code   RO          111    .text.Flash_Read_Array  flash.o
+    0x080003c4   0x080003c4   0x00000032   Code   RO          103    .text.Flash_Write_Array  flash.o
     0x080003f6   0x080003f6   0x00000002   PAD
-    0x080003f8   0x080003f8   0x00000028   Code   RO          387    .text.HAL_Delay     stm32f1xx_hal.o
-    0x08000420   0x08000420   0x000000ee   Code   RO          652    .text.HAL_FLASHEx_Erase  stm32f1xx_hal_flash_ex.o
+    0x080003f8   0x080003f8   0x00000028   Code   RO          388    .text.HAL_Delay     stm32f1xx_hal.o
+    0x08000420   0x08000420   0x000000ee   Code   RO          653    .text.HAL_FLASHEx_Erase  stm32f1xx_hal_flash_ex.o
     0x0800050e   0x0800050e   0x00000002   PAD
-    0x08000510   0x08000510   0x00000014   Code   RO          633    .text.HAL_FLASH_Lock  stm32f1xx_hal_flash.o
-    0x08000524   0x08000524   0x000000ac   Code   RO          619    .text.HAL_FLASH_Program  stm32f1xx_hal_flash.o
-    0x080005d0   0x080005d0   0x0000002e   Code   RO          631    .text.HAL_FLASH_Unlock  stm32f1xx_hal_flash.o
+    0x08000510   0x08000510   0x00000014   Code   RO          634    .text.HAL_FLASH_Lock  stm32f1xx_hal_flash.o
+    0x08000524   0x08000524   0x000000ac   Code   RO          620    .text.HAL_FLASH_Program  stm32f1xx_hal_flash.o
+    0x080005d0   0x080005d0   0x0000002e   Code   RO          632    .text.HAL_FLASH_Unlock  stm32f1xx_hal_flash.o
     0x080005fe   0x080005fe   0x00000002   PAD
-    0x08000600   0x08000600   0x0000021a   Code   RO          479    .text.HAL_GPIO_Init  stm32f1xx_hal_gpio.o
+    0x08000600   0x08000600   0x0000021a   Code   RO          480    .text.HAL_GPIO_Init  stm32f1xx_hal_gpio.o
     0x0800081a   0x0800081a   0x00000002   PAD
-    0x0800081c   0x0800081c   0x0000000a   Code   RO          483    .text.HAL_GPIO_ReadPin  stm32f1xx_hal_gpio.o
+    0x0800081c   0x0800081c   0x0000000a   Code   RO          484    .text.HAL_GPIO_ReadPin  stm32f1xx_hal_gpio.o
     0x08000826   0x08000826   0x00000002   PAD
-    0x08000828   0x08000828   0x00000010   Code   RO          487    .text.HAL_GPIO_TogglePin  stm32f1xx_hal_gpio.o
-    0x08000838   0x08000838   0x0000000a   Code   RO          485    .text.HAL_GPIO_WritePin  stm32f1xx_hal_gpio.o
+    0x08000828   0x08000828   0x00000010   Code   RO          488    .text.HAL_GPIO_TogglePin  stm32f1xx_hal_gpio.o
+    0x08000838   0x08000838   0x0000000a   Code   RO          486    .text.HAL_GPIO_WritePin  stm32f1xx_hal_gpio.o
     0x08000842   0x08000842   0x00000002   PAD
-    0x08000844   0x08000844   0x0000000c   Code   RO          379    .text.HAL_GetTick   stm32f1xx_hal.o
-    0x08000850   0x08000850   0x00000176   Code   RO          229    .text.HAL_I2C_Init  stm32f1xx_hal_i2c.o
+    0x08000844   0x08000844   0x0000000c   Code   RO          380    .text.HAL_GetTick   stm32f1xx_hal.o
+    0x08000850   0x08000850   0x00000176   Code   RO          230    .text.HAL_I2C_Init  stm32f1xx_hal_i2c.o
     0x080009c6   0x080009c6   0x00000002   PAD
-    0x080009c8   0x080009c8   0x000001d4   Code   RO          237    .text.HAL_I2C_Master_Transmit  stm32f1xx_hal_i2c.o
-    0x08000b9c   0x08000b9c   0x0000007a   Code   RO           87    .text.HAL_I2C_MspInit  stm32f1xx_hal_msp.o
+    0x080009c8   0x080009c8   0x000001d4   Code   RO          238    .text.HAL_I2C_Master_Transmit  stm32f1xx_hal_i2c.o
+    0x08000b9c   0x08000b9c   0x0000007a   Code   RO          200    .text.HAL_I2C_MspInit  stm32f1xx_hal_msp.o
     0x08000c16   0x08000c16   0x00000002   PAD
-    0x08000c18   0x08000c18   0x0000001a   Code   RO          377    .text.HAL_IncTick   stm32f1xx_hal.o
+    0x08000c18   0x08000c18   0x0000001a   Code   RO          378    .text.HAL_IncTick   stm32f1xx_hal.o
     0x08000c32   0x08000c32   0x00000002   PAD
-    0x08000c34   0x08000c34   0x00000026   Code   RO          367    .text.HAL_Init      stm32f1xx_hal.o
+    0x08000c34   0x08000c34   0x00000026   Code   RO          368    .text.HAL_Init      stm32f1xx_hal.o
     0x08000c5a   0x08000c5a   0x00000002   PAD
-    0x08000c5c   0x08000c5c   0x00000048   Code   RO          369    .text.HAL_InitTick  stm32f1xx_hal.o
-    0x08000ca4   0x08000ca4   0x00000042   Code   RO           85    .text.HAL_MspInit   stm32f1xx_hal_msp.o
+    0x08000c5c   0x08000c5c   0x00000048   Code   RO          370    .text.HAL_InitTick  stm32f1xx_hal.o
+    0x08000ca4   0x08000ca4   0x00000042   Code   RO          198    .text.HAL_MspInit   stm32f1xx_hal_msp.o
     0x08000ce6   0x08000ce6   0x00000002   PAD
-    0x08000ce8   0x08000ce8   0x00000056   Code   RO          537    .text.HAL_NVIC_SetPriority  stm32f1xx_hal_cortex.o
+    0x08000ce8   0x08000ce8   0x00000056   Code   RO          538    .text.HAL_NVIC_SetPriority  stm32f1xx_hal_cortex.o
     0x08000d3e   0x08000d3e   0x00000002   PAD
-    0x08000d40   0x08000d40   0x00000020   Code   RO          535    .text.HAL_NVIC_SetPriorityGrouping  stm32f1xx_hal_cortex.o
-    0x08000d60   0x08000d60   0x000001be   Code   RO          431    .text.HAL_RCC_ClockConfig  stm32f1xx_hal_rcc.o
+    0x08000d40   0x08000d40   0x00000020   Code   RO          536    .text.HAL_NVIC_SetPriorityGrouping  stm32f1xx_hal_cortex.o
+    0x08000d60   0x08000d60   0x000001be   Code   RO          432    .text.HAL_RCC_ClockConfig  stm32f1xx_hal_rcc.o
     0x08000f1e   0x08000f1e   0x00000002   PAD
-    0x08000f20   0x08000f20   0x00000026   Code   RO          443    .text.HAL_RCC_GetPCLK1Freq  stm32f1xx_hal_rcc.o
+    0x08000f20   0x08000f20   0x00000026   Code   RO          444    .text.HAL_RCC_GetPCLK1Freq  stm32f1xx_hal_rcc.o
     0x08000f46   0x08000f46   0x00000002   PAD
-    0x08000f48   0x08000f48   0x000003b4   Code   RO          429    .text.HAL_RCC_OscConfig  stm32f1xx_hal_rcc.o
-    0x080012fc   0x080012fc   0x000000ac   Code   RO          700    .text.HAL_SPI_Init  stm32f1xx_hal_spi.o
-    0x080013a8   0x080013a8   0x00000076   Code   RO           91    .text.HAL_SPI_MspInit  stm32f1xx_hal_msp.o
+    0x08000f48   0x08000f48   0x000003b4   Code   RO          430    .text.HAL_RCC_OscConfig  stm32f1xx_hal_rcc.o
+    0x080012fc   0x080012fc   0x000000ac   Code   RO          701    .text.HAL_SPI_Init  stm32f1xx_hal_spi.o
+    0x080013a8   0x080013a8   0x00000076   Code   RO          204    .text.HAL_SPI_MspInit  stm32f1xx_hal_msp.o
     0x0800141e   0x0800141e   0x00000002   PAD
-    0x08001420   0x08001420   0x000002d0   Code   RO          712    .text.HAL_SPI_TransmitReceive  stm32f1xx_hal_spi.o
-    0x080016f0   0x080016f0   0x0000002c   Code   RO          547    .text.HAL_SYSTICK_Config  stm32f1xx_hal_cortex.o
-    0x0800171c   0x0800171c   0x00000002   Code   RO           62    .text.HardFault_Handler  stm32f1xx_it.o
+    0x08001420   0x08001420   0x000002d0   Code   RO          713    .text.HAL_SPI_TransmitReceive  stm32f1xx_hal_spi.o
+    0x080016f0   0x080016f0   0x0000002c   Code   RO          548    .text.HAL_SYSTICK_Config  stm32f1xx_hal_cortex.o
+    0x0800171c   0x0800171c   0x00000002   Code   RO          175    .text.HardFault_Handler  stm32f1xx_it.o
     0x0800171e   0x0800171e   0x00000002   PAD
-    0x08001720   0x08001720   0x000000be   Code   RO          243    .text.I2C_WaitOnBTFFlagUntilTimeout  stm32f1xx_hal_i2c.o
+    0x08001720   0x08001720   0x000000be   Code   RO          244    .text.I2C_WaitOnBTFFlagUntilTimeout  stm32f1xx_hal_i2c.o
     0x080017de   0x080017de   0x00000002   PAD
-    0x080017e0   0x080017e0   0x000001d2   Code   RO          239    .text.I2C_WaitOnFlagUntilTimeout  stm32f1xx_hal_i2c.o
+    0x080017e0   0x080017e0   0x000001d2   Code   RO          240    .text.I2C_WaitOnFlagUntilTimeout  stm32f1xx_hal_i2c.o
     0x080019b2   0x080019b2   0x00000002   PAD
-    0x080019b4   0x080019b4   0x000000e0   Code   RO          357    .text.I2C_WaitOnMasterAddressFlagUntilTimeout  stm32f1xx_hal_i2c.o
-    0x08001a94   0x08001a94   0x000000be   Code   RO          241    .text.I2C_WaitOnTXEFlagUntilTimeout  stm32f1xx_hal_i2c.o
+    0x080019b4   0x080019b4   0x000000e0   Code   RO          358    .text.I2C_WaitOnMasterAddressFlagUntilTimeout  stm32f1xx_hal_i2c.o
+    0x08001a94   0x08001a94   0x000000be   Code   RO          242    .text.I2C_WaitOnTXEFlagUntilTimeout  stm32f1xx_hal_i2c.o
     0x08001b52   0x08001b52   0x00000002   PAD
-    0x08001b54   0x08001b54   0x00000070   Code   RO          171    .text.MFRC522_AntennaOn  rc522.o
-    0x08001bc4   0x08001bc4   0x0000009e   Code   RO          145    .text.MFRC522_Anticoll  rc522.o
+    0x08001b54   0x08001b54   0x00000070   Code   RO           79    .text.MFRC522_AntennaOn  rc522.o
+    0x08001bc4   0x08001bc4   0x0000009e   Code   RO           53    .text.MFRC522_Anticoll  rc522.o
     0x08001c62   0x08001c62   0x00000002   PAD
-    0x08001c64   0x08001c64   0x000000b6   Code   RO          153    .text.MFRC522_ClearBitMask  rc522.o
+    0x08001c64   0x08001c64   0x000000b6   Code   RO           61    .text.MFRC522_ClearBitMask  rc522.o
     0x08001d1a   0x08001d1a   0x00000002   PAD
-    0x08001d1c   0x08001d1c   0x0000023e   Code   RO          167    .text.MFRC522_Init  rc522.o
+    0x08001d1c   0x08001d1c   0x0000023e   Code   RO           75    .text.MFRC522_Init  rc522.o
     0x08001f5a   0x08001f5a   0x00000002   PAD
-    0x08001f5c   0x08001f5c   0x0000008c   Code   RO          143    .text.MFRC522_Request  rc522.o
-    0x08001fe8   0x08001fe8   0x000000b6   Code   RO          151    .text.MFRC522_SetBitMask  rc522.o
+    0x08001f5c   0x08001f5c   0x0000008c   Code   RO           51    .text.MFRC522_Request  rc522.o
+    0x08001fe8   0x08001fe8   0x000000b6   Code   RO           59    .text.MFRC522_SetBitMask  rc522.o
     0x0800209e   0x0800209e   0x00000002   PAD
-    0x080020a0   0x080020a0   0x000003ca   Code   RO          155    .text.MFRC522_ToCard  rc522.o
+    0x080020a0   0x080020a0   0x000003ca   Code   RO           63    .text.MFRC522_ToCard  rc522.o
     0x0800246a   0x0800246a   0x00000002   PAD
-    0x0800246c   0x0800246c   0x00000002   Code   RO           64    .text.MemManage_Handler  stm32f1xx_it.o
+    0x0800246c   0x0800246c   0x00000002   Code   RO          177    .text.MemManage_Handler  stm32f1xx_it.o
     0x0800246e   0x0800246e   0x00000002   PAD
-    0x08002470   0x08002470   0x00000002   Code   RO           60    .text.NMI_Handler   stm32f1xx_it.o
+    0x08002470   0x08002470   0x00000002   Code   RO          173    .text.NMI_Handler   stm32f1xx_it.o
     0x08002472   0x08002472   0x00000002   PAD
-    0x08002474   0x08002474   0x00000002   Code   RO           74    .text.PendSV_Handler  stm32f1xx_it.o
+    0x08002474   0x08002474   0x00000002   Code   RO          187    .text.PendSV_Handler  stm32f1xx_it.o
     0x08002476   0x08002476   0x00000002   PAD
-    0x08002478   0x08002478   0x000000e4   Code   RO          804    .text.SPI_WaitFlagStateUntilTimeout  stm32f1xx_hal_spi.o
-    0x0800255c   0x0800255c   0x00000002   Code   RO           70    .text.SVC_Handler   stm32f1xx_it.o
+    0x08002478   0x08002478   0x000000e4   Code   RO          805    .text.SPI_WaitFlagStateUntilTimeout  stm32f1xx_hal_spi.o
+    0x0800255c   0x0800255c   0x00000002   Code   RO          183    .text.SVC_Handler   stm32f1xx_it.o
     0x0800255e   0x0800255e   0x00000002   PAD
-    0x08002560   0x08002560   0x00000004   Code   RO           76    .text.SysTick_Handler  stm32f1xx_it.o
-    0x08002564   0x08002564   0x00000002   Code   RO          816    .text.SystemInit    system_stm32f1xx.o
+    0x08002560   0x08002560   0x00000004   Code   RO          189    .text.SysTick_Handler  stm32f1xx_it.o
+    0x08002564   0x08002564   0x00000002   Code   RO          817    .text.SystemInit    system_stm32f1xx.o
     0x08002566   0x08002566   0x00000002   PAD
-    0x08002568   0x08002568   0x00000002   Code   RO           68    .text.UsageFault_Handler  stm32f1xx_it.o
+    0x08002568   0x08002568   0x00000002   Code   RO          181    .text.UsageFault_Handler  stm32f1xx_it.o
     0x0800256a   0x0800256a   0x00000002   PAD
-    0x0800256c   0x0800256c   0x000001ac   Code   RO           23    .text.add_Card      main.o
-    0x08002718   0x08002718   0x000000d8   Code   RO           21    .text.check_Card    main.o
-    0x080027f0   0x080027f0   0x00000094   Code   RO           39    .text.check_card_RFID  main.o
-    0x08002884   0x08002884   0x000000d2   Code   RO           19    .text.get_key       main.o
-    0x08002956   0x08002956   0x00000002   PAD
-    0x08002958   0x08002958   0x0000010a   Code   RO           37    .text.get_len_keycard  main.o
-    0x08002a62   0x08002a62   0x00000002   PAD
-    0x08002a64   0x08002a64   0x00000054   Code   RO          115    .text.lcd_clear     lcd.o
-    0x08002ab8   0x08002ab8   0x00000116   Code   RO          119    .text.lcd_init      lcd.o
-    0x08002bce   0x08002bce   0x00000002   PAD
-    0x08002bd0   0x08002bd0   0x0000005a   Code   RO          117    .text.lcd_put_cur   lcd.o
-    0x08002c2a   0x08002c2a   0x00000002   PAD
-    0x08002c2c   0x08002c2c   0x00000044   Code   RO          113    .text.lcd_send_data  lcd.o
-    0x08002c70   0x08002c70   0x00000056   Code   RO          121    .text.lcd_send_string  lcd.o
-    0x08002cc6   0x08002cc6   0x00000002   PAD
-    0x08002cc8   0x08002cc8   0x00000294   Code   RO           11    .text.main          main.o
-    0x08002f5c   0x08002f5c   0x000002d6   Code   RO          103    .text.read_keypad   keypad.o
-    0x08003232   0x08003232   0x00000002   PAD
-    0x08003234   0x08003234   0x00000108   Code   RO           33    .text.run_CheckPass  main.o
-    0x0800333c   0x0800333c   0x00000160   Code   RO           31    .text.run_InputPass  main.o
-    0x0800349c   0x0800349c   0x0000010c   Code   RO           27    .text.run_Normal    main.o
-    0x080035a8   0x080035a8   0x00000010   Data   RO          821    .rodata.AHBPrescTable  system_stm32f1xx.o
-    0x080035b8   0x080035b8   0x00000008   Data   RO          822    .rodata.APBPrescTable  system_stm32f1xx.o
-    0x080035c0   0x080035c0   0x00000002   Data   RO          456    .rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable  stm32f1xx_hal_rcc.o
-    0x080035c2   0x080035c2   0x00000010   Data   RO          455    .rodata.cst16       stm32f1xx_hal_rcc.o
-    0x080035d2   0x080035d2   0x00000049   Data   RO           43    .rodata.str1.1      main.o
-    0x0800361b   0x0800361b   0x00000001   PAD
-    0x0800361c   0x0800361c   0x00000020   Data   RO          998    Region$$Table       anon$$obj.o
+    0x0800256c   0x0800256c   0x000002f4   Code   RO          135    .text.add_Card      main.o
+    0x08002860   0x08002860   0x00000230   Code   RO          133    .text.check_Card    main.o
+    0x08002a90   0x08002a90   0x00000344   Code   RO          137    .text.del_Card      main.o
+    0x08002dd4   0x08002dd4   0x00000104   Code   RO          131    .text.get_key       main.o
+    0x08002ed8   0x08002ed8   0x0000015a   Code   RO          151    .text.get_len_keycard  main.o
+    0x08003032   0x08003032   0x00000002   PAD
+    0x08003034   0x08003034   0x00000054   Code   RO           23    .text.lcd_clear     lcd.o
+    0x08003088   0x08003088   0x00000116   Code   RO           27    .text.lcd_init      lcd.o
+    0x0800319e   0x0800319e   0x00000002   PAD
+    0x080031a0   0x080031a0   0x0000005a   Code   RO           25    .text.lcd_put_cur   lcd.o
+    0x080031fa   0x080031fa   0x00000002   PAD
+    0x080031fc   0x080031fc   0x00000044   Code   RO           21    .text.lcd_send_data  lcd.o
+    0x08003240   0x08003240   0x00000056   Code   RO           29    .text.lcd_send_string  lcd.o
+    0x08003296   0x08003296   0x00000002   PAD
+    0x08003298   0x08003298   0x000000be   Code   RO          127    .text.loop_main     main.o
+    0x08003356   0x08003356   0x00000002   PAD
+    0x08003358   0x08003358   0x00000234   Code   RO          123    .text.main          main.o
+    0x0800358c   0x0800358c   0x000002d6   Code   RO           11    .text.read_keypad   keypad.o
+    0x08003862   0x08003862   0x00000002   PAD
+    0x08003864   0x08003864   0x00000110   Code   RO          147    .text.run_CheckPass  main.o
+    0x08003974   0x08003974   0x00000164   Code   RO          143    .text.run_InputPass  main.o
+    0x08003ad8   0x08003ad8   0x00000110   Code   RO          139    .text.run_Normal    main.o
+    0x08003be8   0x08003be8   0x000002ac   Code   RO          145    .text.run_PassMaster  main.o
+    0x08003e94   0x08003e94   0x00000010   Data   RO          822    .rodata.AHBPrescTable  system_stm32f1xx.o
+    0x08003ea4   0x08003ea4   0x00000008   Data   RO          823    .rodata.APBPrescTable  system_stm32f1xx.o
+    0x08003eac   0x08003eac   0x00000002   Data   RO          457    .rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable  stm32f1xx_hal_rcc.o
+    0x08003eae   0x08003eae   0x00000010   Data   RO          456    .rodata.cst16       stm32f1xx_hal_rcc.o
+    0x08003ebe   0x08003ebe   0x0000007f   Data   RO          157    .rodata.str1.1      main.o
+    0x08003f3d   0x08003f3d   0x00000003   PAD
+    0x08003f40   0x08003f40   0x00000020   Data   RO          999    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08003640, Size: 0x00000790, Max: 0x00005000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08003f60, Size: 0x000007a0, Max: 0x00005000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08003640   0x0000000a   Data   RW           50    .data..L_MergedGlobals  main.o
-    0x2000000a   0x0800364a   0x00000002   PAD
-    0x2000000c   0x0800364c   0x00000008   Data   RW          418    .data..L_MergedGlobals  stm32f1xx_hal.o
-    0x20000014   0x08003654   0x00000004   Data   RW          820    .data.SystemCoreClock  system_stm32f1xx.o
-    0x20000018        -       0x00000060   Zero   RW          863    .bss                c_w.l(libspace.o)
-    0x20000078        -       0x00000044   Zero   RW           51    .bss..L_MergedGlobals.19  main.o
-    0x200000bc        -       0x00000054   Zero   RW           44    .bss.hi2c1          main.o
-    0x20000110        -       0x00000058   Zero   RW           45    .bss.hspi1          main.o
-    0x20000168        -       0x00000020   Zero   RW          643    .bss.pFlash         stm32f1xx_hal_flash.o
-    0x20000188        -       0x00000004   Zero   RW          417    .bss.uwTick         stm32f1xx_hal.o
-    0x2000018c   0x08003658   0x00000004   PAD
-    0x20000190        -       0x00000200   Zero   RW            2    HEAP                startup_stm32f103xb.o
-    0x20000390        -       0x00000400   Zero   RW            1    STACK               startup_stm32f103xb.o
+    0x20000000   0x08003f60   0x0000000a   Data   RW          163    .data..L_MergedGlobals  main.o
+    0x2000000a   0x08003f6a   0x00000002   PAD
+    0x2000000c   0x08003f6c   0x00000008   Data   RW          419    .data..L_MergedGlobals  stm32f1xx_hal.o
+    0x20000014   0x08003f74   0x00000004   Data   RW          821    .data.SystemCoreClock  system_stm32f1xx.o
+    0x20000018        -       0x00000060   Zero   RW          864    .bss                c_w.l(libspace.o)
+    0x20000078        -       0x00000050   Zero   RW          164    .bss..L_MergedGlobals.40  main.o
+    0x200000c8        -       0x00000054   Zero   RW          158    .bss.hi2c1          main.o
+    0x2000011c        -       0x00000058   Zero   RW          159    .bss.hspi1          main.o
+    0x20000174   0x08003f78   0x00000004   PAD
+    0x20000178        -       0x00000020   Zero   RW          644    .bss.pFlash         stm32f1xx_hal_flash.o
+    0x20000198        -       0x00000004   Zero   RW          418    .bss.uwTick         stm32f1xx_hal.o
+    0x2000019c   0x08003f78   0x00000004   PAD
+    0x200001a0        -       0x00000200   Zero   RW            2    HEAP                startup_stm32f103xb.o
+    0x200003a0        -       0x00000400   Zero   RW            1    STACK               startup_stm32f103xb.o
 
 
 ==============================================================================
@@ -2273,7 +2305,7 @@ Image component sizes
        200          0          0          0          0      16795   flash.o
        726          0          0          0          0       1376   keypad.o
        606          0          0          0          0       4048   lcd.o
-      2812        222         73         10        240      11915   main.o
+      5096        472        127         10        252      14783   main.o
       2318          0          0          0          0      17354   rc522.o
         64         26        236          0       1536        828   startup_stm32f103xb.o
        188          0          0          8          4       5774   stm32f1xx_hal.o
@@ -2289,9 +2321,9 @@ Image component sizes
          2          0         24          4          0       1654   system_stm32f1xx.o
 
     ----------------------------------------------------------------------
-     13220        270        384         24       1816     167708   Object Totals
+     15504        520        440         24       1832     170576   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        78          0          1          2          4          0   (incl. Padding)
+        78          0          3          2          8          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -2338,15 +2370,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     13500        286        384         24       1912     167884   Grand Totals
-     13500        286        384         24       1912     167884   ELF Image Totals
-     13500        286        384         24          0          0   ROM Totals
+     15784        536        440         24       1928     170752   Grand Totals
+     15784        536        440         24       1928     170752   ELF Image Totals
+     15784        536        440         24          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                13884 (  13.56kB)
-    Total RW  Size (RW Data + ZI Data)              1936 (   1.89kB)
-    Total ROM Size (Code + RO Data + RW Data)      13908 (  13.58kB)
+    Total RO  Size (Code + RO Data)                16224 (  15.84kB)
+    Total RW  Size (RW Data + ZI Data)              1952 (   1.91kB)
+    Total ROM Size (Code + RO Data + RW Data)      16248 (  15.87kB)
 
 ==============================================================================
 
