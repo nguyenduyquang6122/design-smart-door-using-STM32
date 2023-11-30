@@ -644,8 +644,10 @@ char check_card_RFID()
 		lcd_send_string("NO EXIST");
 		lcd_put_cur(1,6);
 		lcd_send_string("THE CARD");
-		
-	} else
+		HAL_Delay(2000);
+		lcd_clear();
+	} 
+	else
 	{
 		bool is_true_card = false;
 		char buff_uID[10];
@@ -654,10 +656,18 @@ char check_card_RFID()
 		memcpy(serNum, str, 4);
 		if(status == MI_OK)
 		{
-			for(i=0; i<4; i++)
+			for(i=0; i<len_key_card; i++)
 			{
-				if(key_card[i] != serNum[i]) is_true_card = false;
-				else is_true_card = true;
+				if(key_card[i] != serNum[i%4])
+				{
+					is_true_card = false;
+					break;
+				}
+				else
+				{
+					is_true_card = true;
+					break;
+				}
 			}
 			if(is_true_card == false)
 			{
