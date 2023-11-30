@@ -52,6 +52,7 @@
 #define ADDRESS_PMASTER_STORAGE (0x08000000 + 90 * 1024)
 #define ADDRESS_PASS_STORAGE (0x08000000 + 91 * 1024)
 #define ADDRESS_CARD_STORAGE (0x08000000 + 92 * 1024)
+#define LIMIT_CARD	5
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
