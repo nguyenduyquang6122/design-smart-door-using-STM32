@@ -750,7 +750,7 @@ void add_Card()
 				Flash_Erase(ADDRESS_CARD_STORAGE);
 				Flash_Write_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
 				HAL_Delay(100);
-				Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 20);
+				Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
 				
 				lcd_clear();
 				lcd_put_cur(0,1);
@@ -801,7 +801,7 @@ void del_Card()
 				Flash_Erase(ADDRESS_CARD_STORAGE);
 				Flash_Write_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
 				HAL_Delay(100);
-				Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, 20);
+				Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
 				
 				lcd_clear();
 				lcd_put_cur(0,1);
