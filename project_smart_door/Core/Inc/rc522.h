@@ -111,7 +111,6 @@ extern SPI_HandleTypeDef hspi1;
 
 #define MFRC522_DUMMY									0x00		// Dummy byte
 #define MFRC522_MAX_LEN								16			// Buf len byte
-#define LIMIT_CARD										5
 
 
 // RC522
