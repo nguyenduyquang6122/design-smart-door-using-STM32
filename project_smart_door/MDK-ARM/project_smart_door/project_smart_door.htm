@@ -3,7 +3,7 @@
 <title>Static Call Graph - [project_smart_door\project_smart_door.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image project_smart_door\project_smart_door.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Thu Nov 30 15:56:56 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Fri Dec  8 17:59:25 2023
 <BR><P>
 <H3>Maximum Stack Usage =        344 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -437,7 +437,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_PassMaster
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_InputPass
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add_Card
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
 <LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -447,8 +447,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_len_keycard
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_InputPass
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add_Card
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
 </UL>
 
 <P><STRONG><a name="[4f]"></a>Flash_Write_Array</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, flash.o(.text.Flash_Write_Array))
@@ -461,7 +461,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_PassMaster
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_InputPass
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add_Card
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
 <LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -475,11 +475,12 @@ Global Symbols
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_InputPass
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_Normal
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add_Card
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_Card
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;press_button
 <LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init
 </UL>
 
 <P><STRONG><a name="[4d]"></a>HAL_FLASHEx_Erase</STRONG> (Thumb, 238 bytes, Stack size 32 bytes, stm32f1xx_hal_flash_ex.o(.text.HAL_FLASHEx_Erase))
@@ -517,18 +518,17 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[82]"></a>HAL_GPIO_ReadPin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f1xx_hal_gpio.o(.text.HAL_GPIO_ReadPin))
-<BR><BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_keypad
+<BR><BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;press_button
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_keypad
 </UL>
 
-<P><STRONG><a name="[78]"></a>HAL_GPIO_TogglePin</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f1xx_hal_gpio.o(.text.HAL_GPIO_TogglePin))
+<P><STRONG><a name="[68]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f1xx_hal_gpio.o(.text.HAL_GPIO_WritePin))
 <BR><BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_PassMaster
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_CheckPass
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_Normal
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_Card
-</UL>
-
-<P><STRONG><a name="[68]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f1xx_hal_gpio.o(.text.HAL_GPIO_WritePin))
-<BR><BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;press_button
+<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MFRC522_AntennaOn
 <LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MFRC522_Init
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MFRC522_ClearBitMask
@@ -536,7 +536,7 @@ Global Symbols
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MFRC522_Request
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MFRC522_Anticoll
 <LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MFRC522_ToCard
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_keypad
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_keypad
 </UL>
 
 <P><STRONG><a name="[4a]"></a>HAL_GetTick</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f1xx_hal.o(.text.HAL_GetTick))
@@ -572,10 +572,10 @@ Global Symbols
 <LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_send_string
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_put_cur
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_clear
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_send_data
+<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_send_data
 </UL>
 
 <P><STRONG><a name="[53]"></a>HAL_I2C_MspInit</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, stm32f1xx_hal_msp.o(.text.HAL_I2C_MspInit))
@@ -707,7 +707,7 @@ Global Symbols
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add_Card
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_Card
 </UL>
 
@@ -738,7 +738,7 @@ Global Symbols
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add_Card
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_Card
 </UL>
 
@@ -799,7 +799,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xb.o(RESET)
 </UL>
-<P><STRONG><a name="[70]"></a>add_Card</STRONG> (Thumb, 680 bytes, Stack size 40 bytes, main.o(.text.add_Card))
+<P><STRONG><a name="[70]"></a>add_Card</STRONG> (Thumb, 676 bytes, Stack size 40 bytes, main.o(.text.add_Card))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = add_Card &rArr; MFRC522_Request &rArr; MFRC522_ToCard &rArr; MFRC522_ClearBitMask &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_CheckPass
@@ -813,25 +813,25 @@ Global Symbols
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_put_cur
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_clear
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
 </UL>
 
-<P><STRONG><a name="[76]"></a>check_Card</STRONG> (Thumb, 532 bytes, Stack size 40 bytes, main.o(.text.check_Card))
+<P><STRONG><a name="[76]"></a>check_Card</STRONG> (Thumb, 612 bytes, Stack size 40 bytes, main.o(.text.check_Card))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = check_Card &rArr; MFRC522_Request &rArr; MFRC522_ToCard &rArr; MFRC522_ClearBitMask &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_len_keycard
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_len_keycard
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MFRC522_Request
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MFRC522_Anticoll
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_send_string
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_put_cur
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_clear
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
 </UL>
 
-<P><STRONG><a name="[79]"></a>del_Card</STRONG> (Thumb, 784 bytes, Stack size 48 bytes, main.o(.text.del_Card))
+<P><STRONG><a name="[78]"></a>del_Card</STRONG> (Thumb, 784 bytes, Stack size 48 bytes, main.o(.text.del_Card))
 <BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = del_Card &rArr; MFRC522_Request &rArr; MFRC522_ToCard &rArr; MFRC522_ClearBitMask &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_CheckPass
@@ -845,20 +845,20 @@ Global Symbols
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_put_cur
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_clear
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
 </UL>
 
-<P><STRONG><a name="[7a]"></a>get_key</STRONG> (Thumb, 260 bytes, Stack size 16 bytes, main.o(.text.get_key))
+<P><STRONG><a name="[79]"></a>get_key</STRONG> (Thumb, 260 bytes, Stack size 16 bytes, main.o(.text.get_key))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = get_key &rArr; lcd_clear &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_put_cur
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_clear
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_send_data
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_keypad
+<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_send_data
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_keypad
 </UL>
 <BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_PassMaster
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
 </UL>
 
 <P><STRONG><a name="[77]"></a>get_len_keycard</STRONG> (Thumb, 346 bytes, Stack size 8 bytes, main.o(.text.get_len_keycard))
@@ -879,14 +879,15 @@ Global Symbols
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_InputPass
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_Normal
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add_Card
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_Card
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;press_button
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
 <LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[7d]"></a>lcd_init</STRONG> (Thumb, 278 bytes, Stack size 24 bytes, lcd.o(.text.lcd_init))
+<P><STRONG><a name="[7c]"></a>lcd_init</STRONG> (Thumb, 278 bytes, Stack size 24 bytes, lcd.o(.text.lcd_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = lcd_init &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
@@ -905,19 +906,20 @@ Global Symbols
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_InputPass
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_Normal
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add_Card
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_Card
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;press_button
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
 <LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[7c]"></a>lcd_send_data</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, lcd.o(.text.lcd_send_data))
+<P><STRONG><a name="[7b]"></a>lcd_send_data</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, lcd.o(.text.lcd_send_data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = lcd_send_data &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key
+<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key
 </UL>
 
 <P><STRONG><a name="[73]"></a>lcd_send_string</STRONG> (Thumb, 86 bytes, Stack size 32 bytes, lcd.o(.text.lcd_send_string))
@@ -930,13 +932,14 @@ Global Symbols
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_InputPass
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_Normal
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add_Card
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_Card
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;press_button
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
 <LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[7e]"></a>loop_main</STRONG> (Thumb, 190 bytes, Stack size 16 bytes, main.o(.text.loop_main))
+<P><STRONG><a name="[7d]"></a>loop_main</STRONG> (Thumb, 194 bytes, Stack size 16 bytes, main.o(.text.loop_main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = loop_main &rArr; del_Card &rArr; MFRC522_Request &rArr; MFRC522_ToCard &rArr; MFRC522_ClearBitMask &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_PassMaster
@@ -944,9 +947,10 @@ Global Symbols
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_InputPass
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_Normal
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add_Card
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_Card
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;press_button
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Read_Array
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_send_string
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_put_cur
@@ -958,7 +962,7 @@ Global Symbols
 <P><STRONG><a name="[40]"></a>main</STRONG> (Thumb, 536 bytes, Stack size 64 bytes, main.o(.text.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 344<LI>Call Chain = main &rArr; loop_main &rArr; del_Card &rArr; MFRC522_Request &rArr; MFRC522_ToCard &rArr; MFRC522_ClearBitMask &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
+<BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Init
 <LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Init
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
@@ -970,7 +974,7 @@ Global Symbols
 <LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MFRC522_Init
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_send_string
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_put_cur
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_clear
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
@@ -978,32 +982,45 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[7b]"></a>read_keypad</STRONG> (Thumb, 726 bytes, Stack size 16 bytes, keypad.o(.text.read_keypad))
+<P><STRONG><a name="[7e]"></a>press_button</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, main.o(.text.press_button))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = press_button &rArr; lcd_clear &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
+</UL>
+<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_send_string
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_put_cur
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_clear
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+</UL>
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
+</UL>
+
+<P><STRONG><a name="[7a]"></a>read_keypad</STRONG> (Thumb, 726 bytes, Stack size 16 bytes, keypad.o(.text.read_keypad))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = read_keypad
 </UL>
 <BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key
+<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key
 </UL>
 
-<P><STRONG><a name="[74]"></a>run_CheckPass</STRONG> (Thumb, 256 bytes, Stack size 24 bytes, main.o(.text.run_CheckPass))
+<P><STRONG><a name="[74]"></a>run_CheckPass</STRONG> (Thumb, 308 bytes, Stack size 24 bytes, main.o(.text.run_CheckPass))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = run_CheckPass &rArr; lcd_clear &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
-<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_send_string
+<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_send_string
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_put_cur
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_clear
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_PassMaster
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_Normal
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add_Card
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_Card
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
 </UL>
 
-<P><STRONG><a name="[80]"></a>run_InputPass</STRONG> (Thumb, 316 bytes, Stack size 16 bytes, main.o(.text.run_InputPass))
+<P><STRONG><a name="[80]"></a>run_InputPass</STRONG> (Thumb, 372 bytes, Stack size 16 bytes, main.o(.text.run_InputPass))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = run_InputPass &rArr; lcd_clear &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Read_Array
@@ -1014,36 +1031,36 @@ Global Symbols
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_put_cur
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_clear
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
 </UL>
 
-<P><STRONG><a name="[7f]"></a>run_Normal</STRONG> (Thumb, 240 bytes, Stack size 24 bytes, main.o(.text.run_Normal))
+<P><STRONG><a name="[7f]"></a>run_Normal</STRONG> (Thumb, 320 bytes, Stack size 24 bytes, main.o(.text.run_Normal))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = run_Normal &rArr; run_CheckPass &rArr; lcd_clear &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_CheckPass
+<BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_CheckPass
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_send_string
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_put_cur
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_clear
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
 </UL>
 
-<P><STRONG><a name="[81]"></a>run_PassMaster</STRONG> (Thumb, 524 bytes, Stack size 32 bytes, main.o(.text.run_PassMaster))
+<P><STRONG><a name="[81]"></a>run_PassMaster</STRONG> (Thumb, 532 bytes, Stack size 32 bytes, main.o(.text.run_PassMaster))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = run_PassMaster &rArr; run_CheckPass &rArr; lcd_clear &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_CheckPass
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key
+<BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_CheckPass
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Write_Array
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Erase
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_send_string
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_put_cur
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_clear
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loop_main
 </UL>
 <P>
 <H3>
