@@ -433,7 +433,9 @@ void get_key()
 	// Nhan # de xac nhan password or cho phep nhap password
   else if (key == '#') 
   {
-		mode_pass = 4;
+		lcd_clear();
+    count_key_in = 0;
+    count_key = 0;
     check_pass = 2;
     mode_pass = MODE_RUN;
 		
@@ -686,7 +688,8 @@ void run_InputPass(){
       HAL_Delay(2000);
       lcd_clear();
       status_pass = 2;
-      mode_pass = MODE_CHECK_CARD;
+			mode_pass = 4;
+      mode_card = MODE_CHECK_CARD;
     }
   }
 }
@@ -721,11 +724,11 @@ void run_PassMaster()
 				lcd_clear(); // Xoa man hinh
 				if(key == '1')
 				{
+					notify_audio(1);
 					lcd_put_cur(0,0);
 					lcd_send_string("CHO0SE 1");
 					lcd_put_cur(1,0);
 					lcd_send_string("RESET PASSWORD");
-					notify_audio(1);
 					Flash_Erase(ADDRESS_PASS_STORAGE);
 					Flash_Write_Array(ADDRESS_PASS_STORAGE, (uint8_t*)pass_master, LIMIT_PASS);
 					HAL_Delay(100);
@@ -734,7 +737,7 @@ void run_PassMaster()
 					Flash_Write_Int(ADDRESS_COUNT_STORAGE, count_enter_pass);
 					HAL_Delay(100);
 					HAL_Delay(3000);
-					notify_audio(1);
+					notify_audio(2);
 					lcd_clear();
 					mode_pass = 4;
 					check_pass = 2;
@@ -744,11 +747,11 @@ void run_PassMaster()
 				}
 				else if(key == '2')
 				{
+					notify_audio(1);
 					lcd_put_cur(0,0);
 					lcd_send_string("CHO0SE 2");
 					lcd_put_cur(1,0);
 					lcd_send_string("RESET SYSTEM");
-					notify_audio(1);
 					Flash_Erase(ADDRESS_PASS_STORAGE);
 					Flash_Write_Array(ADDRESS_PASS_STORAGE, (uint8_t*)pass_master, LIMIT_PASS);
 					HAL_Delay(100);
@@ -762,7 +765,7 @@ void run_PassMaster()
 					HAL_Delay(100);
 					Flash_Erase(ADDRESS_CARD_STORAGE);
 					HAL_Delay(3000);
-					notify_audio(1);
+					notify_audio(2);
 					lcd_clear();
 					mode_pass = 4;
 					check_pass = 2;
@@ -930,7 +933,7 @@ void add_Card()
 	else
 	{
 		lcd_put_cur(0, 0);
-		lcd_send_string("PASSWORD MASTER: ");
+		lcd_send_string("PASSWORD MASTER:");
 		status_pass = run_CheckPass(pass_master);
 		if(status_pass == OK)
 		{
@@ -1015,7 +1018,7 @@ void del_Card()
 	else
 	{
 		lcd_put_cur(0, 0);
-		lcd_send_string("PASSWORD MASTER: ");
+		lcd_send_string("PASSWORD MASTER:");
 		status_pass = run_CheckPass(pass_master);
 		if(status_pass == OK)
 		{
@@ -1102,9 +1105,9 @@ void notify_audio(int s)
 // Ham mo khoa
 void open_latch()
 {
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, 0);
-	HAL_Delay(5000);
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, 1);
+	HAL_Delay(5000);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, 0);
 }
 
 // Ham nhan mo cua

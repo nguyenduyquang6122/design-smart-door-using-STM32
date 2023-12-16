@@ -190,7 +190,7 @@ Section Cross References
     main.o(.text.main) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
     main.o(.text.main) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
     main.o(.text.main) refers to lcd.o(.text.lcd_clear) for lcd_clear
-    main.o(.text.main) refers to main.o(.bss..L_MergedGlobals.41) for .L_MergedGlobals.41
+    main.o(.text.main) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
     main.o(.text.main) refers to main.o(.rodata.str1.1) for .L.str.10
     main.o(.text.main) refers to flash.o(.text.Flash_Read_Array) for Flash_Read_Array
     main.o(.text.main) refers to flash.o(.text.Flash_Read_Int) for Flash_Read_Int
@@ -219,7 +219,7 @@ Section Cross References
     main.o(.text.loop_main) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
     main.o(.text.loop_main) refers (Special) to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
     main.o(.text.loop_main) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
-    main.o(.text.loop_main) refers to main.o(.bss..L_MergedGlobals.41) for .L_MergedGlobals.41
+    main.o(.text.loop_main) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
     main.o(.text.loop_main) refers to flash.o(.text.Flash_Read_Array) for Flash_Read_Array
     main.o(.text.loop_main) refers to flash.o(.text.Flash_Read_Int) for Flash_Read_Int
     main.o(.text.loop_main) refers to main.o(.text.press_button) for press_button
@@ -247,12 +247,12 @@ Section Cross References
     main.o(.text.get_key) refers (Special) to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
     main.o(.text.get_key) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
     main.o(.text.get_key) refers to keypad.o(.text.read_keypad) for read_keypad
-    main.o(.text.get_key) refers to main.o(.bss..L_MergedGlobals.41) for .L_MergedGlobals.41
+    main.o(.text.get_key) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
     main.o(.text.get_key) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
+    main.o(.text.get_key) refers to lcd.o(.text.lcd_clear) for lcd_clear
     main.o(.text.get_key) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
     main.o(.text.get_key) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
     main.o(.text.get_key) refers to lcd.o(.text.lcd_send_data) for lcd_send_data
-    main.o(.text.get_key) refers to lcd.o(.text.lcd_clear) for lcd_clear
     main.o(.ARM.exidx.text.get_key) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
     main.o(.ARM.exidx.text.get_key) refers (Special) to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
     main.o(.ARM.exidx.text.get_key) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
@@ -268,7 +268,7 @@ Section Cross References
     main.o(.text.press_button) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
     main.o(.text.press_button) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
     main.o(.text.press_button) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
-    main.o(.text.press_button) refers to main.o(.bss..L_MergedGlobals.41) for .L_MergedGlobals.41
+    main.o(.text.press_button) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
     main.o(.ARM.exidx.text.press_button) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
     main.o(.ARM.exidx.text.press_button) refers (Special) to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
     main.o(.ARM.exidx.text.press_button) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
@@ -278,7 +278,7 @@ Section Cross References
     main.o(.text.check_Card) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
     main.o(.text.check_Card) refers to main.o(.bss.key_card) for key_card
     main.o(.text.check_Card) refers to flash.o(.text.Flash_Read_Array) for Flash_Read_Array
-    main.o(.text.check_Card) refers to main.o(.bss..L_MergedGlobals.41) for .L_MergedGlobals.41
+    main.o(.text.check_Card) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
     main.o(.text.check_Card) refers to main.o(.text.check_card_RFID) for check_card_RFID
     main.o(.text.check_Card) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
     main.o(.text.check_Card) refers to lcd.o(.text.lcd_clear) for lcd_clear
@@ -294,7 +294,7 @@ Section Cross References
     main.o(.text.add_Card) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
     main.o(.text.add_Card) refers (Special) to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
     main.o(.text.add_Card) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
-    main.o(.text.add_Card) refers to main.o(.bss..L_MergedGlobals.41) for .L_MergedGlobals.41
+    main.o(.text.add_Card) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
     main.o(.text.add_Card) refers to lcd.o(.text.lcd_clear) for lcd_clear
     main.o(.text.add_Card) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
     main.o(.text.add_Card) refers to main.o(.rodata.str1.1) for .L.str.25
@@ -315,10 +315,10 @@ Section Cross References
     main.o(.text.del_Card) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
     main.o(.text.del_Card) refers (Special) to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
     main.o(.text.del_Card) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
-    main.o(.text.del_Card) refers to main.o(.bss..L_MergedGlobals.41) for .L_MergedGlobals.41
+    main.o(.text.del_Card) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
     main.o(.text.del_Card) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
     main.o(.text.del_Card) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
-    main.o(.text.del_Card) refers to main.o(.rodata.str1.1) for .L.str.29
+    main.o(.text.del_Card) refers to main.o(.rodata.str1.1) for .L.str.16
     main.o(.text.del_Card) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
     main.o(.text.del_Card) refers to main.o(.text.run_CheckPass) for run_CheckPass
     main.o(.text.del_Card) refers to lcd.o(.text.lcd_clear) for lcd_clear
@@ -338,7 +338,7 @@ Section Cross References
     main.o(.text.run_Normal) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
     main.o(.text.run_Normal) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
     main.o(.text.run_Normal) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
-    main.o(.text.run_Normal) refers to main.o(.bss..L_MergedGlobals.41) for .L_MergedGlobals.41
+    main.o(.text.run_Normal) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
     main.o(.text.run_Normal) refers to main.o(.text.run_CheckPass) for run_CheckPass
     main.o(.text.run_Normal) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
     main.o(.text.run_Normal) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
@@ -358,7 +358,7 @@ Section Cross References
     main.o(.text.run_ChangePass) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
     main.o(.text.run_ChangePass) refers to main.o(.rodata.str1.1) for .L.str.10
     main.o(.text.run_ChangePass) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
-    main.o(.text.run_ChangePass) refers to main.o(.bss..L_MergedGlobals.41) for .L_MergedGlobals.41
+    main.o(.text.run_ChangePass) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
     main.o(.text.run_ChangePass) refers to main.o(.text.run_CheckPass) for run_CheckPass
     main.o(.text.run_ChangePass) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
     main.o(.text.run_ChangePass) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
@@ -370,7 +370,7 @@ Section Cross References
     main.o(.text.run_InputPass) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
     main.o(.text.run_InputPass) refers (Special) to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
     main.o(.text.run_InputPass) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
-    main.o(.text.run_InputPass) refers to main.o(.bss..L_MergedGlobals.41) for .L_MergedGlobals.41
+    main.o(.text.run_InputPass) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
     main.o(.text.run_InputPass) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
     main.o(.text.run_InputPass) refers to main.o(.rodata.str1.1) for .L.str.2
     main.o(.text.run_InputPass) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
@@ -389,18 +389,18 @@ Section Cross References
     main.o(.text.run_PassMaster) refers (Special) to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
     main.o(.text.run_PassMaster) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
     main.o(.text.run_PassMaster) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
+    main.o(.text.run_PassMaster) refers to main.o(.rodata.str1.1) for .L.str.16
     main.o(.text.run_PassMaster) refers to lcd.o(.text.lcd_send_string) for lcd_send_string
     main.o(.text.run_PassMaster) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
     main.o(.text.run_PassMaster) refers to main.o(.text.run_CheckPass) for run_CheckPass
     main.o(.text.run_PassMaster) refers to flash.o(.text.Flash_Erase) for Flash_Erase
-    main.o(.text.run_PassMaster) refers to main.o(.bss..L_MergedGlobals.41) for .L_MergedGlobals.41
+    main.o(.text.run_PassMaster) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
     main.o(.text.run_PassMaster) refers to flash.o(.text.Flash_Write_Int) for Flash_Write_Int
     main.o(.text.run_PassMaster) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
     main.o(.text.run_PassMaster) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
     main.o(.text.run_PassMaster) refers to main.o(.text.get_key) for get_key
     main.o(.text.run_PassMaster) refers to lcd.o(.text.lcd_clear) for lcd_clear
     main.o(.text.run_PassMaster) refers to flash.o(.text.Flash_Write_Array) for Flash_Write_Array
-    main.o(.text.run_PassMaster) refers to main.o(.rodata.str1.1) for .L.str.6
     main.o(.text.run_PassMaster) refers to noretval__2sprintf.o(.text) for __2sprintf
     main.o(.ARM.exidx.text.run_PassMaster) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
     main.o(.ARM.exidx.text.run_PassMaster) refers (Special) to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
@@ -409,7 +409,7 @@ Section Cross References
     main.o(.text.run_CheckPass) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
     main.o(.text.run_CheckPass) refers (Special) to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
     main.o(.text.run_CheckPass) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
-    main.o(.text.run_CheckPass) refers to main.o(.bss..L_MergedGlobals.41) for .L_MergedGlobals.41
+    main.o(.text.run_CheckPass) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
     main.o(.text.run_CheckPass) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
     main.o(.text.run_CheckPass) refers to lcd.o(.text.lcd_clear) for lcd_clear
     main.o(.text.run_CheckPass) refers to lcd.o(.text.lcd_put_cur) for lcd_put_cur
@@ -444,7 +444,7 @@ Section Cross References
     main.o(.text.get_len_keycard) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
     main.o(.text.get_len_keycard) refers to main.o(.bss.key_card) for key_card
     main.o(.text.get_len_keycard) refers to flash.o(.text.Flash_Read_Array) for Flash_Read_Array
-    main.o(.text.get_len_keycard) refers to main.o(.bss..L_MergedGlobals.41) for .L_MergedGlobals.41
+    main.o(.text.get_len_keycard) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
     main.o(.ARM.exidx.text.get_len_keycard) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
     main.o(.ARM.exidx.text.get_len_keycard) refers (Special) to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
     main.o(.ARM.exidx.text.get_len_keycard) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
@@ -452,7 +452,7 @@ Section Cross References
     main.o(.text.check_card_RFID) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
     main.o(.text.check_card_RFID) refers (Special) to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
     main.o(.text.check_card_RFID) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
-    main.o(.text.check_card_RFID) refers to main.o(.bss..L_MergedGlobals.41) for .L_MergedGlobals.41
+    main.o(.text.check_card_RFID) refers to main.o(.bss..L_MergedGlobals.40) for .L_MergedGlobals.40
     main.o(.text.check_card_RFID) refers to rc522.o(.text.MFRC522_Request) for MFRC522_Request
     main.o(.text.check_card_RFID) refers to rc522.o(.text.MFRC522_Anticoll) for MFRC522_Anticoll
     main.o(.text.check_card_RFID) refers to main.o(.data..L_MergedGlobals) for .L_MergedGlobals
@@ -490,9 +490,9 @@ Section Cross References
     main.o(.data..L_MergedGlobals) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
     main.o(.data..L_MergedGlobals) refers (Special) to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
     main.o(.data..L_MergedGlobals) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
-    main.o(.bss..L_MergedGlobals.41) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
-    main.o(.bss..L_MergedGlobals.41) refers (Special) to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
-    main.o(.bss..L_MergedGlobals.41) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
+    main.o(.bss..L_MergedGlobals.40) refers (Special) to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    main.o(.bss..L_MergedGlobals.40) refers (Special) to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
+    main.o(.bss..L_MergedGlobals.40) refers (Special) to _printf_dec.o(.text) for _printf_int_dec
     stm32f1xx_it.o(.ARM.exidx.text.NMI_Handler) refers to stm32f1xx_it.o(.text.NMI_Handler) for [Anonymous Symbol]
     stm32f1xx_it.o(.ARM.exidx.text.HardFault_Handler) refers to stm32f1xx_it.o(.text.HardFault_Handler) for [Anonymous Symbol]
     stm32f1xx_it.o(.ARM.exidx.text.MemManage_Handler) refers to stm32f1xx_it.o(.text.MemManage_Handler) for [Anonymous Symbol]
@@ -2029,45 +2029,45 @@ Image Symbol Table
     [Anonymous Symbol]                       0x08002d10   Section        0  main.o(.text.check_card_RFID)
     [Anonymous Symbol]                       0x08002e3c   Section        0  main.o(.text.del_Card)
     [Anonymous Symbol]                       0x08003150   Section        0  main.o(.text.get_key)
-    [Anonymous Symbol]                       0x08003254   Section        0  lcd.o(.text.lcd_clear)
-    [Anonymous Symbol]                       0x080032a8   Section        0  lcd.o(.text.lcd_init)
-    [Anonymous Symbol]                       0x080033c0   Section        0  lcd.o(.text.lcd_put_cur)
-    [Anonymous Symbol]                       0x0800341c   Section        0  lcd.o(.text.lcd_send_data)
-    [Anonymous Symbol]                       0x08003460   Section        0  lcd.o(.text.lcd_send_string)
-    [Anonymous Symbol]                       0x080034b8   Section        0  main.o(.text.main)
-    [Anonymous Symbol]                       0x080037e4   Section        0  main.o(.text.press_button)
-    [Anonymous Symbol]                       0x080038c4   Section        0  keypad.o(.text.read_keypad)
-    [Anonymous Symbol]                       0x08003b9c   Section        0  main.o(.text.run_CheckPass)
-    [Anonymous Symbol]                       0x08003d20   Section        0  main.o(.text.run_InputPass)
-    [Anonymous Symbol]                       0x08003f54   Section        0  main.o(.text.run_Normal)
-    [Anonymous Symbol]                       0x08004248   Section        0  main.o(.text.run_PassMaster)
-    HAL_RCC_GetSysClockFreq.aPredivFactorTable 0x08004760   Data           2  stm32f1xx_hal_rcc.o(.rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
-    [Anonymous Symbol]                       0x08004760   Section        0  stm32f1xx_hal_rcc.o(.rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
-    HAL_RCC_GetSysClockFreq.aPLLMULFactorTable 0x08004762   Data          16  stm32f1xx_hal_rcc.o(.rodata.cst16)
-    [Anonymous Symbol]                       0x08004762   Section        0  stm32f1xx_hal_rcc.o(.rodata.cst16)
-    .L.str.29                                0x08004772   Data          18  main.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08004772   Section        0  main.o(.rodata.str1.1)
-    .L.str.7                                 0x08004784   Data           9  main.o(.rodata.str1.1)
-    .L.str.5                                 0x0800478d   Data          14  main.o(.rodata.str1.1)
-    .L.str.2                                 0x0800479b   Data           2  main.o(.rodata.str1.1)
-    .L.str.10                                0x0800479d   Data          14  main.o(.rodata.str1.1)
-    .L.str.11                                0x080047ab   Data          14  main.o(.rodata.str1.1)
-    .L.str.33                                0x080047b9   Data           9  main.o(.rodata.str1.1)
-    .L.str.13                                0x080047c2   Data           7  main.o(.rodata.str1.1)
-    .L.str.32                                0x080047c9   Data          14  main.o(.rodata.str1.1)
-    .L.str.8                                 0x080047d7   Data           9  main.o(.rodata.str1.1)
-    .L.str.25                                0x080047e0   Data          11  main.o(.rodata.str1.1)
-    .L.str.9                                 0x080047eb   Data          11  main.o(.rodata.str1.1)
-    .L.str.6                                 0x080047f6   Data          15  main.o(.rodata.str1.1)
-    .L.str.14                                0x08004805   Data          13  main.o(.rodata.str1.1)
-    .L.str.26                                0x08004812   Data          16  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08003258   Section        0  lcd.o(.text.lcd_clear)
+    [Anonymous Symbol]                       0x080032ac   Section        0  lcd.o(.text.lcd_init)
+    [Anonymous Symbol]                       0x080033c4   Section        0  lcd.o(.text.lcd_put_cur)
+    [Anonymous Symbol]                       0x08003420   Section        0  lcd.o(.text.lcd_send_data)
+    [Anonymous Symbol]                       0x08003464   Section        0  lcd.o(.text.lcd_send_string)
+    [Anonymous Symbol]                       0x080034bc   Section        0  main.o(.text.main)
+    [Anonymous Symbol]                       0x080037e8   Section        0  main.o(.text.press_button)
+    [Anonymous Symbol]                       0x080038c8   Section        0  keypad.o(.text.read_keypad)
+    [Anonymous Symbol]                       0x08003ba0   Section        0  main.o(.text.run_CheckPass)
+    [Anonymous Symbol]                       0x08003d24   Section        0  main.o(.text.run_InputPass)
+    [Anonymous Symbol]                       0x08003f60   Section        0  main.o(.text.run_Normal)
+    [Anonymous Symbol]                       0x08004254   Section        0  main.o(.text.run_PassMaster)
+    HAL_RCC_GetSysClockFreq.aPredivFactorTable 0x0800475c   Data           2  stm32f1xx_hal_rcc.o(.rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
+    [Anonymous Symbol]                       0x0800475c   Section        0  stm32f1xx_hal_rcc.o(.rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
+    HAL_RCC_GetSysClockFreq.aPLLMULFactorTable 0x0800475e   Data          16  stm32f1xx_hal_rcc.o(.rodata.cst16)
+    [Anonymous Symbol]                       0x0800475e   Section        0  stm32f1xx_hal_rcc.o(.rodata.cst16)
+    .L.str.7                                 0x0800476e   Data           9  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x0800476e   Section        0  main.o(.rodata.str1.1)
+    .L.str.5                                 0x08004777   Data          14  main.o(.rodata.str1.1)
+    .L.str.2                                 0x08004785   Data           2  main.o(.rodata.str1.1)
+    .L.str.10                                0x08004787   Data          14  main.o(.rodata.str1.1)
+    .L.str.11                                0x08004795   Data          14  main.o(.rodata.str1.1)
+    .L.str.16                                0x080047a3   Data          17  main.o(.rodata.str1.1)
+    .L.str.32                                0x080047b4   Data           9  main.o(.rodata.str1.1)
+    .L.str.13                                0x080047bd   Data           7  main.o(.rodata.str1.1)
+    .L.str.31                                0x080047c4   Data          14  main.o(.rodata.str1.1)
+    .L.str.8                                 0x080047d2   Data           9  main.o(.rodata.str1.1)
+    .L.str.25                                0x080047db   Data          11  main.o(.rodata.str1.1)
+    .L.str.9                                 0x080047e6   Data          11  main.o(.rodata.str1.1)
+    .L.str.6                                 0x080047f1   Data          15  main.o(.rodata.str1.1)
+    .L.str.14                                0x08004800   Data          13  main.o(.rodata.str1.1)
+    .L.str.26                                0x0800480d   Data          16  main.o(.rodata.str1.1)
     .L_MergedGlobals                         0x20000000   Data          12  main.o(.data..L_MergedGlobals)
     [Anonymous Symbol]                       0x20000000   Section        0  main.o(.data..L_MergedGlobals)
     .L_MergedGlobals                         0x2000000c   Data           8  stm32f1xx_hal.o(.data..L_MergedGlobals)
     [Anonymous Symbol]                       0x2000000c   Section        0  stm32f1xx_hal.o(.data..L_MergedGlobals)
     .bss                                     0x20000018   Section       96  libspace.o(.bss)
-    .L_MergedGlobals.41                      0x20000078   Data          68  main.o(.bss..L_MergedGlobals.41)
-    [Anonymous Symbol]                       0x20000078   Section        0  main.o(.bss..L_MergedGlobals.41)
+    .L_MergedGlobals.40                      0x20000078   Data          68  main.o(.bss..L_MergedGlobals.40)
+    [Anonymous Symbol]                       0x20000078   Section        0  main.o(.bss..L_MergedGlobals.40)
     Heap_Mem                                 0x20000590   Data         512  startup_stm32f103xb.o(HEAP)
     HEAP                                     0x20000590   Section      512  startup_stm32f103xb.o(HEAP)
     Stack_Mem                                0x20000790   Data        1024  startup_stm32f103xb.o(STACK)
@@ -2283,23 +2283,23 @@ Image Symbol Table
     check_Card                               0x08002a7d   Thumb Code   648  main.o(.text.check_Card)
     check_card_RFID                          0x08002d11   Thumb Code   298  main.o(.text.check_card_RFID)
     del_Card                                 0x08002e3d   Thumb Code   724  main.o(.text.del_Card)
-    get_key                                  0x08003151   Thumb Code   260  main.o(.text.get_key)
-    lcd_clear                                0x08003255   Thumb Code    84  lcd.o(.text.lcd_clear)
-    lcd_init                                 0x080032a9   Thumb Code   278  lcd.o(.text.lcd_init)
-    lcd_put_cur                              0x080033c1   Thumb Code    90  lcd.o(.text.lcd_put_cur)
-    lcd_send_data                            0x0800341d   Thumb Code    68  lcd.o(.text.lcd_send_data)
-    lcd_send_string                          0x08003461   Thumb Code    86  lcd.o(.text.lcd_send_string)
-    main                                     0x080034b9   Thumb Code   784  main.o(.text.main)
-    press_button                             0x080037e5   Thumb Code   222  main.o(.text.press_button)
-    read_keypad                              0x080038c5   Thumb Code   726  keypad.o(.text.read_keypad)
-    run_CheckPass                            0x08003b9d   Thumb Code   372  main.o(.text.run_CheckPass)
-    run_InputPass                            0x08003d21   Thumb Code   532  main.o(.text.run_InputPass)
-    run_Normal                               0x08003f55   Thumb Code   740  main.o(.text.run_Normal)
-    run_PassMaster                           0x08004249   Thumb Code  1140  main.o(.text.run_PassMaster)
-    AHBPrescTable                            0x08004748   Data          16  system_stm32f1xx.o(.rodata.AHBPrescTable)
-    APBPrescTable                            0x08004758   Data           8  system_stm32f1xx.o(.rodata.APBPrescTable)
-    Region$$Table$$Base                      0x08004824   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08004844   Number         0  anon$$obj.o(Region$$Table)
+    get_key                                  0x08003151   Thumb Code   264  main.o(.text.get_key)
+    lcd_clear                                0x08003259   Thumb Code    84  lcd.o(.text.lcd_clear)
+    lcd_init                                 0x080032ad   Thumb Code   278  lcd.o(.text.lcd_init)
+    lcd_put_cur                              0x080033c5   Thumb Code    90  lcd.o(.text.lcd_put_cur)
+    lcd_send_data                            0x08003421   Thumb Code    68  lcd.o(.text.lcd_send_data)
+    lcd_send_string                          0x08003465   Thumb Code    86  lcd.o(.text.lcd_send_string)
+    main                                     0x080034bd   Thumb Code   784  main.o(.text.main)
+    press_button                             0x080037e9   Thumb Code   222  main.o(.text.press_button)
+    read_keypad                              0x080038c9   Thumb Code   726  keypad.o(.text.read_keypad)
+    run_CheckPass                            0x08003ba1   Thumb Code   372  main.o(.text.run_CheckPass)
+    run_InputPass                            0x08003d25   Thumb Code   540  main.o(.text.run_InputPass)
+    run_Normal                               0x08003f61   Thumb Code   740  main.o(.text.run_Normal)
+    run_PassMaster                           0x08004255   Thumb Code  1144  main.o(.text.run_PassMaster)
+    AHBPrescTable                            0x08004744   Data          16  system_stm32f1xx.o(.rodata.AHBPrescTable)
+    APBPrescTable                            0x08004754   Data           8  system_stm32f1xx.o(.rodata.APBPrescTable)
+    Region$$Table$$Base                      0x08004820   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08004840   Number         0  anon$$obj.o(Region$$Table)
     mode_pass                                0x20000000   Data           1  main.o(.data..L_MergedGlobals)
     status_pass                              0x20000001   Data           1  main.o(.data..L_MergedGlobals)
     check_pass                               0x20000002   Data           1  main.o(.data..L_MergedGlobals)
@@ -2312,24 +2312,24 @@ Image Symbol Table
     SystemCoreClock                          0x20000014   Data           4  system_stm32f1xx.o(.data.SystemCoreClock)
     __libspace_start                         0x20000018   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x20000078   Data           0  libspace.o(.bss)
-    count_key                                0x20000078   Data           1  main.o(.bss..L_MergedGlobals.41)
-    count_key_in                             0x20000079   Data           1  main.o(.bss..L_MergedGlobals.41)
-    count_enter_pass                         0x2000007a   Data           1  main.o(.bss..L_MergedGlobals.41)
-    count_enter_pmaster                      0x2000007b   Data           1  main.o(.bss..L_MergedGlobals.41)
-    mode_card                                0x2000007c   Data           1  main.o(.bss..L_MergedGlobals.41)
-    key                                      0x2000007d   Data           1  main.o(.bss..L_MergedGlobals.41)
-    i                                        0x2000007e   Data           1  main.o(.bss..L_MergedGlobals.41)
-    status                                   0x2000007f   Data           1  main.o(.bss..L_MergedGlobals.41)
-    j                                        0x20000080   Data           1  main.o(.bss..L_MergedGlobals.41)
-    x                                        0x20000081   Data           1  main.o(.bss..L_MergedGlobals.41)
-    len_key_card                             0x20000084   Data           4  main.o(.bss..L_MergedGlobals.41)
-    time                                     0x20000088   Data           4  main.o(.bss..L_MergedGlobals.41)
-    serNum                                   0x2000008c   Data           5  main.o(.bss..L_MergedGlobals.41)
-    password                                 0x20000091   Data           6  main.o(.bss..L_MergedGlobals.41)
-    buffer_pass                              0x20000097   Data           7  main.o(.bss..L_MergedGlobals.41)
-    new_pass1                                0x2000009e   Data           7  main.o(.bss..L_MergedGlobals.41)
-    new_pass2                                0x200000a5   Data           7  main.o(.bss..L_MergedGlobals.41)
-    str                                      0x200000ac   Data          16  main.o(.bss..L_MergedGlobals.41)
+    count_key                                0x20000078   Data           1  main.o(.bss..L_MergedGlobals.40)
+    count_key_in                             0x20000079   Data           1  main.o(.bss..L_MergedGlobals.40)
+    count_enter_pass                         0x2000007a   Data           1  main.o(.bss..L_MergedGlobals.40)
+    count_enter_pmaster                      0x2000007b   Data           1  main.o(.bss..L_MergedGlobals.40)
+    mode_card                                0x2000007c   Data           1  main.o(.bss..L_MergedGlobals.40)
+    key                                      0x2000007d   Data           1  main.o(.bss..L_MergedGlobals.40)
+    i                                        0x2000007e   Data           1  main.o(.bss..L_MergedGlobals.40)
+    status                                   0x2000007f   Data           1  main.o(.bss..L_MergedGlobals.40)
+    j                                        0x20000080   Data           1  main.o(.bss..L_MergedGlobals.40)
+    x                                        0x20000081   Data           1  main.o(.bss..L_MergedGlobals.40)
+    len_key_card                             0x20000084   Data           4  main.o(.bss..L_MergedGlobals.40)
+    time                                     0x20000088   Data           4  main.o(.bss..L_MergedGlobals.40)
+    serNum                                   0x2000008c   Data           5  main.o(.bss..L_MergedGlobals.40)
+    password                                 0x20000091   Data           6  main.o(.bss..L_MergedGlobals.40)
+    buffer_pass                              0x20000097   Data           7  main.o(.bss..L_MergedGlobals.40)
+    new_pass1                                0x2000009e   Data           7  main.o(.bss..L_MergedGlobals.40)
+    new_pass2                                0x200000a5   Data           7  main.o(.bss..L_MergedGlobals.40)
+    str                                      0x200000ac   Data          16  main.o(.bss..L_MergedGlobals.40)
     hi2c1                                    0x200000bc   Data          84  main.o(.bss.hi2c1)
     hspi1                                    0x20000110   Data          88  main.o(.bss.hspi1)
     key_card                                 0x20000168   Data        1020  main.o(.bss.key_card)
@@ -2344,9 +2344,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00004860, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00004858, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00004844, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00004840, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2509,49 +2509,49 @@ Memory Map of the image
     0x08002d10   0x08002d10   0x0000012a   Code   RO          157    .text.check_card_RFID  main.o
     0x08002e3a   0x08002e3a   0x00000002   PAD
     0x08002e3c   0x08002e3c   0x00000314   Code   RO          139    .text.del_Card      main.o
-    0x08003150   0x08003150   0x00000104   Code   RO          131    .text.get_key       main.o
-    0x08003254   0x08003254   0x00000054   Code   RO           23    .text.lcd_clear     lcd.o
-    0x080032a8   0x080032a8   0x00000116   Code   RO           27    .text.lcd_init      lcd.o
-    0x080033be   0x080033be   0x00000002   PAD
-    0x080033c0   0x080033c0   0x0000005a   Code   RO           25    .text.lcd_put_cur   lcd.o
-    0x0800341a   0x0800341a   0x00000002   PAD
-    0x0800341c   0x0800341c   0x00000044   Code   RO           21    .text.lcd_send_data  lcd.o
-    0x08003460   0x08003460   0x00000056   Code   RO           29    .text.lcd_send_string  lcd.o
-    0x080034b6   0x080034b6   0x00000002   PAD
-    0x080034b8   0x080034b8   0x0000032c   Code   RO          123    .text.main          main.o
-    0x080037e4   0x080037e4   0x000000de   Code   RO          133    .text.press_button  main.o
-    0x080038c2   0x080038c2   0x00000002   PAD
-    0x080038c4   0x080038c4   0x000002d6   Code   RO           11    .text.read_keypad   keypad.o
-    0x08003b9a   0x08003b9a   0x00000002   PAD
-    0x08003b9c   0x08003b9c   0x00000184   Code   RO          149    .text.run_CheckPass  main.o
-    0x08003d20   0x08003d20   0x00000234   Code   RO          145    .text.run_InputPass  main.o
-    0x08003f54   0x08003f54   0x000002f4   Code   RO          141    .text.run_Normal    main.o
-    0x08004248   0x08004248   0x00000500   Code   RO          147    .text.run_PassMaster  main.o
-    0x08004748   0x08004748   0x00000010   Data   RO          826    .rodata.AHBPrescTable  system_stm32f1xx.o
-    0x08004758   0x08004758   0x00000008   Data   RO          827    .rodata.APBPrescTable  system_stm32f1xx.o
-    0x08004760   0x08004760   0x00000002   Data   RO          461    .rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable  stm32f1xx_hal_rcc.o
-    0x08004762   0x08004762   0x00000010   Data   RO          460    .rodata.cst16       stm32f1xx_hal_rcc.o
-    0x08004772   0x08004772   0x000000b0   Data   RO          160    .rodata.str1.1      main.o
-    0x08004822   0x08004822   0x00000002   PAD
-    0x08004824   0x08004824   0x00000020   Data   RO         1042    Region$$Table       anon$$obj.o
+    0x08003150   0x08003150   0x00000108   Code   RO          131    .text.get_key       main.o
+    0x08003258   0x08003258   0x00000054   Code   RO           23    .text.lcd_clear     lcd.o
+    0x080032ac   0x080032ac   0x00000116   Code   RO           27    .text.lcd_init      lcd.o
+    0x080033c2   0x080033c2   0x00000002   PAD
+    0x080033c4   0x080033c4   0x0000005a   Code   RO           25    .text.lcd_put_cur   lcd.o
+    0x0800341e   0x0800341e   0x00000002   PAD
+    0x08003420   0x08003420   0x00000044   Code   RO           21    .text.lcd_send_data  lcd.o
+    0x08003464   0x08003464   0x00000056   Code   RO           29    .text.lcd_send_string  lcd.o
+    0x080034ba   0x080034ba   0x00000002   PAD
+    0x080034bc   0x080034bc   0x0000032c   Code   RO          123    .text.main          main.o
+    0x080037e8   0x080037e8   0x000000de   Code   RO          133    .text.press_button  main.o
+    0x080038c6   0x080038c6   0x00000002   PAD
+    0x080038c8   0x080038c8   0x000002d6   Code   RO           11    .text.read_keypad   keypad.o
+    0x08003b9e   0x08003b9e   0x00000002   PAD
+    0x08003ba0   0x08003ba0   0x00000184   Code   RO          149    .text.run_CheckPass  main.o
+    0x08003d24   0x08003d24   0x0000023c   Code   RO          145    .text.run_InputPass  main.o
+    0x08003f60   0x08003f60   0x000002f4   Code   RO          141    .text.run_Normal    main.o
+    0x08004254   0x08004254   0x000004f0   Code   RO          147    .text.run_PassMaster  main.o
+    0x08004744   0x08004744   0x00000010   Data   RO          826    .rodata.AHBPrescTable  system_stm32f1xx.o
+    0x08004754   0x08004754   0x00000008   Data   RO          827    .rodata.APBPrescTable  system_stm32f1xx.o
+    0x0800475c   0x0800475c   0x00000002   Data   RO          461    .rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable  stm32f1xx_hal_rcc.o
+    0x0800475e   0x0800475e   0x00000010   Data   RO          460    .rodata.cst16       stm32f1xx_hal_rcc.o
+    0x0800476e   0x0800476e   0x000000af   Data   RO          160    .rodata.str1.1      main.o
+    0x0800481d   0x0800481d   0x00000003   PAD
+    0x08004820   0x08004820   0x00000020   Data   RO         1042    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08004848, Size: 0x00000b90, Max: 0x00005000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08004840, Size: 0x00000b90, Max: 0x00005000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08004848   0x0000000c   Data   RW          167    .data..L_MergedGlobals  main.o
-    0x2000000c   0x08004854   0x00000008   Data   RW          423    .data..L_MergedGlobals  stm32f1xx_hal.o
-    0x20000014   0x0800485c   0x00000004   Data   RW          825    .data.SystemCoreClock  system_stm32f1xx.o
+    0x20000000   0x08004840   0x0000000c   Data   RW          167    .data..L_MergedGlobals  main.o
+    0x2000000c   0x0800484c   0x00000008   Data   RW          423    .data..L_MergedGlobals  stm32f1xx_hal.o
+    0x20000014   0x08004854   0x00000004   Data   RW          825    .data.SystemCoreClock  system_stm32f1xx.o
     0x20000018        -       0x00000060   Zero   RW          907    .bss                c_w.l(libspace.o)
-    0x20000078        -       0x00000044   Zero   RW          168    .bss..L_MergedGlobals.41  main.o
+    0x20000078        -       0x00000044   Zero   RW          168    .bss..L_MergedGlobals.40  main.o
     0x200000bc        -       0x00000054   Zero   RW          162    .bss.hi2c1          main.o
     0x20000110        -       0x00000058   Zero   RW          163    .bss.hspi1          main.o
     0x20000168        -       0x000003fc   Zero   RW          161    .bss.key_card       main.o
-    0x20000564   0x08004860   0x00000004   PAD
+    0x20000564   0x08004858   0x00000004   PAD
     0x20000568        -       0x00000020   Zero   RW          648    .bss.pFlash         stm32f1xx_hal_flash.o
     0x20000588        -       0x00000004   Zero   RW          422    .bss.uwTick         stm32f1xx_hal.o
-    0x2000058c   0x08004860   0x00000004   PAD
+    0x2000058c   0x08004858   0x00000004   PAD
     0x20000590        -       0x00000200   Zero   RW            2    HEAP                startup_stm32f103xb.o
     0x20000790        -       0x00000400   Zero   RW            1    STACK               startup_stm32f103xb.o
 
@@ -2566,7 +2566,7 @@ Image component sizes
        234          0          0          0          0      16795   flash.o
        726          0          0          0          0       1376   keypad.o
        606          0          0          0          0       4048   lcd.o
-      6796        422        176         12       1260      16032   main.o
+      6792        402        175         12       1260      16020   main.o
       2318          0          0          0          0      17354   rc522.o
         64         26        236          0       1536        828   startup_stm32f103xb.o
        188          0          0          8          4       5774   stm32f1xx_hal.o
@@ -2582,9 +2582,9 @@ Image component sizes
          2          0         24          4          0       1654   system_stm32f1xx.o
 
     ----------------------------------------------------------------------
-     17224        470        488         24       2840     171825   Object Totals
+     17220        450        488         24       2840     171813   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        80          0          2          0          8          0   (incl. Padding)
+        80          0          3          0          8          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -2640,15 +2640,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     18012        514        488         24       2936     172201   Grand Totals
-     18012        514        488         24       2936     172201   ELF Image Totals
-     18012        514        488         24          0          0   ROM Totals
+     18008        494        488         24       2936     172189   Grand Totals
+     18008        494        488         24       2936     172189   ELF Image Totals
+     18008        494        488         24          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                18500 (  18.07kB)
+    Total RO  Size (Code + RO Data)                18496 (  18.06kB)
     Total RW  Size (RW Data + ZI Data)              2960 (   2.89kB)
-    Total ROM Size (Code + RO Data + RW Data)      18524 (  18.09kB)
+    Total ROM Size (Code + RO Data + RW Data)      18520 (  18.09kB)
 
 ==============================================================================
 
