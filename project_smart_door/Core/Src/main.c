@@ -702,6 +702,8 @@ void run_PassMaster()
   status_pass = run_CheckPass(pass_master);
   if(status_pass == OK)
   {
+		check_pass = 2;
+		status_pass = 2;
 		lcd_put_cur(0,0);
 		lcd_send_string("PASSWORD MASTER");
 		lcd_put_cur(1,3);
@@ -726,52 +728,102 @@ void run_PassMaster()
 				{
 					notify_audio(1);
 					lcd_put_cur(0,0);
-					lcd_send_string("CHO0SE 1");
-					lcd_put_cur(1,0);
 					lcd_send_string("RESET PASSWORD");
-					Flash_Erase(ADDRESS_PASS_STORAGE);
-					Flash_Write_Array(ADDRESS_PASS_STORAGE, (uint8_t*)pass_master, LIMIT_PASS);
-					HAL_Delay(100);
-					Flash_Erase(ADDRESS_COUNT_STORAGE);
-					count_enter_pass = 0;
-					Flash_Write_Int(ADDRESS_COUNT_STORAGE, count_enter_pass);
-					HAL_Delay(100);
-					HAL_Delay(3000);
-					notify_audio(2);
-					lcd_clear();
-					mode_pass = 4;
-					check_pass = 2;
-					status_pass = 2;
-					mode_card = MODE_CHECK_CARD;
-					break;
+					lcd_put_cur(1,1);
+					lcd_send_string("1:YES     2:NO");
+					key = 0;
+					while(1)
+					{
+						get_key();
+						if ((key >= '0')&&(key <= '9'))
+						{
+							if(key == '1')
+							{
+								lcd_clear();
+								Flash_Erase(ADDRESS_PASS_STORAGE);
+								Flash_Write_Array(ADDRESS_PASS_STORAGE, (uint8_t*)pass_master, LIMIT_PASS);
+								HAL_Delay(100);
+								Flash_Erase(ADDRESS_COUNT_STORAGE);
+								count_enter_pass = 0;
+								Flash_Write_Int(ADDRESS_COUNT_STORAGE, count_enter_pass);
+								HAL_Delay(100);
+								HAL_Delay(2000);
+								lcd_put_cur(0,0);
+								lcd_send_string("RESET PASSWORD");
+								lcd_put_cur(1,0);
+								lcd_send_string("UNSUCCESSFULLY");
+								notify_audio(2);
+								lcd_clear();
+								mode_pass = 4;
+								mode_card = MODE_CHECK_CARD;
+								break;
+							}
+							if(key == '2')
+							{
+								lcd_clear();
+								key = 0;
+								break;
+							}
+						}
+					}
+					if(key == '1')
+					{
+						key = 0;
+						break;
+					}
 				}
 				else if(key == '2')
 				{
 					notify_audio(1);
 					lcd_put_cur(0,0);
-					lcd_send_string("CHO0SE 2");
-					lcd_put_cur(1,0);
 					lcd_send_string("RESET SYSTEM");
-					Flash_Erase(ADDRESS_PASS_STORAGE);
-					Flash_Write_Array(ADDRESS_PASS_STORAGE, (uint8_t*)pass_master, LIMIT_PASS);
-					HAL_Delay(100);
-					Flash_Erase(ADDRESS_COUNT_STORAGE);
-					count_enter_pass = 0;
-					Flash_Write_Int(ADDRESS_COUNT_STORAGE, count_enter_pass);
-					HAL_Delay(100);
-					Flash_Erase(ADDRESS_COUNT_M_STORAGE);
-					count_enter_pmaster = 0;
-					Flash_Write_Int(ADDRESS_COUNT_M_STORAGE, count_enter_pmaster);
-					HAL_Delay(100);
-					Flash_Erase(ADDRESS_CARD_STORAGE);
-					HAL_Delay(3000);
-					notify_audio(2);
-					lcd_clear();
-					mode_pass = 4;
-					check_pass = 2;
-					status_pass = 2;
-					mode_card = MODE_CHECK_CARD;
-					break;
+					lcd_put_cur(1,1);
+					lcd_send_string("1:YES     2:NO");
+					key = 0;
+					while(1)
+					{
+						get_key();
+						if ((key >= '0')&&(key <= '9'))
+						{
+							if(key == '1')
+							{
+								lcd_clear();
+								Flash_Erase(ADDRESS_PASS_STORAGE);
+								Flash_Write_Array(ADDRESS_PASS_STORAGE, (uint8_t*)pass_master, LIMIT_PASS);
+								HAL_Delay(100);
+								Flash_Erase(ADDRESS_COUNT_STORAGE);
+								count_enter_pass = 0;
+								Flash_Write_Int(ADDRESS_COUNT_STORAGE, count_enter_pass);
+								HAL_Delay(100);
+								Flash_Erase(ADDRESS_COUNT_M_STORAGE);
+								count_enter_pmaster = 0;
+								Flash_Write_Int(ADDRESS_COUNT_M_STORAGE, count_enter_pmaster);
+								HAL_Delay(100);
+								Flash_Erase(ADDRESS_CARD_STORAGE);
+								HAL_Delay(2000);
+								lcd_put_cur(0,0);
+								lcd_send_string("RESET SYSTEM");
+								lcd_put_cur(1,2);
+								lcd_send_string("SUCCESSFULLY");
+								notify_audio(2);
+								lcd_clear();
+								mode_pass = 4;
+								mode_card = MODE_CHECK_CARD;
+								break;
+							}
+							if(key == '2')
+							{
+								lcd_clear();
+								key = 0;
+								break;
+							}
+						}
+					}
+					if(key == '1')
+					{
+						key = 0;
+						break;
+					}
 				}
 			}
 		}
@@ -938,6 +990,8 @@ void add_Card()
 		if(status_pass == OK)
 		{
 			lcd_clear();
+			check_pass = 2;
+			status_pass = 2;
 			lcd_put_cur(0,1);
 			lcd_send_string("CORRECT PASS!");
 			notify_audio(2);
@@ -962,7 +1016,6 @@ void add_Card()
 					lcd_clear();
 					mode_card = MODE_CHECK_CARD;
 					check_card = 2;
-					status_pass = 2;
 					status_card = 2;
 					break;
 				}
@@ -982,12 +1035,11 @@ void add_Card()
 					lcd_send_string("ADD NEW CARD");
 					lcd_put_cur(1,1);
 					lcd_send_string("SUCCESSFULLY");
-						notify_audio(2);
+					notify_audio(2);
 					HAL_Delay(2000);
 					lcd_clear();
 					mode_card = MODE_CHECK_CARD;
 					check_card = 2;
-					status_pass = 2;
 					status_card = 2;
 					break;
 				}
@@ -1023,6 +1075,8 @@ void del_Card()
 		if(status_pass == OK)
 		{
 			lcd_clear();
+			check_pass = 2;
+			status_pass = 2;
 			lcd_put_cur(0,3);
 			lcd_send_string("CORRECT");
 			lcd_put_cur(1,6);
@@ -1062,7 +1116,6 @@ void del_Card()
 					lcd_clear();
 					mode_card = MODE_CHECK_CARD;
 					check_card = 2;
-					status_pass = 2;
 					status_card = 2;
 					break;
 				} 
@@ -1078,7 +1131,6 @@ void del_Card()
 					lcd_clear();
 					mode_card = MODE_CHECK_CARD;
 					check_card = 2;
-					status_pass = 2;
 					status_card = 2;
 					break;
 				}
