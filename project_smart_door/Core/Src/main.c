@@ -79,7 +79,7 @@ int wrong_card = 0;
 
 // Password default
 char pass_master[] = {'1','1','1','1','1','1'};
-char password[6];
+char password[LIMIT_PASS];
 // Cac bien su dung
 uint8_t key;
 int len_key_card = 0;
@@ -161,14 +161,18 @@ int main(void)
   MX_I2C1_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
+	/*
 	Flash_Erase(ADDRESS_PMASTER_STORAGE);
 	Flash_Write_Array(ADDRESS_PMASTER_STORAGE, (uint8_t*)pass_master, LIMIT_PASS);
 	HAL_Delay(100);
-	/*
 	Flash_Erase(ADDRESS_PASS_STORAGE);
-	Flash_Write_Array(ADDRESS_PASS_STORAGE, (uint8_t*)pass_master, 4);
+	Flash_Write_Array(ADDRESS_PASS_STORAGE, (uint8_t*)pass_master, LIMIT_PASS);
 	HAL_Delay(100);
 	*/
+	Flash_Read_Array(ADDRESS_PASS_STORAGE, (uint8_t*)password, LIMIT_PASS);
+	count_enter_pass = Flash_Read_Int(ADDRESS_COUNT_STORAGE);
+	count_enter_pmaster = Flash_Read_Int(ADDRESS_COUNT_M_STORAGE);
+	
   MFRC522_Init();
   lcd_init();
   lcd_put_cur(0, 3);
@@ -327,10 +331,7 @@ static void MX_GPIO_Init(void)
                           |GPIO_PIN_12, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_11, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10|GPIO_PIN_11, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : PC13 */
   GPIO_InitStruct.Pin = GPIO_PIN_13;
@@ -389,18 +390,24 @@ void get_key()
   }
 	else if (key == 'B')
 	{
+		lcd_clear();
+    count_key = 0;
 		mode_card = MODE_ADD_CARD;
 		mode_pass = 4;
     check_pass = 2;
 	}
 	else if (key == 'C')
 	{
+		lcd_clear();
+    count_key = 0;
 		mode_card = MODE_DEL_CARD;
 		mode_pass = 4;
     check_pass = 2;
 	}
 	else if (key == 'D')
 	{
+		lcd_clear();
+    count_key = 0;
 		mode_pass = MODE_PASS_MASTER;
 		mode_card = 3;
     check_pass = 2;
@@ -447,9 +454,9 @@ void get_key()
 // Ham vong lap chuong trinh chinh
 void loop_main()
 {
-	Flash_Read_Array(ADDRESS_PASS_STORAGE, (uint8_t*)password, LIMIT_PASS);
-	Flash_Read_Int(ADDRESS_COUNT_STORAGE);
-	Flash_Read_Int(ADDRESS_COUNT_M_STORAGE);
+	//Flash_Read_Array(ADDRESS_PASS_STORAGE, (uint8_t*)password, LIMIT_PASS);
+	//Flash_Read_Int(ADDRESS_COUNT_STORAGE);
+	//Flash_Read_Int(ADDRESS_COUNT_M_STORAGE);
 	press_button();
   get_key();
 	switch (mode_card)
@@ -525,7 +532,7 @@ char run_CheckPass(char pass[LIMIT_PASS])
         lcd_clear();
         lcd_put_cur(0,0);
         lcd_send_string("WRONG PASSWORD!"); // Hien thi sai mat khau
-        notify_audio(3);
+        notify_audio(4);
         HAL_Delay(3000);
         lcd_clear();
       }
@@ -570,13 +577,12 @@ void run_Normal()
 			char buff_times[16];
 			lcd_clear();
 			sprintf(buff_times, "WRONG %d TIMES", count_enter_pass);
-			HAL_Delay(200);
+			notify_audio(15);
       lcd_clear();
       lcd_put_cur(0,3);
       lcd_send_string("WARNING!"); // Canh bao
 			lcd_put_cur(1,1);
       lcd_send_string(buff_times);
-      notify_audio(7);
       lcd_clear();
 			time = count_enter_pass*40;
 			lcd_put_cur(0,2);
@@ -592,7 +598,10 @@ void run_Normal()
 			}
 			lcd_clear();
     }
-    mode_pass = MODE_CHECK_CARD;
+		check_pass = 2;
+    status_pass = 2;
+		mode_pass = 4;
+    mode_card = MODE_CHECK_CARD;
   }
   else {}
 }
@@ -665,7 +674,7 @@ void run_InputPass(){
 				Flash_Erase(ADDRESS_PASS_STORAGE);
 				Flash_Write_Array(ADDRESS_PASS_STORAGE, (uint8_t*)password, LIMIT_PASS);
 				HAL_Delay(100);
-				Flash_Read_Array(ADDRESS_PASS_STORAGE, (uint8_t*)password, LIMIT_PASS);
+				//Flash_Read_Array(ADDRESS_PASS_STORAGE, (uint8_t*)password, LIMIT_PASS);
         
         lcd_clear();
         lcd_put_cur(0,4);
@@ -682,11 +691,12 @@ void run_InputPass(){
         lcd_send_string("CHANGE");
 				lcd_put_cur(1,0);
         lcd_send_string("UNSUCCESSFULLY");
-				notify_audio(3);
+				notify_audio(4);
         check_pass = 2;
       }
       HAL_Delay(2000);
       lcd_clear();
+			check_pass = 2;
       status_pass = 2;
 			mode_pass = 4;
       mode_card = MODE_CHECK_CARD;
@@ -708,11 +718,11 @@ void run_PassMaster()
 		lcd_send_string("PASSWORD MASTER");
 		lcd_put_cur(1,3);
 		lcd_send_string("IS CORRECT");
+		notify_audio(2);
 		Flash_Erase(ADDRESS_COUNT_M_STORAGE);
 		count_enter_pmaster = 0;
 		Flash_Write_Int(ADDRESS_COUNT_M_STORAGE, count_enter_pmaster);
 		HAL_Delay(100);
-		notify_audio(2);
     HAL_Delay(1000);
 		while(1)
 		{
@@ -747,11 +757,12 @@ void run_PassMaster()
 								count_enter_pass = 0;
 								Flash_Write_Int(ADDRESS_COUNT_STORAGE, count_enter_pass);
 								HAL_Delay(100);
+								Flash_Read_Array(ADDRESS_PASS_STORAGE, (uint8_t*)password, LIMIT_PASS);
 								HAL_Delay(2000);
 								lcd_put_cur(0,0);
 								lcd_send_string("RESET PASSWORD");
 								lcd_put_cur(1,0);
-								lcd_send_string("UNSUCCESSFULLY");
+								lcd_send_string("SUCCESSFULLY");
 								notify_audio(2);
 								lcd_clear();
 								mode_pass = 4;
@@ -800,6 +811,7 @@ void run_PassMaster()
 								Flash_Write_Int(ADDRESS_COUNT_M_STORAGE, count_enter_pmaster);
 								HAL_Delay(100);
 								Flash_Erase(ADDRESS_CARD_STORAGE);
+								Flash_Read_Array(ADDRESS_PASS_STORAGE, (uint8_t*)password, LIMIT_PASS);
 								HAL_Delay(2000);
 								lcd_put_cur(0,0);
 								lcd_send_string("RESET SYSTEM");
@@ -840,12 +852,12 @@ void run_PassMaster()
 			lcd_clear();
 			char buff_times[16];
 			sprintf(buff_times, "WRONG %d TIMES", count_enter_pmaster);
+			notify_audio(15);
 			lcd_clear();
       lcd_put_cur(0,3);
       lcd_send_string("WARNING!"); // Canh bao
 			lcd_put_cur(1,1);
       lcd_send_string(buff_times);
-      notify_audio(7);
       lcd_clear();
 			time = count_enter_pmaster*40;
 			lcd_put_cur(0,2);
@@ -948,7 +960,7 @@ void check_Card()
 			lcd_send_string("THE CARD'S");
 			lcd_put_cur(1,0);
 			lcd_send_string("MEMORY IS EMPTY");
-			notify_audio(3);
+			notify_audio(4);
 			HAL_Delay(2000);
 			lcd_clear();
 			mode_pass = 4;
@@ -961,7 +973,7 @@ void check_Card()
 			lcd_clear();
 			lcd_put_cur(0, 1);
 			lcd_send_string("WRONG CARD!");
-			notify_audio(3);
+			notify_audio(4);
 			HAL_Delay(3000);
 			lcd_clear();
 			mode_pass = 4;
@@ -1009,9 +1021,9 @@ void add_Card()
 					lcd_clear();
 					lcd_put_cur(0,1);
 					lcd_send_string("THE CARD");
-					lcd_put_cur(1,6);
+					lcd_put_cur(1,5);
 					lcd_send_string("HAS EXISTED");
-					notify_audio(3);
+					notify_audio(4);
 					HAL_Delay(2000);
 					lcd_clear();
 					mode_card = MODE_CHECK_CARD;
@@ -1028,7 +1040,7 @@ void add_Card()
 					Flash_Erase(ADDRESS_CARD_STORAGE);
 					Flash_Write_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
 					HAL_Delay(100);
-					Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
+					//Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
 					
 					lcd_clear();
 					lcd_put_cur(0,1);
@@ -1059,7 +1071,7 @@ void del_Card()
 		lcd_send_string("THE CARD'S");
 		lcd_put_cur(1,0);
 		lcd_send_string("MEMORY IS EMPTY");
-		notify_audio(3);
+		notify_audio(4);
 		HAL_Delay(2000);
 		lcd_clear();
 		mode_card = MODE_CHECK_CARD;
@@ -1077,10 +1089,8 @@ void del_Card()
 			lcd_clear();
 			check_pass = 2;
 			status_pass = 2;
-			lcd_put_cur(0,3);
-			lcd_send_string("CORRECT");
-			lcd_put_cur(1,6);
-			lcd_send_string("PASSWORD!");
+			lcd_put_cur(0,1);
+			lcd_send_string("CORRECT PASS!");
 			notify_audio(2);
 			HAL_Delay(1000);
 			lcd_clear();
@@ -1104,7 +1114,7 @@ void del_Card()
 					Flash_Erase(ADDRESS_CARD_STORAGE);
 					Flash_Write_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
 					HAL_Delay(100);
-					Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
+					//Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
 					
 					lcd_clear();
 					lcd_put_cur(0,1);
@@ -1126,7 +1136,7 @@ void del_Card()
 					lcd_send_string("NO EXIST");
 					lcd_put_cur(1,6);
 					lcd_send_string("THE CARD");
-					notify_audio(3);
+					notify_audio(4);
 					HAL_Delay(2000);
 					lcd_clear();
 					mode_card = MODE_CHECK_CARD;
