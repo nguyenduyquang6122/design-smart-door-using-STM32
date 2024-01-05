@@ -41,7 +41,7 @@
 #define MODE_CHECK_CARD 0
 #define MODE_ADD_CARD 1
 #define MODE_DEL_CARD 2
-// Cac mode cua cua
+// Cac mode cua password
 #define MODE_RUN 0
 #define MODE_CHANGE 1
 #define MODE_INPUT_PASS 2
@@ -83,7 +83,7 @@ char password[LIMIT_PASS];
 // Cac bien su dung
 uint8_t key;
 int len_key_card = 0;
-char i,j,tmp,x;
+char i,j,tmp,x,k;
 char count_key = 0;
 char count_key_in = 0;
 char count_enter_pass = 0;
@@ -421,6 +421,13 @@ void get_key()
       lcd_put_cur(1, count_key);
       lcd_send_data (' ');
     }
+		else if ((count_key == 0)&&(checking == OK))
+		{
+			lcd_clear();
+			check_pass = 2;
+			mode_pass = 4;
+			mode_card = MODE_CHECK_CARD;
+		}
     if (count_key_in > 0&&(mode_pass==MODE_INPUT_PASS))
     {
       if(count_key_in<LIMIT_PASS)
@@ -444,6 +451,7 @@ void get_key()
     count_key_in = 0;
     count_key = 0;
     check_pass = 2;
+		mode_card = MODE_CHECK_CARD;
     mode_pass = MODE_RUN;
 		
   }
@@ -638,12 +646,12 @@ void run_InputPass(){
       lcd_put_cur(1,count_key_in);
       lcd_send_string("*");
       count_key_in++;
-      if (count_key_in == LIMIT_PASS)
-      {
+      if (count_key_in == LIMIT_PASS){
         lcd_clear();
         lcd_put_cur(0,1);
         lcd_send_string("CONFIRM PASS:");
       }
+      
       key = 0;
     }
     else
@@ -772,14 +780,15 @@ void run_PassMaster()
 							if(key == '2')
 							{
 								lcd_clear();
-								key = 0;
 								break;
 							}
 						}
 					}
-					if(key == '1')
+					if(key == '1' | key == '2')
 					{
 						key = 0;
+						mode_pass = 4;
+						mode_card = MODE_CHECK_CARD;
 						break;
 					}
 				}
@@ -826,14 +835,15 @@ void run_PassMaster()
 							if(key == '2')
 							{
 								lcd_clear();
-								key = 0;
 								break;
 							}
 						}
 					}
-					if(key == '1')
+					if(key == '1' | key == '2')
 					{
 						key = 0;
+						mode_pass = 4;
+						mode_card = MODE_CHECK_CARD;
 						break;
 					}
 				}
@@ -873,7 +883,10 @@ void run_PassMaster()
 			}
 			lcd_clear();
     }
-		mode_pass = MODE_PASS_MASTER;
+		check_pass = 2;
+		status_pass = 2;
+		mode_pass = 4;
+		mode_card = MODE_CHECK_CARD;
   }
   else {}
 }
@@ -882,7 +895,7 @@ int get_len_keycard()
 {
 	int n = 0;
 	Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
-	for(i = 0; i<sizeof(key_card); i++)
+	for(i = 0; i<sizeof(key_card)/key_card[0]; i++)
 	{
 		if(key_card[i] != 0xFF)
 		{
@@ -1040,7 +1053,6 @@ void add_Card()
 					Flash_Erase(ADDRESS_CARD_STORAGE);
 					Flash_Write_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
 					HAL_Delay(100);
-					//Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
 					
 					lcd_clear();
 					lcd_put_cur(0,1);
@@ -1055,8 +1067,24 @@ void add_Card()
 					status_card = 2;
 					break;
 				}
-				HAL_Delay(50);
+				HAL_Delay(1000);
+				k++;
+				if(k == 4)
+				{
+					lcd_clear();
+					mode_card = MODE_CHECK_CARD;
+					k = 0;
+					break;
+				}
 			}
+		}
+		else if (status_pass == NOT_OK)
+		{
+			lcd_clear();
+			mode_card = MODE_CHECK_CARD;
+			mode_pass = 4;
+			check_pass = 2;
+			status_pass = 2;
 		}
 	}
 }
@@ -1114,7 +1142,6 @@ void del_Card()
 					Flash_Erase(ADDRESS_CARD_STORAGE);
 					Flash_Write_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
 					HAL_Delay(100);
-					//Flash_Read_Array(ADDRESS_CARD_STORAGE, (uint8_t*)key_card, LIMIT_CARD*4);
 					
 					lcd_clear();
 					lcd_put_cur(0,1);
@@ -1144,8 +1171,24 @@ void del_Card()
 					status_card = 2;
 					break;
 				}
-				HAL_Delay(50);
+				HAL_Delay(1000);
+				k++;
+				if(k == 4)
+				{
+					lcd_clear();
+					mode_card = MODE_CHECK_CARD;
+					k = 0;
+					break;
+				}
 			}
+		}
+		else if (status_pass == NOT_OK)
+		{
+			lcd_clear();
+			mode_card = MODE_CHECK_CARD;
+			mode_pass = 4;
+			check_pass = 2;
+			status_pass = 2;
 		}
 	}
 }	
